@@ -42,6 +42,24 @@ npm run preview    # szybki podgląd statyki: python3 -m http.server 4173 --dire
 npm run validate   # walidacja HTML
 ```
 
+## Formularz kontaktowy (`/api/contact`)
+
+`functions/api/contact.js` przyjmuje POST z formularza, waliduje dane (w tym honeypot
+i opcjonalny Turnstile) i wysyła e-mail przez **Resend**.
+
+Zmienne środowiskowe (lokalnie: `.dev.vars` na podstawie `.dev.vars.example`;
+produkcja: Cloudflare Pages → Settings → Environment variables):
+
+| Zmienna | Wymagana | Opis |
+| --- | --- | --- |
+| `RESEND_API_KEY` | tak | klucz API z resend.com; bez niego endpoint zwraca 503 |
+| `CONTACT_TO` | nie | odbiorca zapytań (domyślnie `kontakt@springus.pl`) |
+| `CONTACT_FROM` | nie | zweryfikowany nadawca w Resend (domyślnie `formularz@springus.pl`) |
+| `TURNSTILE_SECRET_KEY` | nie | włącza weryfikację tokenu Cloudflare Turnstile |
+
+Test lokalny: `npm run dev` → http://localhost:8788 → formularz w sekcji Kontakt.
+Zalecane: reguła rate limiting dla `/api/contact` w panelu Cloudflare.
+
 ## Deploy
 
 Produkcja: **Cloudflare Pages** (projekt `springus-pl`, build output `public/`).
@@ -57,7 +75,7 @@ szczegóły w kolejnych PR-ach.
 
 - [x] **PR1 — scaffold:** repozytorium, narzędzia, bazowy layout i design system
 - [ ] **PR2 — landing:** pełne sekcje strony głównej (usługi, cennik, portfolio, FAQ)
-- [ ] **PR3 — formularz kontaktowy:** Pages Function + Resend + Turnstile/honeypot
+- [x] **PR3 — formularz kontaktowy:** Pages Function + Resend + Turnstile/honeypot
 - [ ] **PR4 — chatbot:** Pages Function + Workers AI + widget na stronie
 - [ ] **PR5 — SEO:** meta/OG, JSON-LD, `robots.txt`, `sitemap.xml`, `_headers`, favicon
 - [ ] **PR6 — podstrony miejskie:** Przeworsk, Jarosław, Łańcut, Rzeszów

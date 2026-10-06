@@ -235,6 +235,13 @@ p {
   transform: translateY(0);
 }
 
+.btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+  transform: none;
+  pointer-events: none;
+}
+
 .btn--lg {
   padding: 16px 30px;
   font-size: 1.05rem;
@@ -1201,6 +1208,29 @@ p {
   width: 100%;
   height: 340px;
   border: 0;
+}
+
+/* Strony dokumentów (polityka prywatności) --------------------------------- */
+
+.legal {
+  max-width: 760px;
+}
+
+.legal h2 {
+  margin-top: 1.8em;
+  font-size: 1.35rem;
+}
+
+.legal ul {
+  margin: 0 0 1em;
+  padding-left: 1.3em;
+  color: var(--ink-soft);
+}
+
+.legal .updated {
+  margin-bottom: 2em;
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 /* Stopka ------------------------------------------------------------------ */
