@@ -859,6 +859,11 @@ p {
   gap: 22px;
 }
 
+.portfolio-card:only-child {
+  grid-column: 1 / -1;
+  max-width: 720px;
+}
+
 .portfolio-card {
   display: flex;
   flex-direction: column;
@@ -888,20 +893,8 @@ p {
   letter-spacing: -0.01em;
 }
 
-.portfolio-cover--kapabud {
-  background: linear-gradient(135deg, #b45309, #78350f);
-}
-
 .portfolio-cover--laczynas {
   background: linear-gradient(135deg, #0f766e, #134e4a);
-}
-
-.portfolio-cover--ttarena {
-  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
-}
-
-.portfolio-cover--sprawni {
-  background: linear-gradient(135deg, #7c3aed, #4c1d95);
 }
 
 .portfolio-body {
