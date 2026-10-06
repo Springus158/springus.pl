@@ -1,5 +1,7 @@
 # springus.pl
 
+![CI](https://github.com/Springus158/springus.pl/actions/workflows/ci.yml/badge.svg)
+
 Strona i oferta freelancera **Springus** — tworzenie stron internetowych dla firm:
 landing page, strony wizytówki i firmowe, aplikacje webowe, SEO lokalne i opieka techniczna.
 
@@ -32,6 +34,23 @@ landing page, strony wizytówki i firmowe, aplikacje webowe, SEO lokalne i opiek
 ├── package.json
 └── wrangler.toml
 ```
+
+## Jakość i CI
+
+```bash
+npm test   # validate + check:links + check:jsonld
+```
+
+- `npm run validate` — `html-validate` na wszystkich stronach
+- `npm run check:links` — skanuje `href`/`src` i pilnuje, żeby żaden wewnętrzny odnośnik nie prowadził w pustkę
+- `npm run check:jsonld` — parsuje każdy blok JSON-LD
+
+GitHub Actions (`.github/workflows/ci.yml`) uruchamia to samo przy każdym pushu na `main` i w każdym PR.
+
+## Praca z PR-ami (stack)
+
+Kolejne PR-y są zestackowane jeden na drugim (PR2 → PR1, PR3 → PR2 itd.).
+Merge od dołu do góry — GitHub sam przekieruje kolejne PR-y na `main`.
 
 ## Praca lokalna
 
@@ -106,7 +125,7 @@ szczegóły w kolejnych PR-ach.
 - [x] **PR4 — chatbot:** Pages Function + Workers AI + widget na stronie
 - [x] **PR5 — SEO:** meta/OG, JSON-LD, `robots.txt`, `sitemap.xml`, `_headers`, favicon
 - [x] **PR6 — podstrony miejskie:** Przeworsk, Jarosław, Łańcut, Rzeszów
-- [ ] **PR7 — CI i deploy:** GitHub Actions (walidacja + link checker) i dokumentacja
+- [x] **PR7 — CI i deploy:** GitHub Actions (walidacja + link checker) i dokumentacja
 
 ## Do uzupełnienia przed publikacją
 

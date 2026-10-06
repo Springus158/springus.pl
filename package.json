@@ -7,6 +7,9 @@
     "dev": "wrangler pages dev public",
     "preview": "python3 -m http.server 4173 --directory public",
     "validate": "html-validate \"public/**/*.html\"",
+    "check:links": "node scripts/check-links.mjs",
+    "check:jsonld": "node scripts/check-jsonld.mjs",
+    "test": "npm run validate && npm run check:links && npm run check:jsonld",
     "deploy": "wrangler pages deploy"
   },
   "devDependencies": {
