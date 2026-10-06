@@ -104,7 +104,7 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-size: clamp(2.1rem, 4.4vw, 3.3rem);
 }
 
 h2 {
@@ -426,7 +426,7 @@ p {
 .stage-wrap {
   position: relative;
   z-index: 1;
-  max-width: 660px;
+  max-width: min(1040px, 100%);
   text-align: center;
 }
 
@@ -492,10 +492,10 @@ p {
 .composer input {
   flex: 1;
   min-width: 0;
-  padding: 12px 0;
+  padding: 14px 0;
   border: 0;
   background: none;
-  font-size: 1rem;
+  font-size: 1.06rem;
   outline: none;
 }
 
@@ -508,8 +508,8 @@ p {
   flex: none;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   border: 0;
   border-radius: 50%;
   background: var(--accent);
@@ -544,12 +544,12 @@ p {
 }
 
 .chip {
-  padding: 9px 16px;
+  padding: 11px 18px;
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
   background: var(--surface);
   color: var(--ink-soft);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
@@ -589,18 +589,18 @@ p {
 .chat-log {
   display: none;
   flex-direction: column;
-  gap: 10px;
-  max-height: min(50vh, 460px);
-  margin-bottom: 16px;
+  gap: 12px;
+  max-height: min(58vh, 560px);
+  margin-bottom: 18px;
   padding-right: 2px;
   overflow-y: auto;
 }
 
 .bubble {
-  max-width: 84%;
-  padding: 11px 16px;
+  max-width: min(680px, 86%);
+  padding: 13px 18px;
   border-radius: 16px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.55;
   overflow-wrap: anywhere;
 }
@@ -701,7 +701,7 @@ body.chatting .stage {
 }
 
 body.chatting .stage-wrap {
-  max-width: 720px;
+  max-width: min(1200px, 100%);
 }
 
 body.chatting .stage-intro,
