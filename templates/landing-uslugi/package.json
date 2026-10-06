@@ -1,0 +1,20 @@
+{
+  "name": "strona-klienta",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Strona klienta — szablon landing-uslugi (Springus)",
+  "scripts": {
+    "dev": "wrangler dev",
+    "preview": "python3 -m http.server 4173 --directory public",
+    "validate": "html-validate \"public/**/*.html\"",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "html-validate": "^9.7.1",
+    "wrangler": "^4.42.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

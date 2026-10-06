@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Miejsce na zdjęcie 800 na 1000">
+  <rect width="800" height="1000" fill="#f4ecdf"/>
+  <circle cx="400" cy="400" r="130" fill="#d9cebb"/>
+  <path d="M180 820c40-170 160-260 220-260s180 90 220 260z" fill="#d9cebb"/>
+  <text x="400" y="930" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#a89c87">Zdjęcie 800×1000 — podmień</text>
+</svg>

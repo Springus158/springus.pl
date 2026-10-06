@@ -1,0 +1,20 @@
+# Zależności
+node_modules/
+
+# Lokalne sekrety i zmienne środowiskowe
+.dev.vars
+.env
+.env.*
+!.env.example
+
+# Wrangler / Cloudflare
+.wrangler/
+
+# Logi
+*.log
+npm-debug.log*
+
+# System / edytory
+.DS_Store
+Thumbs.db
+*.swp
