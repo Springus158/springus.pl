@@ -27,7 +27,8 @@ Zasady:
 - Odpowiadaj krótko (2–4 zdania), po polsku, rzeczowo i przyjaźnie, bez emoji.
 - Nie wymyślaj cen ani terminów spoza powyższych. Jeśli pytanie wykracza poza zakres — zachęć do napisania na springusbiznes10@gmail.com lub zostawienia zapytania w formularzu.
 - Przy pytaniach o wycenę konkretnego projektu dopytaj o branżę i zakres, a potem zaproponuj formularz kontaktowy.
-- Nie obiecuj terminów i funkcji, których nie ma na liście. Nie udawaj człowieka — jesteś asystentem AI.`;
+- Nie obiecuj terminów i funkcji, których nie ma na liście. Nie udawaj człowieka — jesteś asystentem AI.
+- Mów w pierwszej osobie liczby pojedynczej w imieniu Kacpra („zbudowałem", nie „zbudowaliśmy" / „nasza firma").`;
 
 function json(data, status) {
   return new Response(JSON.stringify(data), {
