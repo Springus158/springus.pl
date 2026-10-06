@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <title>Springus — tworzenie stron internetowych | wkrótce</title>
+    <title>Springus — tworzenie stron internetowych dla firm | Podkarpacie</title>
     <meta
       name="description"
-      content="Springus — strony internetowe dla firm. Landing page, strony wizytówki i firmowe, SEO lokalne. Podkarpacie i cała Polska."
+      content="Projektuję i wdrażam strony internetowe dla firm: landing page, wizytówki i strony firmowe. Szybkie, widoczne w Google, gotowe pod reklamy. Przeworsk, Jarosław, Łańcut, Rzeszów i cała Polska."
     >
+    <meta name="theme-color" content="#faf6ef">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,32 +21,676 @@
   <body>
     <a class="skip-link" href="#main">Przejdź do treści</a>
 
-    <header class="site-header">
+    <header class="site-header" data-header>
       <div class="container">
         <a class="logo" href="/">Springus<span>.</span></a>
-        <a class="btn btn--ghost" href="mailto:kontakt@springus.pl">kontakt@springus.pl</a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Otwórz menu"
+          data-nav-toggle
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Nawigacja główna">
+          <ul class="nav-list">
+            <li><a href="#uslugi">Usługi</a></li>
+            <li><a href="#proces">Jak pracuję</a></li>
+            <li><a href="#cennik">Cennik</a></li>
+            <li><a href="#portfolio">Realizacje</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+          <div class="nav-actions">
+            <!-- TODO: podmienić na prawdziwy numer telefonu -->
+            <a class="nav-phone" href="tel:+48000000000">+48&nbsp;000&nbsp;000&nbsp;000</a>
+            <a class="btn btn--primary" href="#kontakt">Bezpłatna wycena</a>
+          </div>
+        </nav>
       </div>
     </header>
 
     <main id="main">
-      <section class="section">
+      <!-- Hero -->
+      <section class="hero" id="start">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Tworzenie stron internetowych · Podkarpacie i cała Polska</p>
+            <h1>Strona internetowa, która <em>przyprowadza klientów</em></h1>
+            <p class="lead">
+              Projektuję i wdrażam landing page oraz strony firmowe: szybkie, dopasowane do
+              lokalnego rynku i przygotowane pod Google oraz kampanie reklamowe. Bez abonamentów
+              za edycję treści i bez ukrytych kosztów.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn--primary btn--lg" href="#kontakt">Bezpłatna wycena w 24 h</a>
+              <a class="btn btn--ghost btn--lg" href="#portfolio">Zobacz realizacje</a>
+            </div>
+            <p class="hero-note">Bez zobowiązań · Odpowiadam w ciągu 24 h w dni robocze</p>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="browser">
+              <div class="browser-bar">
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-url">twojafirma.pl</span>
+              </div>
+              <div class="browser-body">
+                <div class="skeleton skeleton--title"></div>
+                <div class="skeleton skeleton--text"></div>
+                <div class="skeleton skeleton--text skeleton--short"></div>
+                <div class="skeleton skeleton--button"></div>
+                <div class="skeleton-grid">
+                  <div class="skeleton skeleton--card"></div>
+                  <div class="skeleton skeleton--card"></div>
+                  <div class="skeleton skeleton--card"></div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-badge">
+              <strong>95+</strong>
+              <span>Lighthouse<br>w standardzie</span>
+            </div>
+          </div>
+        </div>
+
         <div class="container">
-          <p class="eyebrow">Wkrótce</p>
-          <h1>Strona w budowie</h1>
-          <p class="lead">
-            Pracuję nad ofertą tworzenia stron internetowych dla firm — landing page, strony
-            wizytówki i firmowe, SEO lokalne. W międzyczasie napisz:
-            <a href="mailto:kontakt@springus.pl">kontakt@springus.pl</a>.
+          <ul class="trust-strip">
+            <li><strong>10+</strong><span>wdrożonych projektów</span></li>
+            <li><strong>24 h</strong><span>na odpowiedź w dni robocze</span></li>
+            <li><strong>30 dni</strong><span>wsparcia po wdrożeniu w cenie</span></li>
+            <li><strong>Lokalnie i zdalnie</strong><span>Podkarpacie i cała Polska</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Usługi -->
+      <section class="section" id="uslugi">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Usługi</p>
+            <h2>Co mogę dla Ciebie zrobić</h2>
+            <p class="lead">
+              Od pojedynczego landing page'a po rozbudowane serwisy i aplikacje. Zawsze z myślą
+              o tym, żeby strona realnie pracowała na Twoją firmę.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="card service-card">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg>
+              </span>
+              <h3>Landing page sprzedażowy</h3>
+              <p>
+                Jedna strona, jeden cel: zapytania od klientów. Idealna pod Google Ads, kampanie
+                na Facebooku i pozycjonowanie lokalne. Treści, formularz i analityka — gotowe do
+                startu.
+              </p>
+            </article>
+
+            <article class="card service-card">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l8-6 8 6"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+              </span>
+              <h3>Strona wizytówka</h3>
+              <p>
+                1–3 podstrony dla lokalnej firmy: usługi, cennik, kontakt, mapa i opinie. Wszystko
+                spójne z wizytówką Google, żeby klienci z okolicy trafiali właśnie do Ciebie.
+              </p>
+            </article>
+
+            <article class="card service-card">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
+              </span>
+              <h3>Strona firmowa</h3>
+              <p>
+                Do 6 podstron z ofertą, realizacjami, opiniami i blogiem. Rozbudowywalna baza pod
+                SEO i reklamy — strona rośnie razem z Twoim biznesem.
+              </p>
+            </article>
+
+            <article class="card service-card">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 9l-2 2 2 2M15 9l2 2-2 2"/></svg>
+              </span>
+              <h3>Aplikacje webowe i PWA</h3>
+              <p>
+                Potrzebujesz czegoś więcej niż strony? Panele do zarządzania, zapisy online,
+                kalkulatory wyceny, portale dla społeczności. Buduję też aplikacje działające jak
+                natywne.
+              </p>
+            </article>
+
+            <article class="card service-card">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              </span>
+              <h3>SEO lokalne i Google Maps</h3>
+              <p>
+                Wizytówka Google, frazy lokalne, mapa i opinie klientów. Sprawię, że firma będzie
+                widoczna dla osób szukających usług w Twojej okolicy.
+              </p>
+            </article>
+
+            <article class="card service-card">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+              </span>
+              <h3>Opieka i hosting</h3>
+              <p>
+                Domena, szybki hosting na Cloudflare, kopie zapasowe i drobne zmiany w ramach
+                miesięcznego abonamentu. Ty prowadzisz firmę, ja pilnuję strony.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proces -->
+      <section class="section section--dark" id="proces">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Jak pracuję</p>
+            <h2>Od rozmowy do wdrożenia w czterech krokach</h2>
+          </div>
+
+          <ol class="steps">
+            <li class="step">
+              <span class="step-number">1</span>
+              <h3>Rozmowa i wycena</h3>
+              <p>
+                Opowiadasz o firmie i celach strony. W ciągu 24 h dostajesz konkretną wycenę i
+                proponowany zakres — bezpłatnie i bez zobowiązań.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-number">2</span>
+              <h3>Oferta i start</h3>
+              <p>
+                Ustalamy zakres, termin i cenę. Podpisujemy prostą umowę, wpłacasz zaliczkę
+                30–50% i zaczynam pracę.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-number">3</span>
+              <h3>Realizacja</h3>
+              <p>
+                Dostajesz wersję testową do obejrzenia i dwie rundy poprawek. Konsultujemy
+                teksty, zdjęcia i układ — dopóki wszystko jest jasne.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-number">4</span>
+              <h3>Wdrożenie i opieka</h3>
+              <p>
+                Podłączam domenę, hosting i analitykę, pokazuję jak działa strona. Przez 30 dni
+                po wdrożeniu poprawki gratis.
+              </p>
+            </li>
+          </ol>
+
+          <div class="section-cta">
+            <p>Wolisz najpierw porozmawiać? Napisz lub zadzwoń — doradzę bezpłatnie.</p>
+            <a class="btn btn--light" href="#kontakt">Porozmawiajmy</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cennik -->
+      <section class="section" id="cennik">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Cennik</p>
+            <h2>Przejrzyste ceny, żadnych ukrytych kosztów</h2>
+            <p class="lead">
+              Każda strona jest inna, więc każdą wyceniam indywidualnie — ale te widełki pokazują,
+              czego się spodziewać. Ceny netto.
+            </p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="card price-card">
+              <h3>Landing page</h3>
+              <p class="price">od <strong>1 200 zł</strong></p>
+              <p class="price-desc">Jedna strona pod konkretny cel: zapytania klientów.</p>
+              <ul class="check-list">
+                <li>Projekt i wdrożenie do 5 sekcji</li>
+                <li>Formularz kontaktowy i przyciski „zadzwoń"</li>
+                <li>Wersja mobilna i szybkie ładowanie</li>
+                <li>Podstawowa optymalizacja pod Google</li>
+                <li>Analiza odwiedzin + 30 dni wsparcia</li>
+              </ul>
+              <a class="btn btn--ghost" href="#kontakt">Chcę wycenę</a>
+            </article>
+
+            <article class="card price-card price-card--featured">
+              <p class="price-tag">Najczęściej wybierana</p>
+              <h3>Strona wizytówka</h3>
+              <p class="price">od <strong>1 500 zł</strong></p>
+              <p class="price-desc">1–3 podstrony dla lokalnej firmy — solidna obecność w sieci.</p>
+              <ul class="check-list">
+                <li>Wszystko z pakietu Landing page</li>
+                <li>Do 3 podstron (oferta, cennik, kontakt)</li>
+                <li>Mapa Google i dane firmy</li>
+                <li>Przygotowanie pod wizytówkę Google</li>
+                <li>Podstawy SEO lokalnego</li>
+              </ul>
+              <a class="btn btn--primary" href="#kontakt">Chcę wycenę</a>
+            </article>
+
+            <article class="card price-card">
+              <h3>Strona firmowa</h3>
+              <p class="price">od <strong>3 000 zł</strong></p>
+              <p class="price-desc">Rozbudowany serwis z miejscem na treści i rozwój.</p>
+              <ul class="check-list">
+                <li>Do 6 podstron + blog</li>
+                <li>Rozbudowana struktura pod SEO</li>
+                <li>Galeria realizacji i opinie</li>
+                <li>Szkolenie z obsługi treści</li>
+                <li>60 dni wsparcia po wdrożeniu</li>
+              </ul>
+              <a class="btn btn--ghost" href="#kontakt">Chcę wycenę</a>
+            </article>
+          </div>
+
+          <div class="pricing-extras">
+            <div class="extra">
+              <h3>SEO lokalne + Google Maps</h3>
+              <p>od <strong>600 zł</strong> jednorazowo</p>
+            </div>
+            <div class="extra">
+              <h3>Opieka techniczna</h3>
+              <p>od <strong>100 zł</strong> / miesiąc</p>
+            </div>
+            <div class="extra">
+              <h3>Domena</h3>
+              <p>ok. <strong>60–100 zł</strong> / rok — rejestrowana na Ciebie</p>
+            </div>
+          </div>
+
+          <p class="pricing-note">
+            Hosting na Cloudflare jest w cenie wdrożenia — bez miesięcznych opłat za serwer dla
+            większości stron. Płatność: zaliczka 30–50%, reszta przy odbiorze. Wystawiam faktury.
           </p>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section class="section section--tint" id="portfolio">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Realizacje</p>
+            <h2>Projekty, które już działają</h2>
+            <p class="lead">
+              Kilka ostatnich wdrożeń — od stron dla firm po platformy z setkami użytkowników.
+            </p>
+          </div>
+
+          <div class="portfolio-grid">
+            <article class="card portfolio-card">
+              <div class="portfolio-cover portfolio-cover--kapabud" aria-hidden="true">
+                <span>KapaBud</span>
+              </div>
+              <div class="portfolio-body">
+                <h3>KapaBud.pl</h3>
+                <p>
+                  Strona firmy budowlanej z interaktywnym kalkulatorem wyceny i panelem do obsługi
+                  zapytań. Klient wycenia pracę online, firma dostaje gotowe zgłoszenie.
+                </p>
+                <ul class="tag-list">
+                  <li>Strona firmowa</li>
+                  <li>Kalkulator wyceny</li>
+                  <li>Panel zapytań</li>
+                </ul>
+                <a class="external-link" href="https://kapabud.pl" target="_blank" rel="noopener">
+                  Zobacz stronę
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="card portfolio-card">
+              <div class="portfolio-cover portfolio-cover--laczynas" aria-hidden="true">
+                <span>Łączy Nas</span>
+              </div>
+              <div class="portfolio-body">
+                <h3>ŁączyNas.pl</h3>
+                <p>
+                  Platforma portali dla lokalnych społeczności (Świętoniowa, Łańcut, Piłka).
+                  Newsy, wydarzenia, ogłoszenia i powiadomienia push — działa jak aplikacja
+                  mobilna.
+                </p>
+                <ul class="tag-list">
+                  <li>Aplikacja webowa</li>
+                  <li>PWA + powiadomienia</li>
+                  <li>Wielu użytkowników</li>
+                </ul>
+                <a class="external-link" href="https://laczynas.pl" target="_blank" rel="noopener">
+                  Zobacz stronę
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="card portfolio-card">
+              <div class="portfolio-cover portfolio-cover--ttarena" aria-hidden="true">
+                <span>TT Arena</span>
+              </div>
+              <div class="portfolio-body">
+                <h3>TT Arena</h3>
+                <p>
+                  Platforma turniejowa dla tenisa stołowego: zapisy, drabinki, wyniki na żywo i
+                  statystyki. Ponad 500 graczy i 100 rozegranych turniejów.
+                </p>
+                <ul class="tag-list">
+                  <li>Platforma turniejowa</li>
+                  <li>PWA + Android</li>
+                  <li>500+ graczy</li>
+                </ul>
+                <a class="external-link" href="https://ttarena.pl" target="_blank" rel="noopener">
+                  Zobacz stronę
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="card portfolio-card">
+              <div class="portfolio-cover portfolio-cover--sprawni" aria-hidden="true">
+                <span>Sprawni Cyfrowo</span>
+              </div>
+              <div class="portfolio-body">
+                <h3>SprawniCyfrowo.pl</h3>
+                <p>
+                  Strona usługowa z asystentem AI, który odpowiada na pytania klientów i zbiera
+                  zapytania, oraz z blogiem i pełną obsługą treści.
+                </p>
+                <ul class="tag-list">
+                  <li>Strona usługowa</li>
+                  <li>Chatbot AI</li>
+                  <li>Blog</li>
+                </ul>
+                <a class="external-link" href="https://sprawnicyfrowo.pl" target="_blank" rel="noopener">
+                  Zobacz stronę
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- O mnie -->
+      <section class="section" id="o-mnie">
+        <div class="container about">
+          <div class="about-copy">
+            <p class="eyebrow">O mnie</p>
+            <h2>Kacper — Springus</h2>
+            <p>
+              Buduję strony i aplikacje webowe od kilku lat. Od prostych wizytówek dla lokalnych
+              firm po rozbudowane platformy z setkami użytkowników. Pracuję nowocześnie i bez
+              zbędnych kosztów: szybkie strony na Cloudflare oraz aplikacje w Next.js i Node.js.
+            </p>
+            <p>
+              Mieszkam w Świętoniowej pod Przeworskiem, więc znam lokalny rynek i wiem, czego
+              szukają klienci z Podkarpacia. Pracuję też zdalnie z firmami z całej Polski.
+            </p>
+            <p class="about-sign">Kontaktujesz się bezpośrednio ze mną — bez pośredników i bez call center.</p>
+          </div>
+          <div class="card about-facts">
+            <h3>W skrócie</h3>
+            <ul>
+              <li>10+ wdrożonych projektów — strony, aplikacje, platformy</li>
+              <li>Technologie: HTML/CSS/JS, Next.js, Node.js, Cloudflare</li>
+              <li>Lokalnie: Przeworsk, Jarosław, Łańcut, Rzeszów</li>
+              <li>Zdalnie: cała Polska</li>
+              <li>Odpowiadam w ciągu 24 h w dni robocze</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section--tint" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">FAQ</p>
+            <h2>Najczęstsze pytania</h2>
+          </div>
+
+          <div class="faq">
+            <details>
+              <summary>Ile kosztuje strona internetowa?</summary>
+              <p>
+                Landing page od 1 200 zł, strona wizytówka od 1 500 zł, strona firmowa od 3 000 zł.
+                Ostateczna cena zależy od zakresu — po bezpłatnej rozmowie dostajesz konkretną
+                kwotę i termin, bez zobowiązań.
+              </p>
+            </details>
+
+            <details>
+              <summary>Jak długo trwa realizacja?</summary>
+              <p>
+                Landing page: zwykle 3–7 dni. Strona wizytówka: 1–2 tygodnie. Strona firmowa:
+                2–4 tygodnie. Termin ustalamy na starcie i trzymam się go.
+              </p>
+            </details>
+
+            <details>
+              <summary>Co muszę przygotować?</summary>
+              <p>
+                Logo, zdjęcia i informacje o firmie. Teksty możemy napisać razem — pomogę je
+                ułożyć pod klientów i wyszukiwarkę. Jeśli nie masz logo, doradzę skąd je wziąć.
+              </p>
+            </details>
+
+            <details>
+              <summary>Kto kupuje domenę i płaci za hosting?</summary>
+              <p>
+                Domena jest rejestrowana na Ciebie (koszt ok. 60–100 zł/rok) — zostaje Twoją
+                własnością. Hosting na Cloudflare dla większości stron jest w cenie wdrożenia,
+                bez miesięcznych opłat za serwer.
+              </p>
+            </details>
+
+            <details>
+              <summary>Czy będę mógł sam edytować treści?</summary>
+              <p>
+                Tak. Pokazuję, jak podmieniać teksty i zdjęcia, a przy stronie firmowej przechodzę
+                krótkie szkolenie. Większe zmiany możesz zlecać w ramach miesięcznej opieki.
+              </p>
+            </details>
+
+            <details>
+              <summary>Jak wygląda płatność?</summary>
+              <p>
+                Zaliczka 30–50% na start, reszta przy odbiorze strony. Wystawiam faktury. Przy
+                większych projektach możliwy podział na raty.
+              </p>
+            </details>
+
+            <details>
+              <summary>Czy strona będzie widoczna w Google?</summary>
+              <p>
+                Tak — każda strona ma techniczne SEO w standardzie: szybkość, poprawną strukturę,
+                opisy i mapę strony. Wizytówka Google i frazy lokalne to osobna usługa (SEO
+                lokalne), a kampanie reklamowe robimy po wdrożeniu strony.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontakt -->
+      <section class="section" id="kontakt">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Kontakt</p>
+            <h2>Bezpłatna wycena w 24 h</h2>
+            <p class="lead">
+              Opisz krótko swoją firmę i czego potrzebujesz. Odpiszę z propozycją zakresu,
+              ceny i terminu — bez zobowiązań.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info">
+              <ul class="contact-list">
+                <li>
+                  <span class="contact-label">E-mail</span>
+                  <a href="mailto:kontakt@springus.pl">kontakt@springus.pl</a>
+                </li>
+                <li>
+                  <span class="contact-label">Telefon</span>
+                  <!-- TODO: podmienić na prawdziwy numer telefonu -->
+                  <a href="tel:+48000000000">+48&nbsp;000&nbsp;000&nbsp;000</a>
+                </li>
+                <li>
+                  <span class="contact-label">Obszar działania</span>
+                  <span>Świętoniowa · gmina Przeworsk · Podkarpacie · zdalnie cała Polska</span>
+                </li>
+                <li>
+                  <span class="contact-label">Godziny</span>
+                  <span>pon.–pt. 9:00–17:00 · odpowiadam w 24 h</span>
+                </li>
+              </ul>
+            </div>
+
+            <form class="card contact-form" action="/api/contact" method="post" data-contact-form>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="f-name">Imię i nazwisko *</label>
+                  <input id="f-name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="form-field">
+                  <label for="f-email">E-mail *</label>
+                  <input id="f-email" name="email" type="email" autocomplete="email" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="f-phone">Telefon</label>
+                  <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+                </div>
+                <div class="form-field">
+                  <label for="f-service">Czego dotyczy zapytanie?</label>
+                  <select id="f-service" name="service">
+                    <option value="landing">Landing page</option>
+                    <option value="wizytowka">Strona wizytówka</option>
+                    <option value="firmowa">Strona firmowa</option>
+                    <option value="aplikacja">Aplikacja webowa / PWA</option>
+                    <option value="seo">SEO lokalne / Google Maps</option>
+                    <option value="opieka">Opieka nad stroną</option>
+                    <option value="inne">Inne / nie wiem jeszcze</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="f-message">Wiadomość *</label>
+                <textarea
+                  id="f-message"
+                  name="message"
+                  rows="5"
+                  placeholder="Np. firma budowlana z Przeworska, potrzebuję strony z portfolio i formularzem kontaktowym."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-honeypot" aria-hidden="true">
+                <label for="f-company">Nazwa firmy (nie wypełniaj)</label>
+                <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-field form-field--check">
+                <input id="f-consent" name="consent" type="checkbox" value="yes" required>
+                <label for="f-consent">
+                  Wyrażam zgodę na przetwarzanie moich danych w celu odpowiedzi na zapytanie.
+                  Administratorem danych jest Springus. *
+                </label>
+              </div>
+
+              <button class="btn btn--primary btn--lg" type="submit">Wyślij zapytanie</button>
+              <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+              <noscript>
+                <p class="text-muted">
+                  Formularz wymaga JavaScriptu — napisz bezpośrednio na
+                  <a href="mailto:kontakt@springus.pl">kontakt@springus.pl</a>.
+                </p>
+              </noscript>
+            </form>
+          </div>
+
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps?q=%C5%9Awi%C4%99toniowa,%20Przeworsk&output=embed"
+              title="Mapa — Świętoniowa, gmina Przeworsk"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <div class="footer-bottom">
-          <span>© <span data-year>2026</span> Springus · Świętoniowa, gmina Przeworsk</span>
+      <div class="container footer-grid">
+        <div class="footer-col footer-brand">
+          <a class="logo logo--light" href="/">Springus<span>.</span></a>
+          <p>
+            Strony internetowe dla firm, które chcą mieć klientów z internetu. Lokalnie na
+            Podkarpaciu i zdalnie w całej Polsce.
+          </p>
         </div>
+
+        <nav class="footer-col" aria-label="Stopka — nawigacja">
+          <h3>Strona</h3>
+          <ul>
+            <li><a href="#uslugi">Usługi</a></li>
+            <li><a href="#cennik">Cennik</a></li>
+            <li><a href="#portfolio">Realizacje</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h3>Usługi</h3>
+          <ul>
+            <li><a href="#uslugi">Landing page</a></li>
+            <li><a href="#uslugi">Strony wizytówki i firmowe</a></li>
+            <li><a href="#uslugi">Aplikacje webowe i PWA</a></li>
+            <li><a href="#uslugi">SEO lokalne i Google Maps</a></li>
+            <li><a href="#uslugi">Opieka i hosting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Kontakt</h3>
+          <ul>
+            <li><a href="mailto:kontakt@springus.pl">kontakt@springus.pl</a></li>
+            <!-- TODO: podmienić na prawdziwy numer telefonu -->
+            <li><a href="tel:+48000000000">+48&nbsp;000&nbsp;000&nbsp;000</a></li>
+            <li>Świętoniowa, gmina Przeworsk</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>
+          © <span data-year>2026</span> Springus · Kacper · Świętoniowa, gmina Przeworsk
+        </span>
+        <a href="/polityka-prywatnosci/">Polityka prywatności</a>
       </div>
     </footer>
 
