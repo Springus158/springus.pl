@@ -90,7 +90,7 @@ Zalecane: reguła rate limiting dla `/api/contact` w panelu Cloudflare.
 pełnoekranowy hero z wyśrodkowanym kompozytorem (pill + okrągły przycisk „wyślij"), chipsy z
 przykładowymi pytaniami pod spodem, a po pierwszej wiadomości hero zwija się do rozmowy i pojawia
 się „Nowa rozmowa". Historia rozmowy w `sessionStorage`.
-Korzysta z **Cloudflare Workers AI** (model `@cf/meta/llama-3.1-8b-instruct-fp8`, binding `AI`
+Korzysta z **Cloudflare Workers AI** (model `@cf/meta/llama-3.3-70b-instruct-fp8-fast`, binding `AI`
 w `wrangler.toml`). System prompt zawiera usługi, ceny i obszar działania — asystent nie
 wymyśla informacji spoza zakresu i kieruje do formularza/e-maila.
 
