@@ -135,7 +135,7 @@
   function showTyping() {
     var typing = document.createElement("div");
     typing.className = "bubble bubble--bot typing";
-    typing.setAttribute("aria-label", "Asystent pisze");
+    typing.setAttribute("aria-label", "Konsultant pisze");
     typing.innerHTML =
       '<span class="typing__dot"></span><span class="typing__dot"></span><span class="typing__dot"></span>';
     logEl.appendChild(typing);

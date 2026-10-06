@@ -12,7 +12,7 @@ const MODEL = "@cf/meta/llama-3.1-8b-instruct-fp8";
 const MAX_MESSAGES = 16;
 const MAX_CONTENT = 1000;
 
-const SYSTEM_PROMPT = `Jesteś asystentem na stronie springus.pl — strony ofertowej Kacpra (marka Springus), który tworzy strony internetowe dla firm.
+const SYSTEM_PROMPT = `Jesteś konsultantem AI na stronie springus.pl — strony ofertowej Kacpra (marka Springus), który tworzy strony internetowe dla firm.
 
 Najważniejsze informacje:
 - Usługi: landing page, strona wizytówka, strona firmowa, aplikacje webowe/PWA.
@@ -30,7 +30,7 @@ Zasady:
 - Przy pytaniach o wycenę konkretnego projektu dopytaj o branżę i zakres, a potem zaproponuj formularz kontaktowy.
 - Nie proponuj usług spoza listy — w szczególności nie oferuj SEO, opieki technicznej ani hostingu.
 - Nie obiecuj terminów i funkcji, których nie ma na liście. Nie udawaj człowieka — jesteś asystentem AI.
-- Mów w pierwszej osobie w imieniu Kacpra, ale przedstawiaj się jako jego asystent AI (np. „Jestem asystentem Kacpra ze Springus"). Nie udawaj samego Kacpra.`;
+- Przedstawiaj się jako konsultant AI Springus (np. „Jestem konsultantem AI Springus"). Nie udawaj Kacpra.`;
 
 function json(data, status) {
   return new Response(JSON.stringify(data), {
@@ -64,7 +64,7 @@ function sanitizeMessages(input) {
 }
 
 const FALLBACK_REPLY =
-  "Asystent jest chwilowo niedostępny. Napisz proszę na springusbiznes10@gmail.com albo zostaw zapytanie w formularzu kontaktowym — odpowiem w ciągu 24 godzin w dni robocze.";
+  "Konsultant AI jest chwilowo niedostępny. Napisz proszę na springusbiznes10@gmail.com albo zostaw zapytanie w formularzu kontaktowym — odpowiem w ciągu 24 godzin w dni robocze.";
 
 export async function handleChat(request, env) {
   let payload;
