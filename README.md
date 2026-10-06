@@ -105,7 +105,7 @@ szczegóły w kolejnych PR-ach.
 - [x] **PR3 — formularz kontaktowy:** Pages Function + Resend + Turnstile/honeypot
 - [x] **PR4 — chatbot:** Pages Function + Workers AI + widget na stronie
 - [x] **PR5 — SEO:** meta/OG, JSON-LD, `robots.txt`, `sitemap.xml`, `_headers`, favicon
-- [ ] **PR6 — podstrony miejskie:** Przeworsk, Jarosław, Łańcut, Rzeszów
+- [x] **PR6 — podstrony miejskie:** Przeworsk, Jarosław, Łańcut, Rzeszów
 - [ ] **PR7 — CI i deploy:** GitHub Actions (walidacja + link checker) i dokumentacja
 
 ## Do uzupełnienia przed publikacją

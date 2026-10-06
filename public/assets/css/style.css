@@ -1265,6 +1265,14 @@ p {
   color: #a8a29e;
 }
 
+.footer-areas {
+  max-width: none;
+}
+
+.footer-areas a {
+  color: #d6d3d1;
+}
+
 .footer-col h3 {
   margin: 0 0 14px;
   font-size: 0.82rem;
