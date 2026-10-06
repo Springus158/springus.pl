@@ -120,14 +120,14 @@
           } else {
             setStatus(
               result.data.error ||
-                "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na kontakt@springus.pl.",
+                "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na springusbiznes10@gmail.com.",
               "is-error"
             );
           }
         })
         .catch(function () {
           setStatus(
-            "Brak połączenia. Spróbuj ponownie lub napisz na kontakt@springus.pl.",
+            "Brak połączenia. Spróbuj ponownie lub napisz na springusbiznes10@gmail.com.",
             "is-error"
           );
         })

@@ -20,7 +20,7 @@
   var MAX_CHARS = 500;
 
   var GREETING =
-    "Cześć! Tu asystent Springus. Opisz krótko, czego potrzebujesz — odpowiem od razu. W sprawach pilnych napisz na kontakt@springus.pl.";
+    "Cześć! Tu asystent Springus. Opisz krótko, czego potrzebujesz — odpowiem od razu. W sprawach pilnych napisz na springusbiznes10@gmail.com.";
 
   var history = loadHistory();
   var busy = false;
@@ -122,7 +122,7 @@
         var reply =
           data && data.reply
             ? data.reply
-            : "Nie udało się pobrać odpowiedzi. Napisz proszę na kontakt@springus.pl.";
+            : "Nie udało się pobrać odpowiedzi. Napisz proszę na springusbiznes10@gmail.com.";
         addBubble("bot", reply);
         history.push({ role: "assistant", content: reply });
         saveHistory();
@@ -130,7 +130,7 @@
       .catch(function () {
         typing.remove();
         var reply =
-          "Brak połączenia z asystentem. Spróbuj ponownie za chwilę albo napisz na kontakt@springus.pl.";
+          "Brak połączenia z asystentem. Spróbuj ponownie za chwilę albo napisz na springusbiznes10@gmail.com.";
         addBubble("bot", reply);
       })
       .finally(function () {

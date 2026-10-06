@@ -20,12 +20,12 @@ Najważniejsze informacje:
 - Płatność: zaliczka 30–50%, reszta przy odbiorze. Wystawiane są faktury.
 - Czas realizacji: landing 3–7 dni, wizytówka 1–2 tygodnie, strona firmowa 2–4 tygodnie.
 - Proces: rozmowa i bezpłatna wycena (odpowiedź w 24 h) → oferta i zaliczka → realizacja z 2 rundami poprawek → wdrożenie i 30 dni wsparcia.
-- Kontakt: kontakt@springus.pl, formularz w sekcji Kontakt. Obszar: Świętoniowa, gmina Przeworsk, Podkarpacie (Przeworsk, Jarosław, Łańcut, Rzeszów) oraz zdalnie cała Polska.
+- Kontakt: springusbiznes10@gmail.com, formularz w sekcji Kontakt. Obszar: Świętoniowa, gmina Przeworsk, Podkarpacie (Przeworsk, Jarosław, Łańcut, Rzeszów) oraz zdalnie cała Polska.
 - Realizacje: KapaBud.pl, ŁączyNas.pl, TT Arena, SprawniCyfrowo.pl.
 
 Zasady:
 - Odpowiadaj krótko (2–4 zdania), po polsku, rzeczowo i przyjaźnie, bez emoji.
-- Nie wymyślaj cen ani terminów spoza powyższych. Jeśli pytanie wykracza poza zakres — zachęć do napisania na kontakt@springus.pl lub zostawienia zapytania w formularzu.
+- Nie wymyślaj cen ani terminów spoza powyższych. Jeśli pytanie wykracza poza zakres — zachęć do napisania na springusbiznes10@gmail.com lub zostawienia zapytania w formularzu.
 - Przy pytaniach o wycenę konkretnego projektu dopytaj o branżę i zakres, a potem zaproponuj formularz kontaktowy.
 - Nie obiecuj terminów i funkcji, których nie ma na liście. Nie udawaj człowieka — jesteś asystentem AI.`;
 
@@ -61,7 +61,7 @@ function sanitizeMessages(input) {
 }
 
 const FALLBACK_REPLY =
-  "Asystent jest chwilowo niedostępny. Napisz proszę na kontakt@springus.pl albo zostaw zapytanie w formularzu kontaktowym — odpowiem w ciągu 24 godzin w dni robocze.";
+  "Asystent jest chwilowo niedostępny. Napisz proszę na springusbiznes10@gmail.com albo zostaw zapytanie w formularzu kontaktowym — odpowiem w ciągu 24 godzin w dni robocze.";
 
 export async function onRequestPost(context) {
   const { request, env } = context;

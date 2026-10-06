@@ -3,8 +3,9 @@
  *
  * Zmienne środowiskowe (Cloudflare Pages → Settings → Environment variables):
  *   RESEND_API_KEY       – klucz API Resend (wymagany, bez niego endpoint zwraca 503)
- *   CONTACT_TO           – adres odbiorcy (domyślnie kontakt@springus.pl)
- *   CONTACT_FROM         – nadawca zweryfikowany w Resend (domyślnie formularz@springus.pl)
+ *   CONTACT_TO           – adres odbiorcy (domyślnie springusbiznes10@gmail.com)
+ *   CONTACT_FROM         – nadawca (domyślnie onboarding@resend.dev — działa bez weryfikacji
+ *                          domeny w Resend; po weryfikacji springus.pl ustaw np. formularz@springus.pl)
  *   TURNSTILE_SECRET_KEY – opcjonalny sekret Cloudflare Turnstile (włącza weryfikację tokenu)
  */
 
@@ -158,7 +159,7 @@ export async function onRequestPost(context) {
       ? new Response(
           `<!DOCTYPE html><html lang="pl"><meta charset="utf-8"><title>Błąd formularza</title><body style="font-family:sans-serif;max-width:36rem;margin:4rem auto;padding:0 1rem"><h1>Nie udało się wysłać zapytania</h1><p>${escapeHtml(
             error,
-          )}</p><p>Napisz bezpośrednio na <a href="mailto:kontakt@springus.pl">kontakt@springus.pl</a>.</p></body></html>`,
+          )}</p><p>Napisz bezpośrednio na <a href="mailto:springusbiznes10@gmail.com">springusbiznes10@gmail.com</a>.</p></body></html>`,
           { status, headers: { "Content-Type": "text/html; charset=utf-8" } },
         )
       : json({ ok: false, error }, status);
@@ -193,8 +194,8 @@ export async function onRequestPost(context) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: env.CONTACT_FROM || "Springus <formularz@springus.pl>",
-        to: [env.CONTACT_TO || "kontakt@springus.pl"],
+        from: env.CONTACT_FROM || "Formularz Springus <onboarding@resend.dev>",
+        to: [env.CONTACT_TO || "springusbiznes10@gmail.com"],
         reply_to: mail.replyTo,
         subject: mail.subject,
         text: mail.text,

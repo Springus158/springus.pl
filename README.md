@@ -72,8 +72,8 @@ produkcja: Cloudflare Pages → Settings → Environment variables):
 | Zmienna | Wymagana | Opis |
 | --- | --- | --- |
 | `RESEND_API_KEY` | tak | klucz API z resend.com; bez niego endpoint zwraca 503 |
-| `CONTACT_TO` | nie | odbiorca zapytań (domyślnie `kontakt@springus.pl`) |
-| `CONTACT_FROM` | nie | zweryfikowany nadawca w Resend (domyślnie `formularz@springus.pl`) |
+| `CONTACT_TO` | nie | odbiorca zapytań (domyślnie `springusbiznes10@gmail.com`) |
+| `CONTACT_FROM` | nie | nadawca (domyślnie `onboarding@resend.dev` — działa bez weryfikacji domeny; po weryfikacji `springus.pl` ustaw np. `formularz@springus.pl`) |
 | `TURNSTILE_SECRET_KEY` | nie | włącza weryfikację tokenu Cloudflare Turnstile |
 
 Test lokalny: `npm run dev` → http://localhost:8788 → formularz w sekcji Kontakt.
