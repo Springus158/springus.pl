@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Miejsce na zdjęcie 1600 na 1000">
+  <rect width="1600" height="1000" fill="#f4ecdf"/>
+  <circle cx="800" cy="400" r="150" fill="#d9cebb"/>
+  <path d="M480 860c60-210 220-320 320-320s260 110 320 320z" fill="#d9cebb"/>
+  <text x="800" y="930" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" fill="#a89c87">Zdjęcie 1600×1000 — podmień na swoją realizację</text>
+</svg>
