@@ -725,16 +725,15 @@ body.chatting .suggests {
 body.chatting .stage-chat {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 0;
+  flex: 0 0 auto;
   margin-top: 0;
 }
 
 body.chatting .chat-log {
   display: flex;
-  flex: 1;
+  flex: 0 0 auto;
   min-height: 0;
-  max-height: none;
+  max-height: min(62vh, 560px);
   margin-bottom: 16px;
 }
 
