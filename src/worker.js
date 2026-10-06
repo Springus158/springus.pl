@@ -21,7 +21,15 @@ function json(data, status) {
 
 export default {
   async fetch(request, env) {
-    const { pathname } = new URL(request.url);
+    const url = new URL(request.url);
+
+    /* www → apex (301) */
+    if (url.hostname === "www.springus.pl") {
+      url.hostname = "springus.pl";
+      return Response.redirect(url.toString(), 301);
+    }
+
+    const { pathname } = url;
 
     if (pathname === "/api/contact") {
       if (request.method !== "POST") {

@@ -8,3 +8,11 @@ binding = "ASSETS"
 
 [ai]
 binding = "AI"
+
+[[routes]]
+pattern = "springus.pl"
+custom_domain = true
+
+[[routes]]
+pattern = "www.springus.pl"
+custom_domain = true
