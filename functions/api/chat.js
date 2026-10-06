@@ -8,7 +8,7 @@
  * Odpowiedź: { "reply": "..." }
  */
 
-const MODEL = "@cf/meta/llama-3.1-8b-instruct";
+const MODEL = "@cf/meta/llama-3.1-8b-instruct-fp8";
 const MAX_MESSAGES = 16;
 const MAX_CONTENT = 1000;
 

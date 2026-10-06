@@ -82,7 +82,7 @@ Zalecane: reguła rate limiting dla `/api/contact` w panelu Cloudflare.
 ## Chatbot (`/api/chat`)
 
 `functions/api/chat.js` — asystent AI (widget w prawym dolnym rogu strony głównej).
-Korzysta z **Cloudflare Workers AI** (model `@cf/meta/llama-3.1-8b-instruct`, binding `AI`
+Korzysta z **Cloudflare Workers AI** (model `@cf/meta/llama-3.1-8b-instruct-fp8`, binding `AI`
 w `wrangler.toml`). System prompt zawiera usługi, ceny i obszar działania — asystent nie
 wymyśla informacji spoza zakresu i kieruje do formularza/e-maila.
 
