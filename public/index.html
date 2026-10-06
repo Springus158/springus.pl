@@ -167,7 +167,6 @@
             <li><a href="#uslugi">Usługi</a></li>
             <li><a href="#proces">Jak pracuję</a></li>
             <li><a href="#cennik">Cennik</a></li>
-            <li><a href="#portfolio">Realizacje</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
           <div class="nav-actions">
@@ -180,53 +179,21 @@
     </header>
 
     <main id="main">
-      <!-- Hero z asystentem AI -->
+      <!-- Hero: czat jako główny element strony -->
       <section class="hero" id="start">
-        <div class="container hero-chat-wrap">
-          <p class="eyebrow">Asystent AI · Tworzenie stron internetowych · Podkarpacie i cała Polska</p>
-          <h1>Strona internetowa, która <em>przyprowadza klientów</em></h1>
-          <p class="lead">
-            Opisz, czego potrzebujesz — asystent odpowie od razu: zakres, ceny i czas realizacji.
-            Bez zobowiązań.
-          </p>
+        <div class="container hero-chat-wrap" data-hero-chat>
+          <div class="hero-intro">
+            <span class="hero-mark" aria-hidden="true">S<span>.</span></span>
+            <h1>Strona internetowa, która <em>przyprowadza klientów</em></h1>
+            <p class="lead">
+              Opisz, czego potrzebujesz — asystent odpowie od razu: zakres, ceny i czas
+              realizacji. Bez zobowiązań i bez ukrytych kosztów.
+            </p>
+          </div>
 
-          <div class="hero-chat" data-hero-chat>
-            <div class="hero-chat__bar">
-              <span class="hero-chat__brand">Asystent Springus</span>
-              <span class="hero-chat__hint">AI · odpowiada od razu</span>
+          <div class="hero-chat">
+            <div class="hero-chat__top">
               <button class="hero-chat__new" type="button" data-hero-new hidden>Nowa rozmowa</button>
-            </div>
-
-            <div class="hero-chat__empty" data-hero-empty>
-              <p class="hero-chat__welcome">
-                Cześć! Zapytaj o usługi, ceny albo czas realizacji — albo wybierz jedno z pytań:
-              </p>
-              <div class="hero-prompts">
-                <button type="button" class="hero-prompt" data-hero-suggestion="Ile kosztuje strona wizytówka?">
-                  <span class="hero-prompt__no">01</span>
-                  <span class="hero-prompt__label">Ile kosztuje strona wizytówka?</span>
-                  <span class="hero-prompt__dots" aria-hidden="true"></span>
-                  <span class="hero-prompt__arrow" aria-hidden="true">→</span>
-                </button>
-                <button type="button" class="hero-prompt" data-hero-suggestion="Jak długo trwa realizacja strony?">
-                  <span class="hero-prompt__no">02</span>
-                  <span class="hero-prompt__label">Jak długo trwa realizacja?</span>
-                  <span class="hero-prompt__dots" aria-hidden="true"></span>
-                  <span class="hero-prompt__arrow" aria-hidden="true">→</span>
-                </button>
-                <button type="button" class="hero-prompt" data-hero-suggestion="Chcę stronę z formularzem kontaktowym i mapą Google.">
-                  <span class="hero-prompt__no">03</span>
-                  <span class="hero-prompt__label">Chcę stronę z formularzem i mapą Google</span>
-                  <span class="hero-prompt__dots" aria-hidden="true"></span>
-                  <span class="hero-prompt__arrow" aria-hidden="true">→</span>
-                </button>
-                <button type="button" class="hero-prompt" data-hero-suggestion="Jak wygląda płatność i zaliczka?">
-                  <span class="hero-prompt__no">04</span>
-                  <span class="hero-prompt__label">Jak wygląda płatność i zaliczka?</span>
-                  <span class="hero-prompt__dots" aria-hidden="true"></span>
-                  <span class="hero-prompt__arrow" aria-hidden="true">→</span>
-                </button>
-              </div>
             </div>
 
             <div class="hero-chat__log" data-hero-log role="log" aria-live="polite"></div>
@@ -236,7 +203,7 @@
               <input
                 id="hero-chat-input"
                 type="text"
-                placeholder="Napisz, czego potrzebujesz…"
+                placeholder="Napisz, czego potrzebujesz"
                 autocomplete="off"
                 maxlength="500"
                 required
@@ -246,6 +213,25 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
               </button>
             </form>
+
+            <div class="hero-prompts">
+              <button
+                type="button"
+                class="hero-prompt hero-prompt--featured"
+                data-hero-suggestion="Przygotuj mi bezpłatną propozycję strony dla mojej firmy."
+              >
+                Przygotuj mi bezpłatną propozycję strony
+              </button>
+              <button type="button" class="hero-prompt" data-hero-suggestion="Ile kosztuje strona internetowa?">
+                Ile kosztuje strona internetowa?
+              </button>
+              <button type="button" class="hero-prompt" data-hero-suggestion="Jak długo trwa realizacja strony?">
+                Jak długo trwa realizacja?
+              </button>
+              <button type="button" class="hero-prompt" data-hero-suggestion="Chcę stronę z formularzem kontaktowym i mapą Google.">
+                Chcę stronę z formularzem i mapą
+              </button>
+            </div>
 
             <p class="hero-chat__note">
               Odpowiedzi generuje AI i mogą zawierać błędy. Rozmowa zostaje tylko w Twojej
@@ -478,44 +464,6 @@
         </div>
       </section>
 
-      <!-- Portfolio -->
-      <section class="section section--tint" id="portfolio">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Realizacje</p>
-            <h2>Projekt, który już działa</h2>
-            <p class="lead">
-              Zbudowałem go od zera — od pomysłu, przez kod, po wdrożenie i utrzymanie.
-            </p>
-          </div>
-
-          <div class="portfolio-grid">
-            <article class="card portfolio-card">
-              <div class="portfolio-cover portfolio-cover--laczynas" aria-hidden="true">
-                <span>Łączy Nas</span>
-              </div>
-              <div class="portfolio-body">
-                <h3>ŁączyNas.pl</h3>
-                <p>
-                  Zbudowana od zera platforma portali dla lokalnych społeczności (Świętoniowa,
-                  Łańcut, Piłka). Newsy, wydarzenia, ogłoszenia i powiadomienia push — działa
-                  jak aplikacja mobilna.
-                </p>
-                <ul class="tag-list">
-                  <li>Aplikacja webowa</li>
-                  <li>PWA + powiadomienia</li>
-                  <li>Wielu użytkowników</li>
-                </ul>
-                <a class="external-link" href="https://laczynas.pl" target="_blank" rel="noopener">
-                  Zobacz stronę
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <!-- O mnie -->
       <section class="section" id="o-mnie">
         <div class="container about">
@@ -535,7 +483,7 @@
           <div class="card about-facts">
             <h3>W skrócie</h3>
             <ul>
-              <li>ŁączyNas.pl zbudowane od zera — platforma portali lokalnych (PWA, powiadomienia)</li>
+              <li>Strony statyczne na Cloudflare — bez miesięcznych opłat za serwer</li>
               <li>Technologie: HTML/CSS/JS, Next.js, Node.js, Cloudflare</li>
               <li>Lokalnie: Przeworsk, Jarosław, Łańcut, Rzeszów</li>
               <li>Zdalnie: cała Polska</li>
@@ -688,7 +636,7 @@
                   id="f-message"
                   name="message"
                   rows="5"
-                  placeholder="Np. firma budowlana z Przeworska, potrzebuję strony z portfolio i formularzem kontaktowym."
+                  placeholder="Np. firma budowlana z Przeworska, potrzebuję strony z ofertą i formularzem kontaktowym."
                   required
                 ></textarea>
               </div>
@@ -752,7 +700,6 @@
           <ul>
             <li><a href="#uslugi">Usługi</a></li>
             <li><a href="#cennik">Cennik</a></li>
-            <li><a href="#portfolio">Realizacje</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>

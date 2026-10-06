@@ -86,9 +86,10 @@ Zalecane: reguła rate limiting dla `/api/contact` w panelu Cloudflare.
 
 ## Chatbot (`/api/chat`)
 
-`src/api/chat.js` — asystent AI wbudowany w **hero strony głównej** (na wzór sprawnicyfrowo.pl
-i cowpolityce UIX): puste stanie z numerowanymi podpowiedziami, kompozytor na dole, historia
-rozmowy w `sessionStorage` + przycisk „Nowa rozmowa".
+`src/api/chat.js` — asystent AI jako **główny element strony głównej** (na wzór sprawnicyfrowo.pl):
+pełnoekranowy hero z wyśrodkowanym kompozytorem (pill + okrągły przycisk „wyślij"), chipsy z
+przykładowymi pytaniami pod spodem, a po pierwszej wiadomości hero zwija się do rozmowy i pojawia
+się „Nowa rozmowa". Historia rozmowy w `sessionStorage`.
 Korzysta z **Cloudflare Workers AI** (model `@cf/meta/llama-3.1-8b-instruct-fp8`, binding `AI`
 w `wrangler.toml`). System prompt zawiera usługi, ceny i obszar działania — asystent nie
 wymyśla informacji spoza zakresu i kieruje do formularza/e-maila.
@@ -145,6 +146,5 @@ Binding AI i assets są zadeklarowane w `wrangler.toml`, więc deployują się z
 
 - [ ] Telefon kontaktowy (obecnie placeholder w treści)
 - [ ] Profil Google Business (po zakupie domeny)
-- [ ] Zgody klientów na publikację realizacji w portfolio
 - [ ] Treści o mnie (zdjęcie, opis doświadczenia)
 - [ ] Zakup domeny `springus.pl` i podpięcie Custom Domain do Workera

@@ -87,8 +87,12 @@
     if (input) {
       input.disabled = state;
     }
-    if (sendBtn) {
-      sendBtn.disabled = state;
+    syncSendState();
+  }
+
+  function syncSendState() {
+    if (sendBtn && input) {
+      sendBtn.disabled = busy || input.value.trim().length === 0;
     }
   }
 
@@ -164,6 +168,10 @@
     });
   }
 
+  if (input) {
+    input.addEventListener("input", syncSendState);
+  }
+
   if (newBtn) {
     newBtn.addEventListener("click", reset);
   }
@@ -175,4 +183,5 @@
   });
 
   render();
+  syncSendState();
 })();
