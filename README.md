@@ -60,6 +60,25 @@ produkcja: Cloudflare Pages → Settings → Environment variables):
 Test lokalny: `npm run dev` → http://localhost:8788 → formularz w sekcji Kontakt.
 Zalecane: reguła rate limiting dla `/api/contact` w panelu Cloudflare.
 
+## Chatbot (`/api/chat`)
+
+`functions/api/chat.js` — asystent AI (widget w prawym dolnym rogu strony głównej).
+Korzysta z **Cloudflare Workers AI** (model `@cf/meta/llama-3.1-8b-instruct`, binding `AI`
+w `wrangler.toml`). System prompt zawiera usługi, ceny i obszar działania — asystent nie
+wymyśla informacji spoza zakresu i kieruje do formularza/e-maila.
+
+- Bez bindingu AI (lub przy błędzie modelu) endpoint zwraca życzliwy komunikat zastępczy —
+  widget nigdy nie „wisi".
+- Walidacja: maks. 16 wiadomości, 1000 znaków na wiadomość, ostatnia musi być od użytkownika.
+- Historia rozmowy trzymana w `sessionStorage` (czyszczona po zamknięciu karty).
+- Binding AI włącza się w panelu Pages (Settings → Functions → AI bindings) lub przez
+  `wrangler.toml` (`[ai] binding = "AI"`).
+
+> **Lokalny dev z bindingiem AI:** Workers AI działa zdalnie, więc przed `npm run dev`
+> wykonaj raz `npx wrangler login` (darmowe konto Cloudflare). Bez logowania użyj
+> `npm run preview` (tylko statyka) albo tymczasowo usuń sekcję `[ai]` z `wrangler.toml` —
+> endpoint czatu zadziała wtedy na ścieżce zastępczej (200 + komunikat).
+
 ## Deploy
 
 Produkcja: **Cloudflare Pages** (projekt `springus-pl`, build output `public/`).
@@ -76,7 +95,7 @@ szczegóły w kolejnych PR-ach.
 - [x] **PR1 — scaffold:** repozytorium, narzędzia, bazowy layout i design system
 - [ ] **PR2 — landing:** pełne sekcje strony głównej (usługi, cennik, portfolio, FAQ)
 - [x] **PR3 — formularz kontaktowy:** Pages Function + Resend + Turnstile/honeypot
-- [ ] **PR4 — chatbot:** Pages Function + Workers AI + widget na stronie
+- [x] **PR4 — chatbot:** Pages Function + Workers AI + widget na stronie
 - [ ] **PR5 — SEO:** meta/OG, JSON-LD, `robots.txt`, `sitemap.xml`, `_headers`, favicon
 - [ ] **PR6 — podstrony miejskie:** Przeworsk, Jarosław, Łańcut, Rzeszów
 - [ ] **PR7 — CI i deploy:** GitHub Actions (walidacja + link checker) i dokumentacja
