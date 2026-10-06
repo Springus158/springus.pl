@@ -3,12 +3,12 @@
  * z katalogu public zawiera poprawny JSON. Użycie: node scripts/check-jsonld.mjs
  */
 
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const PUBLIC_DIR = join(ROOT, "public");
+const ROOTS = [join(ROOT, "public"), join(ROOT, "templates")].filter((dir) => existsSync(dir));
 
 function walk(dir, extension) {
   const results = [];
@@ -26,7 +26,7 @@ function walk(dir, extension) {
 }
 
 const errors = [];
-const pages = walk(PUBLIC_DIR, ".html");
+const pages = ROOTS.flatMap((dir) => walk(dir, ".html"));
 let blocks = 0;
 
 for (const page of pages) {

@@ -1,0 +1,7 @@
+# Skopiuj do .dev.vars i uzupełnij — plik .dev.vars jest ignorowany przez git.
+RESEND_API_KEY=
+CONTACT_TO={{EMAIL}}
+# onboarding@resend.dev działa bez weryfikacji domeny (wysyłka tylko na adres konta Resend).
+# Po weryfikacji {{DOMENA}} w Resend ustaw np.: Formularz {{FIRMA}} <formularz@{{DOMENA}}>
+CONTACT_FROM=Formularz {{FIRMA}} <onboarding@resend.dev>
+TURNSTILE_SECRET_KEY=

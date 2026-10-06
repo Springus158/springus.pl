@@ -11,6 +11,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const ROOTS = [join(ROOT, "public"), join(ROOT, "templates")].filter((dir) => existsSync(dir));
 const PUBLIC_DIR = join(ROOT, "public");
 
 const EXTERNAL = /^(https?:|mailto:|tel:|data:|javascript:|#|\/\/)/;
@@ -41,7 +42,7 @@ function targetExists(target) {
 }
 
 const errors = [];
-const pages = walkHtml(PUBLIC_DIR);
+const pages = ROOTS.flatMap((dir) => walkHtml(dir));
 
 for (const page of pages) {
   const html = readFileSync(page, "utf8");

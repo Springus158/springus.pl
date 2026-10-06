@@ -115,6 +115,22 @@ wymyśla informacji spoza zakresu i kieruje do formularza/e-maila.
 - **Cloudflare Web Analytics** (bez cookies) — włącz w panelu Cloudflare (Workers → Analytics); beacon
   jest wstrzykiwany automatycznie, a CSP w `_headers` już dopuszcza `cloudflareinsights.com`
 
+## Szablony klientów
+
+W `templates/` leżą gotowe strony do kopiowania dla klientów (szczegóły: `templates/README.md`).
+Nowy projekt tworzysz jedną komendą:
+
+```bash
+npm run new:client nazwa-klienta -- --template landing-uslugi \
+  --firma "Jan Kowalski" --telefon "+48 600 100 200" \
+  --email "kontakt@firma.pl" --miasto "Przeworsk" \
+  --adres "ul. Przykładowa 1, 37-200 Przeworsk" \
+  --nip "NIP 000 000 00 00" --domena "firma.pl" --kolor "#1e3a8a"
+```
+
+Skrypt kopiuje szablon do `~/www/nazwa-klienta`, podmienia placeholdery i zakłada repo git.
+Walidacja szablonów (`npm test`) działa w CI razem ze stroną.
+
 ## Deploy
 
 Produkcja: **Cloudflare Workers** (projekt `springus-pl`, `main = src/worker.js`,
