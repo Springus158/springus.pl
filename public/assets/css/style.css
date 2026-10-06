@@ -704,7 +704,7 @@ p {
 /* Tryb rozmowy */
 
 body.chatting .stage {
-  justify-content: flex-start;
+  justify-content: center;
   padding-top: clamp(12px, 2vw, 20px);
   padding-bottom: clamp(10px, 2vw, 18px);
 }
@@ -712,7 +712,7 @@ body.chatting .stage {
 body.chatting .stage-wrap {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 0 1 auto;
   min-height: 0;
   max-width: min(1200px, 100%);
 }
