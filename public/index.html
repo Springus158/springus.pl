@@ -30,15 +30,15 @@
     >
     <meta name="twitter:image" content="https://springus.pl/og-image.png">
     <meta name="theme-color" content="#faf6ef">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <script type="application/ld+json">
       {
@@ -145,35 +145,14 @@
   <body>
     <a class="skip-link" href="#main">Przejdź do treści</a>
 
-    <header class="site-header" data-header>
-      <div class="container">
+    <header class="home-bar">
+      <div class="container home-bar__inner">
         <a class="logo" href="/">Springus<span>.</span></a>
-
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Otwórz menu"
-          data-nav-toggle
-        >
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </button>
-
-        <nav class="site-nav" id="site-nav" aria-label="Nawigacja główna">
-          <ul class="nav-list">
-            <li><a href="#uslugi">Usługi</a></li>
-            <li><a href="#proces">Jak pracuję</a></li>
-            <li><a href="#cennik">Cennik</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-          <div class="nav-actions">
-            <!-- TODO: podmienić na prawdziwy numer telefonu -->
-            <a class="nav-phone" href="tel:+48000000000">+48&nbsp;000&nbsp;000&nbsp;000</a>
-            <a class="btn btn--primary" href="#kontakt">Bezpłatna wycena</a>
-          </div>
+        <nav class="home-nav" aria-label="Nawigacja główna">
+          <a href="#uslugi">Usługi</a>
+          <a href="#cennik">Cennik</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt">Kontakt</a>
         </nav>
       </div>
     </header>
@@ -240,16 +219,16 @@
             </p>
           </div>
         </div>
-
-        <div class="container">
-          <ul class="trust-strip">
-            <li><strong>1:1</strong><span>kontakt bezpośrednio ze mną</span></li>
-            <li><strong>24 h</strong><span>na odpowiedź w dni robocze</span></li>
-            <li><strong>30 dni</strong><span>wsparcia po wdrożeniu w cenie</span></li>
-            <li><strong>Lokalnie i zdalnie</strong><span>Podkarpacie i cała Polska</span></li>
-          </ul>
-        </div>
       </section>
+
+      <div class="container">
+        <ul class="trust-strip">
+          <li><strong>1:1</strong><span>kontakt bezpośrednio ze mną</span></li>
+          <li><strong>24 h</strong><span>na odpowiedź w dni robocze</span></li>
+          <li><strong>30 dni</strong><span>wsparcia po wdrożeniu w cenie</span></li>
+          <li><strong>Lokalnie i zdalnie</strong><span>Podkarpacie i cała Polska</span></li>
+        </ul>
+      </div>
 
       <!-- Usługi -->
       <section class="section" id="uslugi">
@@ -735,7 +714,7 @@
       </div>
     </footer>
 
-    <script src="/assets/js/main.js" defer></script>
-    <script src="/assets/js/chat.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/chat.js" defer></script>
   </body>
 </html>

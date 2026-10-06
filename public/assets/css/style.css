@@ -38,6 +38,7 @@
   --maxw: 1120px;
   --gutter: clamp(20px, 4vw, 32px);
   --header-h: 72px;
+  --bar-h: 72px;
 }
 
 /* Reset ------------------------------------------------------------------ */
@@ -315,6 +316,40 @@ p {
 
 /* Nagłówek ---------------------------------------------------------------- */
 
+.home-bar {
+  position: relative;
+  z-index: 2;
+  height: var(--bar-h);
+}
+
+.home-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100%;
+}
+
+.home-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.home-nav a {
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.home-nav a:hover {
+  background: rgba(28, 25, 23, 0.06);
+  color: var(--ink);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -433,8 +468,9 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(100svh - var(--header-h));
-  padding-top: clamp(36px, 6vw, 64px);
+  min-height: calc(100svh - var(--bar-h));
+  padding-top: clamp(8px, 2vw, 24px);
+  padding-bottom: clamp(20px, 4vw, 44px);
   overflow: hidden;
 }
 
@@ -745,7 +781,7 @@ p {
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   width: 100%;
-  margin: clamp(44px, 7vw, 72px) 0 0;
+  margin: 0;
   padding: 26px 0 0;
   border-top: 1px solid var(--border);
   list-style: none;
@@ -1452,6 +1488,10 @@ p {
 }
 
 @media (max-width: 640px) {
+  .home-nav {
+    display: none;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
