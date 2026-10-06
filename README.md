@@ -79,6 +79,14 @@ wymyśla informacji spoza zakresu i kieruje do formularza/e-maila.
 > `npm run preview` (tylko statyka) albo tymczasowo usuń sekcję `[ai]` z `wrangler.toml` —
 > endpoint czatu zadziała wtedy na ścieżce zastępczej (200 + komunikat).
 
+## SEO
+
+- Meta/OG/Twitter + canonical + favicon w `index.html`, `og-image.png` 1200×630 (generowany branding)
+- Structured data: **ProfessionalService** (usługi, ceny, obszar: Przeworsk/Jarosław/Łańcut/Rzeszów) i **FAQPage**
+- `robots.txt`, `sitemap.xml`, `_headers` (CSP, X-Frame-Options, Permissions-Policy, cache statyków)
+- **Cloudflare Web Analytics** (bez cookies) — włącz w panelu Cloudflare (Pages → Analytics); beacon
+  jest wstrzykiwany automatycznie, a CSP w `_headers` już dopuszcza `cloudflareinsights.com`
+
 ## Deploy
 
 Produkcja: **Cloudflare Pages** (projekt `springus-pl`, build output `public/`).
@@ -96,7 +104,7 @@ szczegóły w kolejnych PR-ach.
 - [ ] **PR2 — landing:** pełne sekcje strony głównej (usługi, cennik, portfolio, FAQ)
 - [x] **PR3 — formularz kontaktowy:** Pages Function + Resend + Turnstile/honeypot
 - [x] **PR4 — chatbot:** Pages Function + Workers AI + widget na stronie
-- [ ] **PR5 — SEO:** meta/OG, JSON-LD, `robots.txt`, `sitemap.xml`, `_headers`, favicon
+- [x] **PR5 — SEO:** meta/OG, JSON-LD, `robots.txt`, `sitemap.xml`, `_headers`, favicon
 - [ ] **PR6 — podstrony miejskie:** Przeworsk, Jarosław, Łańcut, Rzeszów
 - [ ] **PR7 — CI i deploy:** GitHub Actions (walidacja + link checker) i dokumentacja
 
