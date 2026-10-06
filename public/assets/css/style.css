@@ -730,20 +730,29 @@ body.chatting .stage-note {
 
 /* Pasek zaufania ----------------------------------------------------------- */
 
+.stage-trust {
+  position: relative;
+  z-index: 1;
+}
+
 .trust-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 64px;
   width: 100%;
-  margin: 0;
-  padding: 26px 0 0;
+  max-width: 880px;
+  margin: clamp(26px, 4vw, 40px) auto 0;
+  padding: 24px 0 0;
   border-top: 1px solid var(--border);
   list-style: none;
+  text-align: center;
 }
 
 .trust-strip li {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2px;
 }
 
@@ -963,7 +972,7 @@ body.chatting .stage-note {
 
 .pricing-extras {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: minmax(0, 480px);
   gap: 20px;
   margin-top: 20px;
 }
@@ -1517,10 +1526,6 @@ body.chatting .stage-note {
 
   .nav-phone {
     text-align: center;
-  }
-
-  .trust-strip {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .pricing-grid,

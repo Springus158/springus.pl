@@ -22,8 +22,6 @@ const SERVICES = {
   wizytowka: "Strona wizytówka",
   firmowa: "Strona firmowa",
   aplikacja: "Aplikacja webowa / PWA",
-  seo: "SEO lokalne / Google Maps",
-  opieka: "Opieka nad stroną",
   inne: "Inne / do ustalenia",
 };
 

@@ -16,7 +16,7 @@
     <meta property="og:title" content="Springus — strony internetowe dla firm">
     <meta
       property="og:description"
-      content="Landing page, strony wizytówki i firmowe, aplikacje webowe i SEO lokalne. Podkarpacie i cała Polska."
+      content="Landing page, strony wizytówki i firmowe, aplikacje webowe. Podkarpacie i cała Polska."
     >
     <meta property="og:image" content="https://springus.pl/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -26,7 +26,7 @@
     <meta name="twitter:title" content="Springus — strony internetowe dla firm">
     <meta
       name="twitter:description"
-      content="Landing page, strony wizytówki i firmowe, aplikacje webowe i SEO lokalne. Podkarpacie i cała Polska."
+      content="Landing page, strony wizytówki i firmowe, aplikacje webowe. Podkarpacie i cała Polska."
     >
     <meta name="twitter:image" content="https://springus.pl/og-image.png">
     <meta name="theme-color" content="#faf6ef">
@@ -38,14 +38,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="assets/css/style.css?v=7">
+    <link rel="stylesheet" href="assets/css/style.css?v=8">
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Springus",
-        "description": "Tworzenie stron internetowych dla firm: landing page, strony wizytówki i firmowe, aplikacje webowe, SEO lokalne i opieka techniczna.",
+        "description": "Tworzenie stron internetowych dla firm: landing page, strony wizytówki i firmowe, aplikacje webowe.",
         "url": "https://springus.pl/",
         "image": "https://springus.pl/og-image.png",
         "email": "springusbiznes10@gmail.com",
@@ -71,8 +71,7 @@
         "makesOffer": [
           { "@type": "Offer", "name": "Landing page", "priceCurrency": "PLN", "price": "1200" },
           { "@type": "Offer", "name": "Strona wizytówka", "priceCurrency": "PLN", "price": "1500" },
-          { "@type": "Offer", "name": "Strona firmowa", "priceCurrency": "PLN", "price": "3000" },
-          { "@type": "Offer", "name": "SEO lokalne i Google Maps", "priceCurrency": "PLN", "price": "600" }
+          { "@type": "Offer", "name": "Strona firmowa", "priceCurrency": "PLN", "price": "3000" }
         ]
       }
     </script>
@@ -108,10 +107,10 @@
           },
           {
             "@type": "Question",
-            "name": "Kto kupuje domenę i płaci za hosting?",
+            "name": "Kto zajmuje się domeną?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Domena jest rejestrowana na klienta (koszt ok. 60–100 zł/rok) i zostaje jego własnością. Hosting na Cloudflare dla większości stron jest w cenie wdrożenia, bez miesięcznych opłat za serwer."
+              "text": "Domena jest rejestrowana na klienta (koszt ok. 60–100 zł/rok) i zostaje jego własnością. Podłączenie strony pod domenę robię w ramach wdrożenia."
             }
           },
           {
@@ -119,7 +118,7 @@
             "name": "Czy będę mógł sam edytować treści?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Tak. Pokazuję, jak podmieniać teksty i zdjęcia, a przy stronie firmowej przechodzę krótkie szkolenie. Większe zmiany można zlecać w ramach miesięcznej opieki."
+              "text": "Tak. Pokazuję, jak podmieniać teksty i zdjęcia, a przy stronie firmowej przechodzę krótkie szkolenie."
             }
           },
           {
@@ -135,7 +134,7 @@
             "name": "Czy strona będzie widoczna w Google?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Tak — każda strona ma techniczne SEO w standardzie: szybkość, poprawną strukturę, opisy i mapę strony. Wizytówka Google i frazy lokalne to osobna usługa, a kampanie reklamowe robimy po wdrożeniu strony."
+              "text": "Tak — każda strona ma techniczne SEO w standardzie: szybkość, poprawną strukturę, opisy i mapę strony. Kampanie reklamowe robimy po wdrożeniu strony."
             }
           }
         ]
@@ -213,16 +212,15 @@
             </p>
           </div>
         </div>
-      </section>
 
-      <div class="container">
-        <ul class="trust-strip">
-          <li><strong>1:1</strong><span>kontakt bezpośrednio ze mną</span></li>
-          <li><strong>24 h</strong><span>na odpowiedź w dni robocze</span></li>
-          <li><strong>30 dni</strong><span>wsparcia po wdrożeniu w cenie</span></li>
-          <li><strong>Lokalnie i zdalnie</strong><span>Podkarpacie i cała Polska</span></li>
-        </ul>
-      </div>
+        <div class="container stage-trust">
+          <ul class="trust-strip">
+            <li><strong>24 h</strong><span>na odpowiedź w dni robocze</span></li>
+            <li><strong>30 dni</strong><span>wsparcia po wdrożeniu w cenie</span></li>
+            <li><strong>Lokalnie i zdalnie</strong><span>Podkarpacie i cała Polska</span></li>
+          </ul>
+        </div>
+      </section>
 
       <!-- Usługi -->
       <section class="section" id="uslugi">
@@ -282,28 +280,6 @@
                 natywne.
               </p>
             </article>
-
-            <article class="card service-card">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
-              </span>
-              <h3>SEO lokalne i Google Maps</h3>
-              <p>
-                Wizytówka Google, frazy lokalne, mapa i opinie klientów. Sprawię, że firma będzie
-                widoczna dla osób szukających usług w Twojej okolicy.
-              </p>
-            </article>
-
-            <article class="card service-card">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
-              </span>
-              <h3>Opieka i hosting</h3>
-              <p>
-                Domena, szybki hosting na Cloudflare, kopie zapasowe i drobne zmiany w ramach
-                miesięcznego abonamentu. Ty prowadzisz firmę, ja pilnuję strony.
-              </p>
-            </article>
           </div>
         </div>
       </section>
@@ -343,9 +319,9 @@
             </li>
             <li class="step">
               <span class="step-number">4</span>
-              <h3>Wdrożenie i opieka</h3>
+              <h3>Wdrożenie</h3>
               <p>
-                Podłączam domenę, hosting i analitykę, pokazuję jak działa strona. Przez 30 dni
+                Podłączam domenę i analitykę, pokazuję jak działa strona. Przez 30 dni
                 po wdrożeniu poprawki gratis.
               </p>
             </li>
@@ -395,7 +371,6 @@
                 <li>Do 3 podstron (oferta, cennik, kontakt)</li>
                 <li>Mapa Google i dane firmy</li>
                 <li>Przygotowanie pod wizytówkę Google</li>
-                <li>Podstawy SEO lokalnego</li>
               </ul>
               <a class="btn btn--primary" href="#kontakt">Chcę wycenę</a>
             </article>
@@ -417,22 +392,13 @@
 
           <div class="pricing-extras">
             <div class="extra">
-              <h3>SEO lokalne + Google Maps</h3>
-              <p>od <strong>600 zł</strong> jednorazowo</p>
-            </div>
-            <div class="extra">
-              <h3>Opieka techniczna</h3>
-              <p>od <strong>100 zł</strong> / miesiąc</p>
-            </div>
-            <div class="extra">
               <h3>Domena</h3>
               <p>ok. <strong>60–100 zł</strong> / rok — rejestrowana na Ciebie</p>
             </div>
           </div>
 
           <p class="pricing-note">
-            Hosting na Cloudflare jest w cenie wdrożenia — bez miesięcznych opłat za serwer dla
-            większości stron. Płatność: zaliczka 30–50%, reszta przy odbiorze. Wystawiam faktury.
+            Płatność: zaliczka 30–50%, reszta przy odbiorze. Wystawiam faktury.
           </p>
         </div>
       </section>
@@ -501,11 +467,10 @@
             </details>
 
             <details>
-              <summary>Kto kupuje domenę i płaci za hosting?</summary>
+              <summary>Kto zajmuje się domeną?</summary>
               <p>
                 Domena jest rejestrowana na Ciebie (koszt ok. 60–100 zł/rok) — zostaje Twoją
-                własnością. Hosting na Cloudflare dla większości stron jest w cenie wdrożenia,
-                bez miesięcznych opłat za serwer.
+                własnością. Podłączenie strony pod domenę robię w ramach wdrożenia.
               </p>
             </details>
 
@@ -513,7 +478,7 @@
               <summary>Czy będę mógł sam edytować treści?</summary>
               <p>
                 Tak. Pokazuję, jak podmieniać teksty i zdjęcia, a przy stronie firmowej przechodzę
-                krótkie szkolenie. Większe zmiany możesz zlecać w ramach miesięcznej opieki.
+                krótkie szkolenie.
               </p>
             </details>
 
@@ -529,8 +494,7 @@
               <summary>Czy strona będzie widoczna w Google?</summary>
               <p>
                 Tak — każda strona ma techniczne SEO w standardzie: szybkość, poprawną strukturę,
-                opisy i mapę strony. Wizytówka Google i frazy lokalne to osobna usługa (SEO
-                lokalne), a kampanie reklamowe robimy po wdrożeniu strony.
+                opisy i mapę strony. Kampanie reklamowe robimy po wdrożeniu strony.
               </p>
             </details>
           </div>
@@ -596,8 +560,6 @@
                     <option value="wizytowka">Strona wizytówka</option>
                     <option value="firmowa">Strona firmowa</option>
                     <option value="aplikacja">Aplikacja webowa / PWA</option>
-                    <option value="seo">SEO lokalne / Google Maps</option>
-                    <option value="opieka">Opieka nad stroną</option>
                     <option value="inne">Inne / nie wiem jeszcze</option>
                   </select>
                 </div>
@@ -684,8 +646,6 @@
             <li><a href="#uslugi">Landing page</a></li>
             <li><a href="#uslugi">Strony wizytówki i firmowe</a></li>
             <li><a href="#uslugi">Aplikacje webowe i PWA</a></li>
-            <li><a href="#uslugi">SEO lokalne i Google Maps</a></li>
-            <li><a href="#uslugi">Opieka i hosting</a></li>
           </ul>
         </div>
 
@@ -708,7 +668,7 @@
       </div>
     </footer>
 
-    <script src="assets/js/main.js?v=7" defer></script>
-    <script src="assets/js/chat.js?v=7" defer></script>
+    <script src="assets/js/main.js?v=8" defer></script>
+    <script src="assets/js/chat.js?v=8" defer></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
 ![CI](https://github.com/Springus158/springus.pl/actions/workflows/ci.yml/badge.svg)
 
 Strona i oferta freelancera **Springus** — tworzenie stron internetowych dla firm:
-landing page, strony wizytówki i firmowe, aplikacje webowe, SEO lokalne i opieka techniczna.
+landing page, strony wizytówki i firmowe, aplikacje webowe.
 
 - **Baza:** Świętoniowa / gmina Przeworsk · Podkarpacie
 - **Obsługa:** lokalnie (Przeworsk, Jarosław, Łańcut, Rzeszów) i zdalnie w całej Polsce
