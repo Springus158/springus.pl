@@ -1,4 +1,4 @@
-/* springus.pl — asystent AI w hero strony głównej */
+/* springus.pl — asystent AI na stronie głównej */
 (function () {
   "use strict";
 
@@ -11,7 +11,7 @@
   var form = root.querySelector("[data-hero-form]");
   var input = root.querySelector("[data-hero-input]");
   var sendBtn = root.querySelector("[data-hero-send]");
-  var newBtn = root.querySelector("[data-hero-new]");
+  var newBtn = document.querySelector("[data-hero-new]");
 
   var STORAGE_KEY = "springus-chat-history";
   var MAX_SENT = 12;
@@ -44,17 +44,78 @@
     }
   }
 
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function formatInline(text) {
+    return text
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/__([^_]+)__/g, "<strong>$1</strong>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>")
+      .replace(
+        /\[([^\]]+)\]\((https?:\/\/[^)\s]+|mailto:[^)\s]+)\)/g,
+        '<a href="$2" target="_blank" rel="noopener">$1</a>'
+      )
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+      .replace(/(^|[\s(])((?:https?:\/\/|mailto:)[^\s<)]+)/g, '$1<a href="$2" target="_blank" rel="noopener">$2</a>');
+  }
+
+  function formatBotText(text) {
+    var lines = escapeHtml(text).split(/\r?\n/);
+    var html = "";
+    var inList = false;
+
+    function closeList() {
+      if (inList) {
+        html += "</ul>";
+        inList = false;
+      }
+    }
+
+    lines.forEach(function (line) {
+      var trimmed = line.trim();
+      var isItem = /^([-*•]|\d+[.)])\s+/.test(trimmed);
+
+      if (isItem) {
+        if (!inList) {
+          html += "<ul>";
+          inList = true;
+        }
+        html += "<li>" + formatInline(trimmed.replace(/^([-*•]|\d+[.)])\s+/, "")) + "</li>";
+        return;
+      }
+
+      closeList();
+      if (trimmed.length > 0) {
+        html += "<p>" + formatInline(trimmed) + "</p>";
+      }
+    });
+
+    closeList();
+    return html;
+  }
+
   function addBubble(role, text) {
     var bubble = document.createElement("div");
-    bubble.className = "hero-chat__bubble hero-chat__bubble--" + role;
-    bubble.textContent = text;
+    bubble.className = "bubble bubble--" + role;
+    if (role === "bot") {
+      bubble.innerHTML = formatBotText(text);
+    } else {
+      bubble.textContent = text;
+    }
     logEl.appendChild(bubble);
     scrollToEnd();
     return bubble;
   }
 
   function setConversing(conversing) {
-    root.classList.toggle("is-conversing", conversing);
+    document.body.classList.toggle("chatting", conversing);
     if (newBtn) {
       newBtn.hidden = !conversing;
     }
@@ -73,13 +134,19 @@
 
   function showTyping() {
     var typing = document.createElement("div");
-    typing.className = "hero-chat__bubble hero-chat__bubble--bot hero-chat__typing";
+    typing.className = "bubble bubble--bot typing";
     typing.setAttribute("aria-label", "Asystent pisze");
     typing.innerHTML =
-      '<span class="hero-chat__dot"></span><span class="hero-chat__dot"></span><span class="hero-chat__dot"></span>';
+      '<span class="typing__dot"></span><span class="typing__dot"></span><span class="typing__dot"></span>';
     logEl.appendChild(typing);
     scrollToEnd();
     return typing;
+  }
+
+  function syncSendState() {
+    if (sendBtn && input) {
+      sendBtn.disabled = busy || input.value.trim().length === 0;
+    }
   }
 
   function setBusy(state) {
@@ -88,12 +155,6 @@
       input.disabled = state;
     }
     syncSendState();
-  }
-
-  function syncSendState() {
-    if (sendBtn && input) {
-      sendBtn.disabled = busy || input.value.trim().length === 0;
-    }
   }
 
   function send(text) {

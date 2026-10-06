@@ -38,7 +38,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=4">
 
     <script type="application/ld+json">
       {
@@ -145,39 +145,37 @@
   <body>
     <a class="skip-link" href="#main">Przejdź do treści</a>
 
-    <header class="home-bar">
-      <div class="container home-bar__inner">
+    <header class="bar">
+      <div class="container bar__inner">
         <a class="logo" href="/">Springus<span>.</span></a>
-        <nav class="home-nav" aria-label="Nawigacja główna">
-          <a href="#uslugi">Usługi</a>
-          <a href="#cennik">Cennik</a>
-          <a href="#faq">FAQ</a>
-          <a href="#kontakt">Kontakt</a>
-        </nav>
+        <div class="bar__right">
+          <button class="btn-new" type="button" data-hero-new hidden>Nowa rozmowa</button>
+          <nav class="bar-nav" aria-label="Nawigacja główna">
+            <a href="#uslugi">Usługi</a>
+            <a href="#cennik">Cennik</a>
+            <a href="#faq">FAQ</a>
+            <a href="#kontakt">Kontakt</a>
+          </nav>
+        </div>
       </div>
     </header>
 
     <main id="main">
-      <!-- Hero: czat jako główny element strony -->
-      <section class="hero" id="start">
-        <div class="container hero-chat-wrap" data-hero-chat>
-          <div class="hero-intro">
-            <span class="hero-mark" aria-hidden="true">S<span>.</span></span>
+      <section class="stage" id="start">
+        <div class="container stage-wrap" data-hero-chat>
+          <div class="stage-intro">
+            <span class="stage-mark" aria-hidden="true">S<span>.</span></span>
             <h1>Strona internetowa, która <em>przyprowadza klientów</em></h1>
-            <p class="lead">
+            <p class="stage-lead">
               Opisz, czego potrzebujesz — asystent odpowie od razu: zakres, ceny i czas
               realizacji. Bez zobowiązań i bez ukrytych kosztów.
             </p>
           </div>
 
-          <div class="hero-chat">
-            <div class="hero-chat__top">
-              <button class="hero-chat__new" type="button" data-hero-new hidden>Nowa rozmowa</button>
-            </div>
+          <div class="stage-chat">
+            <div class="chat-log" data-hero-log role="log" aria-live="polite"></div>
 
-            <div class="hero-chat__log" data-hero-log role="log" aria-live="polite"></div>
-
-            <form class="hero-chat__form" data-hero-form>
+            <form class="composer" data-hero-form>
               <label class="visually-hidden" for="hero-chat-input">Twoja wiadomość</label>
               <input
                 id="hero-chat-input"
@@ -188,31 +186,27 @@
                 required
                 data-hero-input
               >
-              <button class="hero-chat__send" type="submit" aria-label="Wyślij wiadomość" data-hero-send>
+              <button class="composer__send" type="submit" aria-label="Wyślij wiadomość" data-hero-send>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
               </button>
             </form>
 
-            <div class="hero-prompts">
-              <button
-                type="button"
-                class="hero-prompt hero-prompt--featured"
-                data-hero-suggestion="Przygotuj mi bezpłatną propozycję strony dla mojej firmy."
-              >
+            <div class="suggests">
+              <button type="button" class="chip chip--primary" data-hero-suggestion="Przygotuj mi bezpłatną propozycję strony dla mojej firmy.">
                 Przygotuj mi bezpłatną propozycję strony
               </button>
-              <button type="button" class="hero-prompt" data-hero-suggestion="Ile kosztuje strona internetowa?">
+              <button type="button" class="chip" data-hero-suggestion="Ile kosztuje strona internetowa?">
                 Ile kosztuje strona internetowa?
               </button>
-              <button type="button" class="hero-prompt" data-hero-suggestion="Jak długo trwa realizacja strony?">
+              <button type="button" class="chip" data-hero-suggestion="Jak długo trwa realizacja strony?">
                 Jak długo trwa realizacja?
               </button>
-              <button type="button" class="hero-prompt" data-hero-suggestion="Chcę stronę z formularzem kontaktowym i mapą Google.">
+              <button type="button" class="chip" data-hero-suggestion="Chcę stronę z formularzem kontaktowym i mapą Google.">
                 Chcę stronę z formularzem i mapą
               </button>
             </div>
 
-            <p class="hero-chat__note">
+            <p class="stage-note">
               Odpowiedzi generuje AI i mogą zawierać błędy. Rozmowa zostaje tylko w Twojej
               przeglądarce. Pilne?
               <a href="mailto:springusbiznes10@gmail.com">springusbiznes10@gmail.com</a>
@@ -714,7 +708,7 @@
       </div>
     </footer>
 
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/chat.js" defer></script>
+    <script src="assets/js/main.js?v=4" defer></script>
+    <script src="assets/js/chat.js?v=4" defer></script>
   </body>
 </html>
