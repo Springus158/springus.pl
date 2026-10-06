@@ -1,0 +1,19 @@
+{
+  "name": "springus-pl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "springus.pl — strona i oferta freelancera: tworzenie stron internetowych",
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "preview": "python3 -m http.server 4173 --directory public",
+    "validate": "html-validate \"public/**/*.html\"",
+    "deploy": "wrangler pages deploy"
+  },
+  "devDependencies": {
+    "html-validate": "^9.7.1",
+    "wrangler": "^4.42.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
