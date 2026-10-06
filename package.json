@@ -2,15 +2,17 @@
   "name": "springus-pl",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "springus.pl — strona i oferta freelancera: tworzenie stron internetowych",
   "scripts": {
-    "dev": "wrangler pages dev public",
+    "dev": "wrangler dev",
     "preview": "python3 -m http.server 4173 --directory public",
     "validate": "html-validate \"public/**/*.html\"",
     "check:links": "node scripts/check-links.mjs",
     "check:jsonld": "node scripts/check-jsonld.mjs",
-    "test": "npm run validate && npm run check:links && npm run check:jsonld",
-    "deploy": "wrangler pages deploy"
+    "check:worker": "node --check src/worker.js && node --check src/api/contact.js && node --check src/api/chat.js",
+    "test": "npm run validate && npm run check:links && npm run check:jsonld && npm run check:worker",
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
     "html-validate": "^9.7.1",

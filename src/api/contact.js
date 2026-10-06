@@ -1,7 +1,7 @@
 /**
  * POST /api/contact — przyjmuje zapytanie z formularza i wysyła e-mail przez Resend.
  *
- * Zmienne środowiskowe (Cloudflare Pages → Settings → Environment variables):
+ * Zmienne środowiskowe (Cloudflare dashboard → Worker → Settings → Variables and Secrets):
  *   RESEND_API_KEY       – klucz API Resend (wymagany, bez niego endpoint zwraca 503)
  *   CONTACT_TO           – adres odbiorcy (domyślnie springusbiznes10@gmail.com)
  *   CONTACT_FROM         – nadawca (domyślnie onboarding@resend.dev — działa bez weryfikacji
@@ -141,9 +141,7 @@ function buildEmail(data) {
   };
 }
 
-export async function onRequestPost(context) {
-  const { request, env } = context;
-
+export async function handleContact(request, env) {
   let payload;
   try {
     payload = await readPayload(request);
@@ -217,8 +215,4 @@ export async function onRequestPost(context) {
   }
 
   return json({ ok: true });
-}
-
-export async function onRequest() {
-  return json({ ok: false, error: "Metoda niedozwolona." }, 405);
 }

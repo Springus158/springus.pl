@@ -1,7 +1,7 @@
 /**
  * POST /api/chat — asystent AI na stronie (Cloudflare Workers AI).
  *
- * Binding: [ai] binding = "AI" w wrangler.toml (dla Pages: Settings → Functions → AI).
+ * Binding: [ai] binding = "AI" w wrangler.toml.
  * Bez bindingu endpoint zwraca życzliwy komunikat zastępczy (200), więc widget działa zawsze.
  *
  * Body: { "messages": [{ "role": "user"|"assistant", "content": "..." }, ...] }
@@ -63,9 +63,7 @@ function sanitizeMessages(input) {
 const FALLBACK_REPLY =
   "Asystent jest chwilowo niedostępny. Napisz proszę na springusbiznes10@gmail.com albo zostaw zapytanie w formularzu kontaktowym — odpowiem w ciągu 24 godzin w dni robocze.";
 
-export async function onRequestPost(context) {
-  const { request, env } = context;
-
+export async function handleChat(request, env) {
   let payload;
   try {
     payload = await request.json();
@@ -100,8 +98,4 @@ export async function onRequestPost(context) {
     console.error("Błąd Workers AI:", error);
     return json({ reply: FALLBACK_REPLY });
   }
-}
-
-export async function onRequest() {
-  return json({ error: "Metoda niedozwolona." }, 405);
 }
