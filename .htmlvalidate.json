@@ -1,0 +1,9 @@
+{
+  "extends": ["html-validate:recommended"],
+  "rules": {
+    "attr-quotes": ["error", { "style": "double" }],
+    "long-title": "off",
+    "no-inline-style": "off",
+    "require-sri": "off"
+  }
+}
