@@ -697,10 +697,17 @@ p {
 /* Tryb rozmowy */
 
 body.chatting .stage {
-  justify-content: flex-end;
+  height: calc(100svh - var(--bar-h));
+  justify-content: flex-start;
+  padding-top: clamp(12px, 2vw, 20px);
+  padding-bottom: clamp(20px, 3vw, 32px);
 }
 
 body.chatting .stage-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
   max-width: min(1200px, 100%);
 }
 
@@ -709,8 +716,19 @@ body.chatting .suggests {
   display: none;
 }
 
+body.chatting .stage-chat {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  margin-top: 0;
+}
+
 body.chatting .chat-log {
   display: flex;
+  flex: 1;
+  min-height: 0;
+  max-height: none;
 }
 
 body.chatting .stage-note {
