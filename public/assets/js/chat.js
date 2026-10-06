@@ -1,26 +1,21 @@
-/* springus.pl — widget czatu (asystent AI) */
+/* springus.pl — asystent AI w hero strony głównej */
 (function () {
   "use strict";
 
-  var root = document.querySelector("[data-chat]");
+  var root = document.querySelector("[data-hero-chat]");
   if (!root) {
     return;
   }
 
-  var toggle = root.querySelector("[data-chat-toggle]");
-  var panel = root.querySelector("[data-chat-panel]");
-  var closeBtn = root.querySelector("[data-chat-close]");
-  var messagesEl = root.querySelector("[data-chat-messages]");
-  var form = root.querySelector("[data-chat-form]");
-  var input = root.querySelector("[data-chat-input]");
-  var quick = root.querySelector("[data-chat-quick]");
+  var logEl = root.querySelector("[data-hero-log]");
+  var form = root.querySelector("[data-hero-form]");
+  var input = root.querySelector("[data-hero-input]");
+  var sendBtn = root.querySelector("[data-hero-send]");
+  var newBtn = root.querySelector("[data-hero-new]");
 
   var STORAGE_KEY = "springus-chat-history";
   var MAX_SENT = 12;
   var MAX_CHARS = 500;
-
-  var GREETING =
-    "Cześć! Tu asystent Springus. Opisz krótko, czego potrzebujesz — odpowiem od razu. W sprawach pilnych napisz na springusbiznes10@gmail.com.";
 
   var history = loadHistory();
   var busy = false;
@@ -43,61 +38,72 @@
     }
   }
 
+  function scrollToEnd() {
+    if (logEl) {
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+  }
+
   function addBubble(role, text) {
     var bubble = document.createElement("div");
-    bubble.className = "chat-bubble chat-bubble--" + role;
+    bubble.className = "hero-chat__bubble hero-chat__bubble--" + role;
     bubble.textContent = text;
-    messagesEl.appendChild(bubble);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
+    logEl.appendChild(bubble);
+    scrollToEnd();
     return bubble;
   }
 
-  function renderHistory() {
-    messagesEl.textContent = "";
-    if (history.length === 0) {
-      addBubble("bot", GREETING);
+  function setConversing(conversing) {
+    root.classList.toggle("is-conversing", conversing);
+    if (newBtn) {
+      newBtn.hidden = !conversing;
+    }
+  }
+
+  function render() {
+    if (!logEl) {
       return;
     }
+    logEl.textContent = "";
     history.forEach(function (message) {
       addBubble(message.role === "user" ? "user" : "bot", message.content);
     });
-  }
-
-  function setOpen(open) {
-    root.classList.toggle("is-open", open);
-    if (toggle) {
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    }
-    if (open) {
-      renderHistory();
-      if (input) {
-        input.focus();
-      }
-    }
+    setConversing(history.length > 0);
   }
 
   function showTyping() {
     var typing = document.createElement("div");
-    typing.className = "chat-bubble chat-bubble--bot chat-typing";
+    typing.className = "hero-chat__bubble hero-chat__bubble--bot hero-chat__typing";
     typing.setAttribute("aria-label", "Asystent pisze");
     typing.innerHTML =
-      '<span class="chat-typing-dot"></span><span class="chat-typing-dot"></span><span class="chat-typing-dot"></span>';
-    messagesEl.appendChild(typing);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
+      '<span class="hero-chat__dot"></span><span class="hero-chat__dot"></span><span class="hero-chat__dot"></span>';
+    logEl.appendChild(typing);
+    scrollToEnd();
     return typing;
+  }
+
+  function setBusy(state) {
+    busy = state;
+    if (input) {
+      input.disabled = state;
+    }
+    if (sendBtn) {
+      sendBtn.disabled = state;
+    }
   }
 
   function send(text) {
     var content = String(text || "").trim().slice(0, MAX_CHARS);
-    if (!content || busy) {
+    if (!content || busy || !logEl) {
       return;
     }
 
-    busy = true;
+    setBusy(true);
     if (input) {
       input.value = "";
     }
 
+    setConversing(true);
     addBubble("user", content);
     history.push({ role: "user", content: content });
     saveHistory();
@@ -129,32 +135,27 @@
       })
       .catch(function () {
         typing.remove();
-        var reply =
-          "Brak połączenia z asystentem. Spróbuj ponownie za chwilę albo napisz na springusbiznes10@gmail.com.";
-        addBubble("bot", reply);
+        addBubble(
+          "bot",
+          "Brak połączenia z asystentem. Spróbuj ponownie za chwilę albo napisz na springusbiznes10@gmail.com."
+        );
       })
       .finally(function () {
-        busy = false;
+        setBusy(false);
+        if (input) {
+          input.focus({ preventScroll: true });
+        }
       });
   }
 
-  if (toggle) {
-    toggle.addEventListener("click", function () {
-      setOpen(!root.classList.contains("is-open"));
-    });
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", function () {
-      setOpen(false);
-    });
-  }
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && root.classList.contains("is-open")) {
-      setOpen(false);
+  function reset() {
+    history = [];
+    saveHistory();
+    render();
+    if (input) {
+      input.focus({ preventScroll: true });
     }
-  });
+  }
 
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -163,13 +164,15 @@
     });
   }
 
-  if (quick) {
-    quick.querySelectorAll("[data-chat-suggestion]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        send(button.getAttribute("data-chat-suggestion"));
-      });
-    });
+  if (newBtn) {
+    newBtn.addEventListener("click", reset);
   }
 
-  renderHistory();
+  root.querySelectorAll("[data-hero-suggestion]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      send(button.getAttribute("data-hero-suggestion"));
+    });
+  });
+
+  render();
 })();

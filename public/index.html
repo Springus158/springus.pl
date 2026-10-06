@@ -180,48 +180,78 @@
     </header>
 
     <main id="main">
-      <!-- Hero -->
+      <!-- Hero z asystentem AI -->
       <section class="hero" id="start">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow">Tworzenie stron internetowych · Podkarpacie i cała Polska</p>
-            <h1>Strona internetowa, która <em>przyprowadza klientów</em></h1>
-            <p class="lead">
-              Projektuję i wdrażam landing page oraz strony firmowe: szybkie, dopasowane do
-              lokalnego rynku i przygotowane pod Google oraz kampanie reklamowe. Bez abonamentów
-              za edycję treści i bez ukrytych kosztów.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn--primary btn--lg" href="#kontakt">Bezpłatna wycena w 24 h</a>
-              <a class="btn btn--ghost btn--lg" href="#portfolio">Zobacz realizacje</a>
-            </div>
-            <p class="hero-note">Bez zobowiązań · Odpowiadam w ciągu 24 h w dni robocze</p>
-          </div>
+        <div class="container hero-chat-wrap">
+          <p class="eyebrow">Asystent AI · Tworzenie stron internetowych · Podkarpacie i cała Polska</p>
+          <h1>Strona internetowa, która <em>przyprowadza klientów</em></h1>
+          <p class="lead">
+            Opisz, czego potrzebujesz — asystent odpowie od razu: zakres, ceny i czas realizacji.
+            Bez zobowiązań.
+          </p>
 
-          <div class="hero-visual" aria-hidden="true">
-            <div class="browser">
-              <div class="browser-bar">
-                <span class="browser-dot"></span>
-                <span class="browser-dot"></span>
-                <span class="browser-dot"></span>
-                <span class="browser-url">twojafirma.pl</span>
-              </div>
-              <div class="browser-body">
-                <div class="skeleton skeleton--title"></div>
-                <div class="skeleton skeleton--text"></div>
-                <div class="skeleton skeleton--text skeleton--short"></div>
-                <div class="skeleton skeleton--button"></div>
-                <div class="skeleton-grid">
-                  <div class="skeleton skeleton--card"></div>
-                  <div class="skeleton skeleton--card"></div>
-                  <div class="skeleton skeleton--card"></div>
-                </div>
+          <div class="hero-chat" data-hero-chat>
+            <div class="hero-chat__bar">
+              <span class="hero-chat__brand">Asystent Springus</span>
+              <span class="hero-chat__hint">AI · odpowiada od razu</span>
+              <button class="hero-chat__new" type="button" data-hero-new hidden>Nowa rozmowa</button>
+            </div>
+
+            <div class="hero-chat__empty" data-hero-empty>
+              <p class="hero-chat__welcome">
+                Cześć! Zapytaj o usługi, ceny albo czas realizacji — albo wybierz jedno z pytań:
+              </p>
+              <div class="hero-prompts">
+                <button type="button" class="hero-prompt" data-hero-suggestion="Ile kosztuje strona wizytówka?">
+                  <span class="hero-prompt__no">01</span>
+                  <span class="hero-prompt__label">Ile kosztuje strona wizytówka?</span>
+                  <span class="hero-prompt__dots" aria-hidden="true"></span>
+                  <span class="hero-prompt__arrow" aria-hidden="true">→</span>
+                </button>
+                <button type="button" class="hero-prompt" data-hero-suggestion="Jak długo trwa realizacja strony?">
+                  <span class="hero-prompt__no">02</span>
+                  <span class="hero-prompt__label">Jak długo trwa realizacja?</span>
+                  <span class="hero-prompt__dots" aria-hidden="true"></span>
+                  <span class="hero-prompt__arrow" aria-hidden="true">→</span>
+                </button>
+                <button type="button" class="hero-prompt" data-hero-suggestion="Chcę stronę z formularzem kontaktowym i mapą Google.">
+                  <span class="hero-prompt__no">03</span>
+                  <span class="hero-prompt__label">Chcę stronę z formularzem i mapą Google</span>
+                  <span class="hero-prompt__dots" aria-hidden="true"></span>
+                  <span class="hero-prompt__arrow" aria-hidden="true">→</span>
+                </button>
+                <button type="button" class="hero-prompt" data-hero-suggestion="Jak wygląda płatność i zaliczka?">
+                  <span class="hero-prompt__no">04</span>
+                  <span class="hero-prompt__label">Jak wygląda płatność i zaliczka?</span>
+                  <span class="hero-prompt__dots" aria-hidden="true"></span>
+                  <span class="hero-prompt__arrow" aria-hidden="true">→</span>
+                </button>
               </div>
             </div>
-            <div class="hero-badge">
-              <strong>95+</strong>
-              <span>Lighthouse<br>w standardzie</span>
-            </div>
+
+            <div class="hero-chat__log" data-hero-log role="log" aria-live="polite"></div>
+
+            <form class="hero-chat__form" data-hero-form>
+              <label class="visually-hidden" for="hero-chat-input">Twoja wiadomość</label>
+              <input
+                id="hero-chat-input"
+                type="text"
+                placeholder="Napisz, czego potrzebujesz…"
+                autocomplete="off"
+                maxlength="500"
+                required
+                data-hero-input
+              >
+              <button class="hero-chat__send" type="submit" aria-label="Wyślij wiadomość" data-hero-send>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              </button>
+            </form>
+
+            <p class="hero-chat__note">
+              Odpowiedzi generuje AI i mogą zawierać błędy. Rozmowa zostaje tylko w Twojej
+              przeglądarce. Pilne?
+              <a href="mailto:springusbiznes10@gmail.com">springusbiznes10@gmail.com</a>
+            </p>
           </div>
         </div>
 
@@ -757,61 +787,6 @@
         <a href="/polityka-prywatnosci/">Polityka prywatności</a>
       </div>
     </footer>
-
-    <!-- Czat z asystentem -->
-    <div class="chat" data-chat>
-      <button
-        class="chat-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="chat-panel"
-        aria-label="Otwórz czat"
-        data-chat-toggle
-      >
-        <svg class="chat-icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-8 8H4l2.4-2.9A8 8 0 1 1 21 12z"/><path d="M8 11h8M8 14h5"/></svg>
-        <svg class="chat-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-
-      <section class="chat-panel" id="chat-panel" aria-label="Czat z asystentem Springus" data-chat-panel>
-        <header class="chat-header">
-          <div>
-            <strong>Asystent Springus</strong>
-            <span>Odpowiada od razu · AI</span>
-          </div>
-          <button class="chat-close" type="button" aria-label="Zamknij czat" data-chat-close>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-          </button>
-        </header>
-
-        <div class="chat-messages" data-chat-messages aria-live="polite"></div>
-
-        <div class="chat-quick" data-chat-quick>
-          <button type="button" data-chat-suggestion="Ile kosztuje strona wizytówka?">Ile kosztuje strona?</button>
-          <button type="button" data-chat-suggestion="Jak długo trwa realizacja strony?">Jak długo trwa realizacja?</button>
-          <button type="button" data-chat-suggestion="Pokaż realizacje.">Realizacje</button>
-        </div>
-
-        <form class="chat-form" data-chat-form>
-          <label class="visually-hidden" for="chat-input">Twoja wiadomość</label>
-          <input
-            id="chat-input"
-            type="text"
-            placeholder="Napisz wiadomość…"
-            autocomplete="off"
-            maxlength="500"
-            required
-            data-chat-input
-          >
-          <button class="chat-send" type="submit" aria-label="Wyślij wiadomość">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-          </button>
-        </form>
-
-        <p class="chat-note">
-          Odpowiedzi generuje AI. Pilne? <a href="mailto:springusbiznes10@gmail.com">springusbiznes10@gmail.com</a>
-        </p>
-      </section>
-    </div>
 
     <script src="/assets/js/main.js" defer></script>
     <script src="/assets/js/chat.js" defer></script>
