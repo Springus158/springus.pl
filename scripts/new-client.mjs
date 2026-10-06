@@ -148,7 +148,7 @@ Następne kroki:
   npm run deploy   # wdrożenie na Cloudflare
 
 Do uzupełnienia przed publikacją:
-  - treści w [nawiasach] (hero, usługi, proces, o mnie, opinie, FAQ)
+  - treści w [nawiasach] (hero, sekcje oferty, FAQ, o nas / o mnie)
   - dane: ${telefon === "+48 000 000 000" ? "TELEFON (placeholder!)" : "telefon ✓"}, ${miasto === "[miasto]" ? "MIASTO (placeholder!)" : "miasto ✓"}, ${adres === "[adres]" ? "ADRES (placeholder!)" : "adres ✓"}, ${nip}
   - zdjęcia w public/assets/img/
   - checklista w README.md szablonu
