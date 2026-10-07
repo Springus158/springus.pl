@@ -4,6 +4,32 @@
 
   var track = window.springusTrack || function () {};
 
+  document.documentElement.classList.add("has-js");
+
+  /* Animacje przy przewijaniu ------------------------------------ */
+  var revealTargets = document.querySelectorAll(
+    ".section-head, .services-grid, .templates-grid, .steps, .pricing-grid, .pricing-extras, .about, .faq, .contact-grid, .map-wrap"
+  );
+
+  if (revealTargets.length > 0 && "IntersectionObserver" in window) {
+    var revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-revealed");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+    );
+
+    revealTargets.forEach(function (el) {
+      el.setAttribute("data-reveal", "");
+      revealObserver.observe(el);
+    });
+  }
+
   /* Źródło zapytania (UTM / referrer) ---------------------------- */
   var SOURCE_KEY = "springus-source";
   var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
