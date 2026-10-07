@@ -115,6 +115,20 @@ wymyśla informacji spoza zakresu i kieruje do formularza/e-maila.
 - **Cloudflare Web Analytics** (bez cookies) — włącz w panelu Cloudflare (Workers → Analytics); beacon
   jest wstrzykiwany automatycznie, a CSP w `_headers` już dopuszcza `cloudflareinsights.com`
 
+## Analityka i zgody (`public/assets/js/analytics.js`)
+
+- Domyślnie **nic nie ładuje się bez zgody** — strona nie ustawia cookies poza bezcookie'owym
+  Cloudflare Web Analytics. Baner zgód pokazuje się tylko, gdy w `analytics.js` są wpisane
+  identyfikatory.
+- Konfiguracja (góra pliku): `ga4` (np. `G-…`), `googleAds` (np. `AW-…`), `adsLeadLabel`
+  (etykieta konwersji formularza). Instrukcja krok po kroku: `docs/analiza-reklamowa.md`.
+- Consent Mode v2: domyślnie wszystko `denied`, po „Akceptuję” → `granted`; wybór zapisany w
+  `localStorage["springus-consent"]`, a link „Ustawienia cookies” w stopce otwiera baner ponownie.
+- Zdarzenia przez `window.springusTrack`: `generate_lead` (wysłany formularz → konwersja Google
+  Ads), `tel_click`, `email_click`, `chat_started`.
+- CSP w `_headers` dopuszcza `googletagmanager.com`, `google-analytics.com`,
+  `googleadservices.com` i `doubleclick.net`.
+
 ## Szablony klientów
 
 W `templates/` leżą gotowe strony do kopiowania dla klientów (szczegóły: `templates/README.md`).
@@ -158,9 +172,13 @@ Binding AI i assets są zadeklarowane w `wrangler.toml`, więc deployują się z
 - [x] **PR6 — podstrony miejskie:** Przeworsk, Jarosław, Łańcut, Rzeszów
 - [x] **PR7 — CI i deploy:** GitHub Actions (walidacja + link checker) i dokumentacja
 
-## Do uzupełnienia przed publikacją
+## Do uzupełnienia (stan 2026-10-07)
 
-- [ ] Telefon kontaktowy (obecnie placeholder w treści)
-- [ ] Profil Google Business (po zakupie domeny)
-- [ ] Treści o mnie (zdjęcie, opis doświadczenia)
-- [ ] Zakup domeny `springus.pl` i podpięcie Custom Domain do Workera
+- [x] Telefon kontaktowy — +48 796 904 039
+- [x] Domena `springus.pl` + custom domain
+- [ ] Wpisać identyfikatory GA4 / Google Ads w `public/assets/js/analytics.js`
+- [ ] Konto Google Ads + konwersja `generate_lead`, Search Console, wizytówka Google (GBP)
+- [ ] E-mail `kontakt@springus.pl` (Cloudflare Email Routing) i podmiana adresów na stronie
+- [ ] Pełne imię i nazwisko do stopki / polityki prywatności (obecnie „Kacper — Springus”)
+- [ ] Realizacje + opinie: `/realizacje/`, case study ŁączyNas.pl; dema szablonów na springus.pl
+- [ ] Landing `/wycena/` pod kampanie + sticky CTA mobilny

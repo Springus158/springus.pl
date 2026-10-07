@@ -2,6 +2,23 @@
 (function () {
   "use strict";
 
+  var track = window.springusTrack || function () {};
+
+  /* Zdarzenia kontaktowe (telefon, e-mail) ----------------------- */
+  document.addEventListener("click", function (event) {
+    var target = event.target;
+    var link = target && target.closest ? target.closest("a[href]") : null;
+    if (!link) {
+      return;
+    }
+    var href = link.getAttribute("href") || "";
+    if (href.indexOf("tel:") === 0) {
+      track("tel_click", { link_url: href });
+    } else if (href.indexOf("mailto:") === 0) {
+      track("email_click", { link_url: href });
+    }
+  });
+
   /* Rok w stopce ------------------------------------------------ */
   var yearEls = document.querySelectorAll("[data-year]");
   var year = String(new Date().getFullYear());
@@ -113,6 +130,7 @@
         .then(function (result) {
           if (result.ok) {
             form.reset();
+            track("generate_lead", { form: "contact", service: payload.service });
             setStatus(
               "Dziękuję! Wiadomość wysłana — odpowiem w ciągu 24 h w dni robocze.",
               "is-success"

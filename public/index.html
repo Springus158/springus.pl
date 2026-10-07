@@ -38,7 +38,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="assets/css/style.css?v=14">
+    <link rel="stylesheet" href="assets/css/style.css?v=15">
 
     <script type="application/ld+json">
       {
@@ -127,7 +127,7 @@
             "name": "Jak wygląda płatność?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Zaliczka 30–50% na start, reszta przy odbiorze strony. Wystawiam faktury. Przy większych projektach możliwy podział na raty."
+              "text": "Zaliczka 30–50% na start, reszta przy odbiorze strony. Rozliczenie: faktura lub rachunek bez VAT (nie jestem podatnikiem VAT). Przy większych projektach możliwy podział na raty."
             }
           },
           {
@@ -418,7 +418,7 @@
             <h2>Przejrzyste ceny, żadnych ukrytych kosztów</h2>
             <p class="lead">
               Każda strona jest inna, więc każdą wyceniam indywidualnie — ale te widełki pokazują,
-              czego się spodziewać. Ceny netto.
+              czego się spodziewać. Ceny brutto — nie doliczam VAT.
             </p>
           </div>
 
@@ -474,7 +474,8 @@
           </div>
 
           <p class="pricing-note">
-            Płatność: zaliczka 30–50%, reszta przy odbiorze. Wystawiam faktury.
+            Płatność: zaliczka 30–50%, reszta przy odbiorze. Rozliczenie: faktura lub rachunek
+            bez VAT — nie jestem podatnikiem VAT.
           </p>
         </div>
       </section>
@@ -561,8 +562,8 @@
             <details>
               <summary>Jak wygląda płatność?</summary>
               <p>
-                Zaliczka 30–50% na start, reszta przy odbiorze strony. Wystawiam faktury. Przy
-                większych projektach możliwy podział na raty.
+                Zaliczka 30–50% na start, reszta przy odbiorze strony. Rozliczenie: faktura lub
+                rachunek bez VAT. Przy większych projektach możliwy podział na raty.
               </p>
             </details>
 
@@ -598,7 +599,6 @@
                 </li>
                 <li>
                   <span class="contact-label">Telefon</span>
-                  <!-- TODO: podmienić na prawdziwy numer telefonu -->
                   <a href="tel:+48796904039">+48&nbsp;796&nbsp;904&nbsp;039</a>
                 </li>
                 <li>
@@ -730,7 +730,6 @@
           <h3>Kontakt</h3>
           <ul>
             <li><a href="mailto:springusbiznes10@gmail.com">springusbiznes10@gmail.com</a></li>
-            <!-- TODO: podmienić na prawdziwy numer telefonu -->
             <li><a href="tel:+48796904039">+48&nbsp;796&nbsp;904&nbsp;039</a></li>
             <li>Świętoniowa, gmina Przeworsk</li>
           </ul>
@@ -741,11 +740,15 @@
         <span>
           © <span data-year>2026</span> Springus · Kacper · Świętoniowa, gmina Przeworsk
         </span>
-        <a href="/polityka-prywatnosci/">Polityka prywatności</a>
+        <span class="footer-legal">
+          <a href="/polityka-prywatnosci/">Polityka prywatności</a>
+          <a href="#" data-cookie-settings hidden>Ustawienia cookies</a>
+        </span>
       </div>
     </footer>
 
-    <script src="assets/js/main.js?v=14" defer></script>
-    <script src="assets/js/chat.js?v=14" defer></script>
+    <script src="assets/js/analytics.js?v=1" defer></script>
+    <script src="assets/js/main.js?v=15" defer></script>
+    <script src="assets/js/chat.js?v=15" defer></script>
   </body>
 </html>

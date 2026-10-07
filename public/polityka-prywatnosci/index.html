@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="/assets/css/style.css?v=14">
+    <link rel="stylesheet" href="/assets/css/style.css?v=15">
   </head>
   <body>
     <a class="skip-link" href="#main">Przejdź do treści</a>
@@ -34,7 +34,7 @@
       <div class="container legal">
         <p class="eyebrow">Dokumenty</p>
         <h1>Polityka prywatności</h1>
-        <p class="updated">Ostatnia aktualizacja: 6 października 2026</p>
+        <p class="updated">Ostatnia aktualizacja: 7 października 2026</p>
 
         <p>
           Niniejsza polityka opisuje, w jaki sposób przetwarzane są dane osobowe osób
@@ -44,8 +44,9 @@
 
         <h2>1. Administrator danych</h2>
         <p>
-          Administratorem danych jest <strong>Kacper — Springus</strong>, Świętoniowa, gmina
-          Przeworsk. Kontakt: <a href="mailto:springusbiznes10@gmail.com">springusbiznes10@gmail.com</a>.
+          Administratorem danych jest <strong>Kacper — Springus</strong> (osoba fizyczna
+          prowadząca działalność nierejestrowaną), Świętoniowa, gmina Przeworsk. Kontakt:
+          <a href="mailto:springusbiznes10@gmail.com">springusbiznes10@gmail.com</a>.
         </p>
 
         <h2>2. Zakres i cel przetwarzania</h2>
@@ -59,8 +60,15 @@
         <h2>3. Odbiorcy danych</h2>
         <p>Dane mogą być przetwarzane przez zaufanych dostawców narzędzi:</p>
         <ul>
-          <li><strong>Cloudflare, Inc.</strong> — hosting strony i infrastruktura (serwery w UE i USA),</li>
-          <li><strong>Resend, Inc.</strong> — dostarczanie wiadomości e-mail z formularza.</li>
+          <li>
+            <strong>Cloudflare, Inc.</strong> — hosting strony, infrastruktura oraz model AI
+            obsługujący czat (serwery w UE i USA),
+          </li>
+          <li><strong>Resend, Inc.</strong> — dostarczanie wiadomości e-mail z formularza,</li>
+          <li>
+            <strong>Google Ireland Limited / Google LLC</strong> — statystyki i pomiar reklam
+            (Google Analytics 4, Google Ads), wyłącznie po wyrażeniu zgody.
+          </li>
         </ul>
         <p>
           Przekazywanie danych poza EOG odbywa się na podstawie standardowych klauzul umownych
@@ -86,14 +94,34 @@
           <a href="mailto:springusbiznes10@gmail.com">springusbiznes10@gmail.com</a>.
         </p>
 
-        <h2>6. Pliki cookies i statystyki</h2>
+        <h2>6. Pliki cookies, statystyki i zgody</h2>
         <p>
-          Strona nie wykorzystuje plików cookies do śledzenia użytkowników. Korzystam z
-          bezcookie'owych statystyk odwiedzin (Cloudflare Web Analytics), które nie identyfikują
-          pojedynczych osób.
+          Strona sama w sobie nie wymaga plików cookies. Korzystam z bezcookie'owych statystyk
+          odwiedzin (Cloudflare Web Analytics), które nie identyfikują pojedynczych osób.
+        </p>
+        <p>
+          Po wyrażeniu zgody w banerze uruchamiam narzędzia Google: <strong>Google Analytics 4</strong>
+          (statystyki odwiedzin) oraz <strong>Google Ads</strong> (pomiar skuteczności kampanii
+          reklamowych). Mogą one zapisywać pliki cookies i przetwarzać identyfikatory urządzenia w
+          celach analitycznych i reklamowych. Podstawą prawną jest Twoja zgoda (art. 6 ust. 1
+          lit. a RODO).
+        </p>
+        <p>
+          Zgodę możesz wycofać lub zmienić w każdej chwili klikając <strong>„Ustawienia cookies”</strong>
+          w stopce strony albo usuwając dane witryny w przeglądarce. Odrzucenie zgody nie ogranicza
+          korzystania ze strony.
         </p>
 
-        <h2>7. Zmiany polityki</h2>
+        <h2>7. Czat AI na stronie</h2>
+        <p>
+          Na stronie głównej działa asystent AI. Treść wiadomości, którą wpiszesz, jest wysyłana do
+          modelu językowego Cloudflare Workers AI wyłącznie w celu wygenerowania odpowiedzi.
+          Historia rozmowy zapisuje się tylko w pamięci Twojej przeglądarki (sessionStorage) i
+          znika po zamknięciu karty. Nie wykorzystuję rozmowy do innych celów — proszę nie podawać
+          w czacie danych wrażliwych.
+        </p>
+
+        <h2>8. Zmiany polityki</h2>
         <p>
           Polityka może być aktualizowana — aktualna wersja jest zawsze dostępna pod adresem
           <strong>springus.pl/polityka-prywatnosci/</strong>.
@@ -104,10 +132,14 @@
     <footer class="site-footer">
       <div class="container footer-bottom">
         <span>© <span data-year>2026</span> Springus · Świętoniowa, gmina Przeworsk</span>
-        <a href="/">Strona główna</a>
+        <span class="footer-legal">
+          <a href="/">Strona główna</a>
+          <a href="#" data-cookie-settings hidden>Ustawienia cookies</a>
+        </span>
       </div>
     </footer>
 
-    <script src="/assets/js/main.js?v=14" defer></script>
+    <script src="/assets/js/analytics.js?v=1" defer></script>
+    <script src="/assets/js/main.js?v=15" defer></script>
   </body>
 </html>

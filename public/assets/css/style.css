@@ -1704,3 +1704,65 @@ body.chatting .stage-note {
     opacity: 0.6;
   }
 }
+
+/* Baner zgód cookies ------------------------------------------------------ */
+
+.consent {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 1000;
+  padding: 16px;
+  pointer-events: none;
+}
+
+.consent__inner {
+  pointer-events: auto;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 28px;
+  flex-wrap: wrap;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-md);
+}
+
+.consent__text {
+  margin: 0;
+  max-width: 64ch;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.consent__text a {
+  color: inherit;
+}
+
+.consent__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .consent__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .consent__actions .btn {
+    flex: 1;
+  }
+}
+
+.site-footer .footer-legal {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}

@@ -19,6 +19,7 @@
 
   var history = loadHistory();
   var busy = false;
+  var started = false;
 
   function loadHistory() {
     try {
@@ -169,6 +170,11 @@
     }
 
     setConversing(true);
+    if (!started) {
+      started = true;
+      var track = window.springusTrack || function () {};
+      track("chat_started");
+    }
     addBubble("user", content);
     history.push({ role: "user", content: content });
     saveHistory();
