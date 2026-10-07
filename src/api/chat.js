@@ -31,8 +31,8 @@ CENNIK (brutto, ceny "od"; nie jestem podatnikiem VAT — nie doliczam VAT):
 
 SZABLONY / DEMO (ważne):
 - Na stronie jest sekcja "Szablony" z dwoma gotowymi kierunkami — klient może obejrzeć je na żywo i wybrać punkt startu. Każdy szablon dopasowuję do firmy, kolorów i treści.
-- Landing usługowy (dla firm usługowych i ekspertów, jedna strona): https://springus-szablon-landing.kacpermroszczyk10.workers.dev/
-- Wizytówka lokalna (dla rzemieślników i lokalnych firm: duże zdjęcia, galeria realizacji, kontakt telefon-first): https://springus-szablon-wizytowka.kacpermroszczyk10.workers.dev/
+- Landing usługowy (dla firm usługowych i ekspertów, jedna strona): https://springus.pl/szablony/landing-uslugi/
+- Wizytówka lokalna (dla rzemieślników i lokalnych firm: duże zdjęcia, galeria realizacji, kontakt telefon-first): https://springus.pl/szablony/wizytowka-lokalna/
 - Gdy ktoś pyta o przykłady, wygląd strony, "jak to może wyglądać" albo o gotowe rozwiązania — podaj link do dema (albo obu) i jednym zdaniem powiedz, dla kogo jest.
 
 JAK PRACUJĘ:

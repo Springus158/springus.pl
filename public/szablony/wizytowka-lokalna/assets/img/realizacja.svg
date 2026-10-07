@@ -6,12 +6,12 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="900" fill="url(#plaster)"/>
-  <g fill="none" stroke="{{KOLOR}}" stroke-width="26" opacity="0.55" stroke-linecap="round">
+  <g fill="none" stroke="#b45309" stroke-width="26" opacity="0.55" stroke-linecap="round">
     <path d="M240 640c90-150 240-150 330 0"/>
     <path d="M630 640c90-150 240-150 330 0"/>
   </g>
   <circle cx="600" cy="330" r="150" fill="#fffdf7" opacity="0.75"/>
-  <circle cx="600" cy="330" r="96" fill="{{KOLOR}}" opacity="0.4"/>
+  <circle cx="600" cy="330" r="96" fill="#b45309" opacity="0.4"/>
   <path d="M140 740h920" stroke="#8a6a45" stroke-width="12" opacity="0.4" stroke-linecap="round"/>
   <g opacity="0.3" stroke="#8a6a45" stroke-width="8" fill="none" stroke-linecap="round">
     <path d="M170 160c80-40 160-40 240 0"/>

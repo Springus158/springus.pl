@@ -48,9 +48,9 @@ Wnioski: cena 500–1200 zł jest wyraźnie poniżej rynku (dobre pod Ads), ale 
 - [x] Faza 1 — pomiar i zgody: GA4 + Ads tag (consent-gated), Consent Mode v2, CSP,
       eventy `generate_lead` / `tel_click` / `email_click` / `chat_started`, aktualizacja
       polityki prywatności, poprawa cen (netto → brutto bez VAT).
-- [ ] Faza 2 — dowody: `/realizacje/` + case study ŁączyNas.pl, dema szablonów na
-      springus.pl, 2–3 dema branżowe, proces zbierania opinii, oferta startowa dla
-      pierwszych klientów w zamian za publikację realizacji i opinię.
+- [x] Faza 2 (część) — nowe szablony + dema na springus.pl: `/szablony/landing-uslugi/`, `/szablony/wizytowka-lokalna/`.
+- [ ] Faza 2 (reszta) — `/realizacje/` + case study ŁączyNas.pl, proces zbierania opinii,
+      oferta startowa dla pierwszych klientów w zamian za publikację realizacji i opinię.
 - [ ] Faza 3 — landing `/wycena/` + sticky CTA mobilny.
 - [ ] Faza 4 — kampanie Google Search (struktura niżej).
 

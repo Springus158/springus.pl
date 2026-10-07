@@ -5,8 +5,8 @@
       <stop offset="1" stop-color="#dcc9a4"/>
     </linearGradient>
     <linearGradient id="clay" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="{{KOLOR}}" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="{{KOLOR}}" stop-opacity="0.4"/>
+      <stop offset="0" stop-color="#b45309" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#b45309" stop-opacity="0.4"/>
     </linearGradient>
   </defs>
   <rect width="1600" height="1000" fill="url(#wall)"/>

@@ -5,7 +5,7 @@
 
 :root {
   /* KOLOR MARKI — podmień (presety: bursztyn #b45309 · cegła #9a3412 · zieleń #166534) */
-  --brand: {{KOLOR}};
+  --brand: #b45309;
   --brand-strong: color-mix(in srgb, var(--brand) 80%, #2a2118);
   --brand-soft: color-mix(in srgb, var(--brand) 12%, #fffdf7);
 

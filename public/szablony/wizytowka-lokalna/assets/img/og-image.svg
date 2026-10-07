@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Nowak Tynki Ozdobne">
+  <defs>
+    <linearGradient id="ogw" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#261d14"/>
+      <stop offset="1" stop-color="#34281c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogw)"/>
+  <circle cx="1010" cy="180" r="180" fill="#b45309" opacity="0.55"/>
+  <circle cx="1010" cy="180" r="104" fill="#f4eee3" opacity="0.85"/>
+  <g opacity="0.5" stroke="#8a6a45" stroke-width="12" fill="none" stroke-linecap="round">
+    <path d="M840 460c60-50 120-50 180 0"/>
+    <path d="M840 520c80-66 160-66 240 0"/>
+  </g>
+  <text x="90" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="600" fill="#fffdf7">Nowak Tynki Ozdobne</text>
+  <text x="90" y="400" font-family="Arial, sans-serif" font-size="30" fill="#d8cdbd">Rzemiosło z Przeworsk i okolic · bezpłatna wycena</text>
+  <rect x="90" y="450" width="220" height="10" rx="5" fill="#b45309"/>
+</svg>

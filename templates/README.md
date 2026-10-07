@@ -4,10 +4,14 @@ Gotowe do skopiowania strony dla klientów — czysty HTML/CSS/JS + Worker (form
 Resend), deploy na Cloudflare. Każdy szablon jest samodzielny: kopiuj → podmień treści →
 wdroź.
 
-| Szablon | Dla kogo | Wzór |
+| Szablon | Dla kogo | Styl |
 | --- | --- | --- |
-| [`landing-uslugi`](landing-uslugi/) | firmy usługowe, eksperci, doradcy | jakub-socha.pl |
-| `wizytowka-lokalna` | rzemieślnicy, lokalne firmy, budowlanka | stiukwenecki.pl |
+| [`landing-uslugi`](landing-uslugi/) | firmy usługowe, eksperci, doradcy | edytorski: serif Fraunces, głęboka zieleń, duże liczby |
+| `wizytowka-lokalna` | rzemieślnicy, lokalne firmy, budowlanka | ciepłe rzemiosło: tynk/glina, galeria, telefon-first |
+
+Podglądy na żywo (wersje demo generowane z tych szablonów, `noindex`):
+- https://springus.pl/szablony/landing-uslugi/
+- https://springus.pl/szablony/wizytowka-lokalna/
 
 ## Nowy projekt klienta
 

@@ -11,7 +11,7 @@
   </defs>
   <rect width="800" height="1000" fill="url(#sky)"/>
   <circle cx="640" cy="180" r="150" fill="url(#glass)" opacity="0.5"/>
-  <circle cx="150" cy="820" r="110" fill="{{KOLOR}}" opacity="0.35"/>
+  <circle cx="150" cy="820" r="110" fill="#166534" opacity="0.35"/>
   <g opacity="0.16" fill="#f6f3ec">
     <circle cx="80" cy="120" r="4"/><circle cx="120" cy="120" r="4"/><circle cx="160" cy="120" r="4"/>
     <circle cx="80" cy="160" r="4"/><circle cx="120" cy="160" r="4"/><circle cx="160" cy="160" r="4"/>

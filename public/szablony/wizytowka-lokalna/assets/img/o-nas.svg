@@ -9,7 +9,7 @@
   <rect x="80" y="140" width="640" height="500" rx="26" fill="#261d14"/>
   <path d="M80 640h640v180H80z" fill="#34281c"/>
   <circle cx="250" cy="390" r="90" fill="#f0e6d2"/>
-  <path d="M160 640c0-90 40-150 90-150s90 60 90 150z" fill="{{KOLOR}}"/>
+  <path d="M160 640c0-90 40-150 90-150s90 60 90 150z" fill="#b45309"/>
   <path d="M420 300h240v24H420zM420 350h180v24H420zM420 400h210v24H420z" fill="#f0e6d2" opacity="0.7"/>
   <path d="M420 520c40-60 120-60 160 0" stroke="#e8b04b" stroke-width="16" fill="none" stroke-linecap="round"/>
   <g opacity="0.5" stroke="#8a6a45" stroke-width="8" fill="none" stroke-linecap="round">
