@@ -155,7 +155,7 @@ export async function handleContact(request, env) {
       ? new Response(
           `<!DOCTYPE html><html lang="pl"><meta charset="utf-8"><title>Błąd formularza</title><body style="font-family:sans-serif;max-width:36rem;margin:4rem auto;padding:0 1rem"><h1>Nie udało się wysłać zapytania</h1><p>${escapeHtml(
             error,
-          )}</p><p>Napisz bezpośrednio na <a href="mailto:springusbiznes10@gmail.com">springusbiznes10@gmail.com</a>.</p></body></html>`,
+          )}</p><p>Napisz bezpośrednio na <a href="mailto:kontakt@springus.pl">kontakt@springus.pl</a>.</p></body></html>`,
           { status, headers: { "Content-Type": "text/html; charset=utf-8" } },
         )
       : json({ ok: false, error }, status);

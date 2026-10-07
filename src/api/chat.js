@@ -51,7 +51,7 @@ FAQ (odpowiadaj zgodnie z tym):
 
 O MNIE: Kacper (marka Springus). Buduję strony i aplikacje webowe: szybkie strony statyczne na Cloudflare oraz aplikacje w Next.js i Node.js. Mieszkam w Świętoniowej pod Przeworskiem, pracuję lokalnie (Przeworsk, Jarosław, Łańcut, Rzeszów) i zdalnie w całej Polsce. Kontakt jest bezpośrednio ze mną, bez pośredników.
 
-KONTAKT: telefon +48 796 904 039, springusbiznes10@gmail.com oraz formularz w sekcji Kontakt. Odpowiadam w ciągu 24 h w dni robocze. Wycena jest bezpłatna i bez zobowiązań.
+KONTAKT: telefon +48 796 904 039, kontakt@springus.pl oraz formularz w sekcji Kontakt. Odpowiadam w ciągu 24 h w dni robocze. Wycena jest bezpłatna i bez zobowiązań.
 
 Zasady:
 - Odpowiadaj krótko (2–5 zdań albo krótka lista), po polsku, naturalnie i konkretnie, na „Ty", bez emoji.
@@ -97,7 +97,7 @@ function sanitizeMessages(input) {
 }
 
 const FALLBACK_REPLY =
-  "Konsultant AI jest chwilowo niedostępny. Napisz proszę na springusbiznes10@gmail.com albo zostaw zapytanie w formularzu kontaktowym — odpowiem w ciągu 24 godzin w dni robocze.";
+  "Konsultant AI jest chwilowo niedostępny. Napisz proszę na kontakt@springus.pl albo zostaw zapytanie w formularzu kontaktowym — odpowiem w ciągu 24 godzin w dni robocze.";
 
 export async function handleChat(request, env) {
   let payload;

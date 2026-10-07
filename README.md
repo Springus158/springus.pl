@@ -178,7 +178,7 @@ Binding AI i assets są zadeklarowane w `wrangler.toml`, więc deployują się z
 - [x] Domena `springus.pl` + custom domain
 - [ ] Wpisać identyfikatory GA4 / Google Ads w `public/assets/js/analytics.js`
 - [ ] Konto Google Ads + konwersja `generate_lead`, Search Console, wizytówka Google (GBP)
-- [ ] E-mail `kontakt@springus.pl` (Cloudflare Email Routing) i podmiana adresów na stronie
+- [x] E-mail `kontakt@springus.pl` (Cloudflare Email Routing → gmail; adresy na stronie podmienione)
 - [ ] Pełne imię i nazwisko do stopki / polityki prywatności (obecnie „Kacper — Springus”)
 - [ ] Realizacje + opinie: `/realizacje/`, case study ŁączyNas.pl; dema szablonów na springus.pl
 - [ ] Landing `/wycena/` pod kampanie + sticky CTA mobilny

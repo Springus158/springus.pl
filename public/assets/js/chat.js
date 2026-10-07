@@ -199,7 +199,7 @@
         var reply =
           data && data.reply
             ? data.reply
-            : "Nie udało się pobrać odpowiedzi. Napisz proszę na springusbiznes10@gmail.com.";
+            : "Nie udało się pobrać odpowiedzi. Napisz proszę na kontakt@springus.pl.";
         addBubble("bot", reply);
         history.push({ role: "assistant", content: reply });
         saveHistory();
@@ -208,7 +208,7 @@
         typing.remove();
         addBubble(
           "bot",
-          "Brak połączenia z asystentem. Spróbuj ponownie za chwilę albo napisz na springusbiznes10@gmail.com."
+          "Brak połączenia z asystentem. Spróbuj ponownie za chwilę albo napisz na kontakt@springus.pl."
         );
       })
       .finally(function () {
