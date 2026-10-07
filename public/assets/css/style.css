@@ -791,54 +791,10 @@ p {
   }
 }
 
-/* Tryb rozmowy */
-
-body.chatting .screen {
-  min-height: 0;
-}
-
-body.chatting .stage {
-  justify-content: flex-start;
-  overflow: visible;
-  padding-top: clamp(14px, 2.5vw, 24px);
-  padding-bottom: clamp(14px, 2.5vw, 24px);
-}
-
-body.chatting .stage-wrap {
-  display: flex;
-  flex-direction: column;
-  flex: 0 1 auto;
-  min-height: 0;
-  max-width: min(1200px, 100%);
-}
+/* Tryb rozmowy — nagłówek zostaje bez zmian, zmienia się tylko zawartość czatu */
 
 body.chatting .suggests {
   display: none;
-}
-
-body.chatting .stage-intro {
-  margin-bottom: 16px;
-}
-
-body.chatting .stage-hello {
-  font-size: clamp(1.15rem, 2vw, 1.4rem);
-}
-
-body.chatting .stage-intro h1 {
-  margin-top: 2px;
-  font-size: clamp(1.45rem, 2.7vw, 2.05rem);
-}
-
-body.chatting .stage-lead {
-  margin-top: 8px;
-  font-size: 0.98rem;
-}
-
-body.chatting .stage-chat {
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 auto;
-  margin-top: 0;
 }
 
 body.chatting .sticker {
@@ -849,12 +805,8 @@ body.chatting .chat-log {
   display: flex;
   flex: 0 0 auto;
   min-height: 0;
-  max-height: min(50vh, 480px);
+  max-height: min(44vh, 420px);
   margin-bottom: 16px;
-}
-
-body.chatting .stage-note {
-  padding-left: 4px;
 }
 
 /* Pasek zaufania ------------------------------------------------------------- */
