@@ -22,18 +22,12 @@ USŁUGI:
 - Kampanie Google i Meta (Facebook/Instagram): strona docelowa, konfiguracja kampanii i prowadzenie pod zapytania; dla firm lokalnych (np. fryzjer, budowlanka, usługi). Budżet reklamowy klient opłaca bezpośrednio w Google/Meta.
 
 CENNIK (brutto, ceny "od"; nie jestem podatnikiem VAT — nie doliczam VAT):
-- Landing page od 500 zł: projekt i wdrożenie do 5 sekcji, formularz kontaktowy i przyciski "zadzwoń", wersja mobilna, szybkie ładowanie, podstawowa optymalizacja pod Google, analiza odwiedzin, 30 dni wsparcia. Cena startowa obejmuje wdrożenie na gotowym szablonie, treści i zdjęcia od klienta oraz 1 rundę poprawek — napisanie tekstów i dodatkowe sekcje są wyceniane osobno.
+- Landing page od 500 zł: projekt i wdrożenie do 5 sekcji, formularz kontaktowy i przyciski "zadzwoń", wersja mobilna, szybkie ładowanie, podstawowa optymalizacja pod Google, analiza odwiedzin, 30 dni wsparcia. Cena startowa obejmuje wdrożenie prostej strony w jednym układzie, treści i zdjęcia od klienta oraz 1 rundę poprawek — napisanie tekstów i dodatkowe sekcje są wyceniane osobno.
 - Strona wizytówka od 800 zł: wszystko z pakietu Landing page, do 3 podstron (oferta, cennik, kontakt), mapa Google i dane firmy, przygotowanie pod wizytówkę Google.
 - Strona firmowa od 1200 zł: do 6 podstron + blog, rozbudowana struktura pod SEO, galeria realizacji i opinie, 60 dni wsparcia.
 - Domena: ok. 60–100 zł/rok, rejestrowana na klienta (zostaje jego własnością), podłączenie w ramach wdrożenia.
 - Kampanie Google/Meta: konfiguracja od 800 zł, prowadzenie od 400 zł miesięcznie; budżet reklamowy klient opłaca bezpośrednio w Google/Meta (nie wchodzi w moje wynagrodzenie).
 - Każdą stronę wyceniam indywidualnie po bezpłatnej rozmowie. Nie oferuję SEO, opieki technicznej ani hostingu.
-
-SZABLONY / DEMO (ważne):
-- Na stronie jest sekcja "Szablony" z dwoma gotowymi kierunkami — klient może obejrzeć je na żywo i wybrać punkt startu. Każdy szablon dopasowuję do firmy, kolorów i treści.
-- Landing usługowy (dla firm usługowych i ekspertów, jedna strona): https://springus.pl/szablony/landing-uslugi/
-- Wizytówka lokalna (dla rzemieślników i lokalnych firm: duże zdjęcia, galeria realizacji, kontakt telefon-first): https://springus.pl/szablony/wizytowka-lokalna/
-- Gdy ktoś pyta o przykłady, wygląd strony, "jak to może wyglądać" albo o gotowe rozwiązania — podaj link do dema (albo obu) i jednym zdaniem powiedz, dla kogo jest.
 
 JAK PRACUJĘ:
 1. Rozmowa i wycena: opisujesz firmę i cele strony; w ciągu 24 h dostajesz konkretną wycenę i zakres — bezpłatnie i bez zobowiązań.

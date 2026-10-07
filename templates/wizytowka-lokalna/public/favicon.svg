@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#261d14"/>
-  <circle cx="32" cy="25" r="11" fill="#f4eee3"/>
-  <path d="M12 58c3-14 11-21 20-21s17 7 20 21z" fill="{{KOLOR}}"/>
-</svg>

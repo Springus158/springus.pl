@@ -134,22 +134,6 @@ wymyśla informacji spoza zakresu i kieruje do formularza/e-maila.
 - CSP w `_headers` dopuszcza `googletagmanager.com`, `google-analytics.com`,
   `googleadservices.com` i `doubleclick.net`.
 
-## Szablony klientów
-
-W `templates/` leżą gotowe strony do kopiowania dla klientów (szczegóły: `templates/README.md`).
-Nowy projekt tworzysz jedną komendą:
-
-```bash
-npm run new:client nazwa-klienta -- --template landing-uslugi \
-  --firma "Jan Kowalski" --telefon "+48 600 100 200" \
-  --email "kontakt@firma.pl" --miasto "Przeworsk" \
-  --adres "ul. Przykładowa 1, 37-200 Przeworsk" \
-  --nip "NIP 000 000 00 00" --domena "firma.pl" --kolor "#1e3a8a"
-```
-
-Skrypt kopiuje szablon do `~/www/nazwa-klienta`, podmienia placeholdery i zakłada repo git.
-Walidacja szablonów (`npm test`) działa w CI razem ze stroną.
-
 ## Deploy
 
 Produkcja: **Cloudflare Workers** (projekt `springus-pl`, `main = src/worker.js`,
@@ -185,6 +169,5 @@ Binding AI i assets są zadeklarowane w `wrangler.toml`, więc deployują się z
 - [ ] Konto Google Ads + konwersja `generate_lead`, Search Console, wizytówka Google (GBP)
 - [x] E-mail `kontakt@springus.pl` (Cloudflare Email Routing → gmail; adresy na stronie podmienione)
 - [ ] Pełne imię i nazwisko do stopki / polityki prywatności (obecnie „Kacper — Springus”)
-- [x] Dema szablonów na springus.pl: `/szablony/landing-uslugi/` i `/szablony/wizytowka-lokalna/`
 - [ ] Realizacje + opinie: `/realizacje/` i case study ŁączyNas.pl
 - [ ] Landing `/wycena/` pod kampanie + sticky CTA mobilny

@@ -11,7 +11,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const ROOTS = [join(ROOT, "public"), join(ROOT, "templates")].filter((dir) => existsSync(dir));
+const ROOTS = [join(ROOT, "public")].filter((dir) => existsSync(dir));
 const PUBLIC_DIR = join(ROOT, "public");
 
 const EXTERNAL = /^(https?:|mailto:|tel:|data:|javascript:|#|\/\/)/;

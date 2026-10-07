@@ -1,7 +1,0 @@
-name = "{{NAZWA}}"
-compatibility_date = "2026-10-01"
-main = "src/worker.js"
-
-[assets]
-directory = "./public"
-binding = "ASSETS"

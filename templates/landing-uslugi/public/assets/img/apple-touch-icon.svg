@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
-  <rect width="180" height="180" rx="40" fill="#12271f"/>
-  <path d="M90 34c-30 0-46 20-46 50 0 26 16 44 46 44s46-18 46-44c0-30-16-50-46-50z" fill="#f0e6d2"/>
-  <path d="M42 156c8-30 26-46 48-46s40 16 48 46z" fill="{{KOLOR}}"/>
-</svg>
