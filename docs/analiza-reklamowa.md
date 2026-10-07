@@ -1,4 +1,4 @@
-| Portfolio | Do zdobycia — start: ŁączyNas.pl + własne realizacje |# Springus.pl — analiza reklamowa i plan wdrożenia
+# Springus.pl — analiza reklamowa i plan wdrożenia
 
 Data: 2026-10-07 · Cel: przygotować stronę do skutecznej reklamy w Google Search (lokalnie).
 
@@ -13,6 +13,7 @@ Data: 2026-10-07 · Cel: przygotować stronę do skutecznej reklamy w Google Sea
 | Cennik | Landing od 500 zł, wizytówka od 800 zł, firmowa od 1200 zł (od 2026-10-07) |
 | Reklamy | Sprzedajemy konfigurację i prowadzenie kampanii Google/Meta: od 800 zł + 400 zł/mies. (budżet klienta opłacany w Google/Meta) |
 | Obsługa leada | Auto-potwierdzenie do klienta + UTM/referrer w powiadomieniu (od 2026-10-07) |
+| Opinie | Świadomie bez opinii/recenzji na stronie (od 2026-10-07) |
 
 ## Stan wyjściowy (2026-10-06)
 
@@ -48,8 +49,8 @@ Wnioski: cena 500–1200 zł jest wyraźnie poniżej rynku (dobre pod Ads), ale 
 - [x] Faza 1 — pomiar i zgody: GA4 + Ads tag (consent-gated), Consent Mode v2, CSP,
       eventy `generate_lead` / `tel_click` / `email_click` / `chat_started`, aktualizacja
       polityki prywatności, poprawa cen (netto → brutto bez VAT).
-- [ ] Faza 2 — `/realizacje/` + case study ŁączyNas.pl, proces zbierania opinii,
-      oferta startowa dla pierwszych klientów w zamian za publikację realizacji i opinię.
+- [ ] Faza 2 — `/realizacje/` + case study ŁączyNas.pl; oferta startowa dla pierwszych
+      klientów w zamian za zgodę na pokazanie realizacji (bez opinii — świadoma decyzja).
 - [ ] Faza 3 — landing `/wycena/` + sticky CTA mobilny.
 - [ ] Faza 4 — kampanie Google Search (struktura niżej).
 
@@ -67,7 +68,7 @@ Wnioski: cena 500–1200 zł jest wyraźnie poniżej rynku (dobre pod Ads), ale 
    (weryfikacja DNS w Cloudflare) → zgłoś `https://springus.pl/sitemap.xml`.
 6. **Wizytówka Google** — business.google.com → kategoria „Projektant stron internetowych”,
    obszar obsługi: Przeworsk, Jarosław, Łańcut, Rzeszów; dodaj usługi, opis, zdjęcia,
-   link do strony. Po każdym wdrożeniu wyślij klientowi link do opinii.
+   link do strony.
 7. **E-mail na domenie** — Cloudflare → Email Routing → `kontakt@springus.pl` → przekieruj
    na gmail. Po weryfikacji domeny w Resend ustaw nadawcę `formularz@springus.pl`.
    Dopiero wtedy podmienić adresy e-mail na stronie.
@@ -86,7 +87,7 @@ Wnioski: cena 500–1200 zł jest wyraźnie poniżej rynku (dobre pod Ads), ale 
 
 - Konwersje główne: `generate_lead` (formularz), kliknięcia `tel:` (mikrokonwersja).
 - Wsparcie: `chat_started`, `email_click`. Zgody: `localStorage["springus-consent"]` (v1).
-- Miesięczny przegląd: GSC (zapytania), GA4 (ruchy), Ads (koszt/lead), GBP (opinie, wyświetlenia).
+- Miesięczny przegląd: GSC (zapytania), GA4 (ruchy), Ads (koszt/lead), GBP (wyświetlenia, kliknięcia telefonu).
 
 ## Ryzyko zgód
 
