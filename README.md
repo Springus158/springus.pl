@@ -3,7 +3,7 @@
 ![CI](https://github.com/Springus158/springus.pl/actions/workflows/ci.yml/badge.svg)
 
 Strona i oferta freelancera **Springus** — tworzenie stron internetowych dla firm:
-landing page, strony wizytówki i firmowe, aplikacje webowe.
+landing page, strony wizytówki i firmowe, aplikacje webowe oraz kampanie Google i Meta.
 
 - **Baza:** Świętoniowa / gmina Przeworsk · Podkarpacie
 - **Obsługa:** lokalnie (Przeworsk, Jarosław, Łańcut, Rzeszów) i zdalnie w całej Polsce
@@ -70,6 +70,11 @@ npm run validate   # walidacja HTML
 
 `src/api/contact.js` przyjmuje POST z formularza, waliduje dane (w tym honeypot
 i opcjonalny Turnstile) i wysyła e-mail przez **Resend**.
+
+- Po zapytaniu klient dostaje **automatyczne potwierdzenie** („odpowiem w 24 h”); `reply_to`
+  auto-odpowiedzi to `CONTACT_TO`, więc odpowiedź klienta wraca do skrzynki.
+- Powiadomienie do Ciebie zawiera **źródło zapytania**: stronę wejścia, referrer i parametry
+  UTM (zbierane w `main.js` do `sessionStorage["springus-source"]` i dołączane do payloadu).
 
 Zmienne środowiskowe (lokalnie: `.dev.vars` na podstawie `.dev.vars.example`;
 produkcja: Cloudflare dashboard → Worker `springus-pl` → Settings → Variables and Secrets):

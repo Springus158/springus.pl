@@ -1,5 +1,7 @@
 /**
  * POST /api/contact — przyjmuje zapytanie z formularza i wysyła e-mail przez Resend.
+ * Po zapisie do skrzynki wysyła też automatyczne potwierdzenie do nadawcy.
+ * W powiadomieniu przekazuje źródło zapytania (strona, referrer, UTM).
  *
  * Zmienne środowiskowe (Cloudflare dashboard → Worker → Settings → Variables and Secrets):
  *   RESEND_API_KEY       – klucz API Resend (wymagany, bez niego endpoint zwraca 503)
@@ -15,6 +17,8 @@ const MAX = {
   phone: 40,
   service: 80,
   message: 5000,
+  source: 300,
+  utm: 120,
 };
 
 const SERVICES = {
@@ -22,6 +26,7 @@ const SERVICES = {
   wizytowka: "Strona wizytówka",
   firmowa: "Strona firmowa",
   aplikacja: "Aplikacja webowa / PWA",
+  reklama: "Kampanie Google / Meta",
   inne: "Inne / do ustalenia",
 };
 
@@ -37,6 +42,10 @@ function json(data, status) {
 
 function clean(value) {
   return String(value == null ? "" : value).trim();
+}
+
+function clip(value, max) {
+  return clean(value).slice(0, max);
 }
 
 function escapeHtml(value) {
@@ -120,6 +129,21 @@ function buildEmail(data) {
   const serviceKey = clean(data.service) || "inne";
   const serviceLabel = SERVICES[serviceKey] || SERVICES.inne;
 
+  const source = [];
+  if (clip(data.page, MAX.source)) {
+    source.push(`Strona: ${clip(data.page, MAX.source)}`);
+  }
+  if (clip(data.referrer, MAX.source)) {
+    source.push(`Referrer: ${clip(data.referrer, MAX.source)}`);
+  }
+  const utm = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]
+    .map((key) => [key, clip(data[key], MAX.utm)])
+    .filter(([, value]) => value)
+    .map(([key, value]) => `${key}=${value}`);
+  if (utm.length > 0) {
+    source.push(`UTM: ${utm.join(" · ")}`);
+  }
+
   const lines = [
     "Nowe zapytanie ze strony springus.pl",
     "",
@@ -128,6 +152,7 @@ function buildEmail(data) {
     `Telefon: ${clean(data.phone) || "—"}`,
     `Temat: ${serviceLabel}`,
     "",
+    ...(source.length > 0 ? ["Źródło zapytania:", ...source.map((line) => `- ${line}`), ""] : []),
     "Wiadomość:",
     clean(data.message),
   ];
@@ -136,7 +161,46 @@ function buildEmail(data) {
     subject: `Nowe zapytanie: ${serviceLabel} — ${clean(data.name)}`,
     text: lines.join("\n"),
     replyTo: clean(data.email),
+    serviceLabel,
   };
+}
+
+async function sendAutoReply(env, data, mail) {
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: env.CONTACT_FROM || "Springus <onboarding@resend.dev>",
+        to: [clean(data.email)],
+        reply_to: env.CONTACT_TO || "springusbiznes10@gmail.com",
+        subject: "Dziękuję za zapytanie — Springus",
+        text: [
+          `Dzień dobry ${clean(data.name).split(" ")[0]},`,
+          "",
+          `dziękuję za wiadomość wysłaną przez formularz na springus.pl${
+            mail.serviceLabel ? ` (temat: ${mail.serviceLabel})` : ""
+          }.`,
+          "",
+          "Odpowiem w ciągu 24 h w dni robocze (pon.–pt. 9:00–16:00). W razie pilnej sprawy",
+          "możesz zadzwonić: +48 796 904 039.",
+          "",
+          "Kacper — Springus",
+          "springus.pl · kontakt@springus.pl",
+        ].join("\n"),
+      }),
+    });
+
+    if (!res.ok) {
+      const detail = await res.text();
+      console.warn("Resend odrzucił auto-potwierdzenie:", res.status, detail);
+    }
+  } catch (error) {
+    console.warn("Błąd auto-potwierdzenia:", error);
+  }
 }
 
 export async function handleContact(request, env) {
@@ -207,6 +271,8 @@ export async function handleContact(request, env) {
     console.error("Błąd połączenia z Resend:", error);
     return fail(502, "Nie udało się wysłać wiadomości.");
   }
+
+  await sendAutoReply(env, data, mail);
 
   if (wantHtml) {
     return Response.redirect(new URL("/#kontakt", request.url), 303);

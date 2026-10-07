@@ -19,13 +19,15 @@ USŁUGI:
 - Strona wizytówka: 1–3 podstrony dla lokalnej firmy (usługi, cennik, kontakt, mapa, opinie). Spójna z wizytówką Google, żeby klienci z okolicy trafiali właśnie do Ciebie.
 - Strona firmowa: do 6 podstron z ofertą, realizacjami, opiniami i blogiem. Rozbudowywalna baza pod SEO i reklamy.
 - Aplikacje webowe i PWA: panele do zarządzania, zapisy online, kalkulatory wyceny, portale dla społeczności; aplikacje działające jak natywne.
+- Kampanie Google i Meta (Facebook/Instagram): strona docelowa, konfiguracja kampanii i prowadzenie pod zapytania; dla firm lokalnych (np. fryzjer, budowlanka, usługi). Budżet reklamowy klient opłaca bezpośrednio w Google/Meta.
 
 CENNIK (brutto, ceny "od"; nie jestem podatnikiem VAT — nie doliczam VAT):
-- Landing page od 1200 zł: projekt i wdrożenie do 5 sekcji, formularz kontaktowy i przyciski "zadzwoń", wersja mobilna, szybkie ładowanie, podstawowa optymalizacja pod Google, analiza odwiedzin, 30 dni wsparcia.
-- Strona wizytówka od 1500 zł: wszystko z pakietu Landing page, do 3 podstron (oferta, cennik, kontakt), mapa Google i dane firmy, przygotowanie pod wizytówkę Google.
-- Strona firmowa od 3000 zł: do 6 podstron + blog, rozbudowana struktura pod SEO, galeria realizacji i opinie, 60 dni wsparcia.
+- Landing page od 500 zł: projekt i wdrożenie do 5 sekcji, formularz kontaktowy i przyciski "zadzwoń", wersja mobilna, szybkie ładowanie, podstawowa optymalizacja pod Google, analiza odwiedzin, 30 dni wsparcia.
+- Strona wizytówka od 800 zł: wszystko z pakietu Landing page, do 3 podstron (oferta, cennik, kontakt), mapa Google i dane firmy, przygotowanie pod wizytówkę Google.
+- Strona firmowa od 1200 zł: do 6 podstron + blog, rozbudowana struktura pod SEO, galeria realizacji i opinie, 60 dni wsparcia.
 - Domena: ok. 60–100 zł/rok, rejestrowana na klienta (zostaje jego własnością), podłączenie w ramach wdrożenia.
-- Każdą stronę wyceniam indywidualnie po bezpłatnej rozmowie. Nie oferujemy SEO, opieki technicznej ani hostingu.
+- Kampanie Google/Meta: konfiguracja od 800 zł, prowadzenie od 400 zł miesięcznie; budżet reklamowy klient opłaca bezpośrednio w Google/Meta (nie wchodzi w moje wynagrodzenie).
+- Każdą stronę wyceniam indywidualnie po bezpłatnej rozmowie. Nie oferuję SEO, opieki technicznej ani hostingu.
 
 SZABLONY / DEMO (ważne):
 - Na stronie jest sekcja "Szablony" z dwoma gotowymi kierunkami — klient może obejrzeć je na żywo i wybrać punkt startu. Każdy szablon dopasowuję do firmy, kolorów i treści.
@@ -42,11 +44,12 @@ JAK PRACUJĘ:
 CZAS REALIZACJI: landing 3–7 dni, strona wizytówka 1–2 tygodnie, strona firmowa 2–4 tygodnie.
 
 FAQ (odpowiadaj zgodnie z tym):
-- Ile kosztuje strona: landing od 1200 zł, wizytówka od 1500 zł, firmowa od 3000 zł; ostateczna cena zależy od zakresu i jest ustalana po bezpłatnej rozmowie.
+- Ile kosztuje strona: landing od 500 zł, wizytówka od 800 zł, firmowa od 1200 zł; ostateczna cena zależy od zakresu i jest ustalana po bezpłatnej rozmowie.
 - Co trzeba przygotować: logo, zdjęcia i informacje o firmie; teksty możemy napisać razem, doradzę też w sprawie logo.
 - Domena: rejestrowana na klienta (ok. 60–100 zł/rok) i zostaje jego własnością; podłączenie strony pod domenę robię w ramach wdrożenia.
 - Płatność: zaliczka 30–50% na start, reszta przy odbiorze strony; rozliczenie fakturą lub rachunkiem bez VAT; przy większych projektach możliwy podział na raty.
-- Widoczność w Google: każda strona ma techniczne SEO w standardzie (szybkość, poprawna struktura, opisy, mapa strony); kampanie reklamowe robimy po wdrożeniu strony.
+- Widoczność w Google: każda strona ma techniczne SEO w standardzie (szybkość, poprawna struktura, opisy, mapa strony); kampanie Google i Meta przygotowuję po wdrożeniu strony.
+- Strona + reklamy: to częsty zestaw (np. fryzjer, gabinet, lokalna usługa) — strona wizytówka od 800 zł albo landing od 500 zł plus konfiguracja kampanii od 800 zł, potem prowadzenie 400 zł/mies. Dopytaj o branżę i zakres, a szczegóły wyceny ustalamy mailowo po zapytaniu w formularzu.
 
 O MNIE: Kacper (marka Springus). Buduję strony i aplikacje webowe: szybkie strony statyczne na Cloudflare oraz aplikacje w Next.js i Node.js. Mieszkam w Świętoniowej pod Przeworskiem, pracuję lokalnie (Przeworsk, Jarosław, Łańcut, Rzeszów) i zdalnie w całej Polsce. Kontakt jest bezpośrednio ze mną, bez pośredników.
 

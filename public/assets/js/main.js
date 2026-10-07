@@ -4,6 +4,48 @@
 
   var track = window.springusTrack || function () {};
 
+  /* Źródło zapytania (UTM / referrer) ---------------------------- */
+  var SOURCE_KEY = "springus-source";
+  var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+
+  function loadSource() {
+    try {
+      var raw = sessionStorage.getItem(SOURCE_KEY);
+      return raw ? JSON.parse(raw) || {} : {};
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function saveSource(source) {
+    try {
+      sessionStorage.setItem(SOURCE_KEY, JSON.stringify(source));
+    } catch (error) {
+      /* brak sessionStorage — trudno, źródło nie zostanie zapamiętane */
+    }
+  }
+
+  (function captureSource() {
+    var source = loadSource();
+    var params = new URLSearchParams(window.location.search);
+
+    UTM_KEYS.forEach(function (key) {
+      var value = params.get(key);
+      if (value) {
+        source[key] = value.slice(0, 120);
+      }
+    });
+
+    if (!source.landing) {
+      source.landing = window.location.pathname;
+    }
+    if (!source.referrer && document.referrer) {
+      source.referrer = document.referrer.slice(0, 300);
+    }
+
+    saveSource(source);
+  })();
+
   /* Zdarzenia kontaktowe (telefon, e-mail) ----------------------- */
   document.addEventListener("click", function (event) {
     var target = event.target;
@@ -103,6 +145,15 @@
         company: val("company"),
         consent: form.elements.namedItem("consent").checked ? "yes" : "",
       };
+
+      var source = loadSource();
+      payload.page = String(source.landing || window.location.pathname).slice(0, 300);
+      payload.referrer = String(source.referrer || "").slice(0, 300);
+      UTM_KEYS.forEach(function (key) {
+        if (source[key]) {
+          payload[key] = String(source[key]).slice(0, 120);
+        }
+      });
 
       if (submitBtn) {
         submitBtn.disabled = true;

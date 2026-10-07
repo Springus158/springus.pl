@@ -9,7 +9,10 @@ Data: 2026-10-07 · Cel: przygotować stronę do skutecznej reklamy w Google Sea
 | Kanał startowy | Google Search lokalny (Przeworsk, Jarosław, Łańcut, Rzeszów + zdalnie Polska) |
 | Forma działalności | Działalność nierejestrowana (bez NIP, bez VAT) |
 | Portfolio | Do zdobycia — start: ŁączyNas.pl + szablony |
-| Model oferty | Bez miesięcznych opłat (hosting Cloudflare w cenie) |
+| Model oferty | Bez miesięcznych opłat za utrzymanie strony (hosting Cloudflare w cenie) |
+| Cennik | Landing od 500 zł, wizytówka od 800 zł, firmowa od 1200 zł (od 2026-10-07) |
+| Reklamy | Sprzedajemy konfigurację i prowadzenie kampanii Google/Meta: od 800 zł + 400 zł/mies. (budżet klienta opłacany w Google/Meta) |
+| Obsługa leada | Auto-potwierdzenie do klienta + UTM/referrer w powiadomieniu (od 2026-10-07) |
 
 ## Stan wyjściowy (2026-10-06)
 
@@ -27,7 +30,7 @@ Data: 2026-10-07 · Cel: przygotować stronę do skutecznej reklamy w Google Sea
 | Lokalni freelancerzy | ContentWave (Przeworsk), zarkowski.dev, Karol Lasek, Gabriel Lichacz | NIP, blog/SEO, portfolio, zgody cookies, Oferteo | brak tych elementów |
 | Marketplace/DIY | Oferteo (150 firm w Przeworsku), Fixly, Wix/WebWave | lead od razu; średnia rynkowa PL 6,6–13,7 tys. zł netto | brak profilu, brak obsługi obiekcji „nie Wix” |
 
-Wnioski: cena 1200–3000 zł jest na dole rynku (dobre pod Ads), ale bez dowodów wygląda
+Wnioski: cena 500–1200 zł jest wyraźnie poniżej rynku (dobre pod Ads), ale bez dowodów wygląda
 „tanio i anonimowo”. USP „bez miesięcznych opłat” wymaga uzasadnienia w treści.
 
 ## Ryzyka działalności nierejestrowanej
