@@ -793,10 +793,15 @@ p {
 
 /* Tryb rozmowy */
 
+body.chatting .screen {
+  min-height: 0;
+}
+
 body.chatting .stage {
-  justify-content: center;
-  padding-top: clamp(12px, 2vw, 20px);
-  padding-bottom: clamp(10px, 2vw, 18px);
+  justify-content: flex-start;
+  overflow: visible;
+  padding-top: clamp(14px, 2.5vw, 24px);
+  padding-bottom: clamp(14px, 2.5vw, 24px);
 }
 
 body.chatting .stage-wrap {
@@ -807,10 +812,26 @@ body.chatting .stage-wrap {
   max-width: min(1200px, 100%);
 }
 
-body.chatting .stage-hello,
-body.chatting .stage-intro,
 body.chatting .suggests {
   display: none;
+}
+
+body.chatting .stage-intro {
+  margin-bottom: 16px;
+}
+
+body.chatting .stage-hello {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+body.chatting .stage-intro h1 {
+  margin-top: 2px;
+  font-size: clamp(1.45rem, 2.7vw, 2.05rem);
+}
+
+body.chatting .stage-lead {
+  margin-top: 8px;
+  font-size: 0.98rem;
 }
 
 body.chatting .stage-chat {
@@ -828,7 +849,7 @@ body.chatting .chat-log {
   display: flex;
   flex: 0 0 auto;
   min-height: 0;
-  max-height: min(62vh, 560px);
+  max-height: min(50vh, 480px);
   margin-bottom: 16px;
 }
 
