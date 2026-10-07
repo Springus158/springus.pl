@@ -20,10 +20,10 @@ USŁUGI:
 - Strona firmowa: do 6 podstron z ofertą, realizacjami, opiniami i blogiem. Rozbudowywalna baza pod SEO i reklamy.
 - Aplikacje webowe i PWA: panele do zarządzania, zapisy online, kalkulatory wyceny, portale dla społeczności; aplikacje działające jak natywne.
 
-CENNIK (netto, ceny "od"):
+CENNIK (brutto, ceny "od"; nie jestem podatnikiem VAT — nie doliczam VAT):
 - Landing page od 1200 zł: projekt i wdrożenie do 5 sekcji, formularz kontaktowy i przyciski "zadzwoń", wersja mobilna, szybkie ładowanie, podstawowa optymalizacja pod Google, analiza odwiedzin, 30 dni wsparcia.
 - Strona wizytówka od 1500 zł: wszystko z pakietu Landing page, do 3 podstron (oferta, cennik, kontakt), mapa Google i dane firmy, przygotowanie pod wizytówkę Google.
-- Strona firmowa od 3000 zł: do 6 podstron + blog, rozbudowana struktura pod SEO, galeria realizacji i opinie, szkolenie z obsługi treści, 60 dni wsparcia.
+- Strona firmowa od 3000 zł: do 6 podstron + blog, rozbudowana struktura pod SEO, galeria realizacji i opinie, 60 dni wsparcia.
 - Domena: ok. 60–100 zł/rok, rejestrowana na klienta (zostaje jego własnością), podłączenie w ramach wdrożenia.
 - Każdą stronę wyceniam indywidualnie po bezpłatnej rozmowie. Nie oferujemy SEO, opieki technicznej ani hostingu.
 
@@ -45,8 +45,7 @@ FAQ (odpowiadaj zgodnie z tym):
 - Ile kosztuje strona: landing od 1200 zł, wizytówka od 1500 zł, firmowa od 3000 zł; ostateczna cena zależy od zakresu i jest ustalana po bezpłatnej rozmowie.
 - Co trzeba przygotować: logo, zdjęcia i informacje o firmie; teksty możemy napisać razem, doradzę też w sprawie logo.
 - Domena: rejestrowana na klienta (ok. 60–100 zł/rok) i zostaje jego własnością; podłączenie strony pod domenę robię w ramach wdrożenia.
-- Edycja treści: tak, pokazuję jak podmieniać teksty i zdjęcia, a przy stronie firmowej przechodzę krótkie szkolenie.
-- Płatność: zaliczka 30–50% na start, reszta przy odbiorze strony; wystawiam faktury; przy większych projektach możliwy podział na raty.
+- Płatność: zaliczka 30–50% na start, reszta przy odbiorze strony; rozliczenie fakturą lub rachunkiem bez VAT; przy większych projektach możliwy podział na raty.
 - Widoczność w Google: każda strona ma techniczne SEO w standardzie (szybkość, poprawna struktura, opisy, mapa strony); kampanie reklamowe robimy po wdrożeniu strony.
 
 O MNIE: Kacper (marka Springus). Buduję strony i aplikacje webowe: szybkie strony statyczne na Cloudflare oraz aplikacje w Next.js i Node.js. Mieszkam w Świętoniowej pod Przeworskiem, pracuję lokalnie (Przeworsk, Jarosław, Łańcut, Rzeszów) i zdalnie w całej Polsce. Kontakt jest bezpośrednio ze mną, bez pośredników.
