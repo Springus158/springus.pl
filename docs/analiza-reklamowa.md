@@ -49,8 +49,9 @@ Wnioski: cena 500–1200 zł jest wyraźnie poniżej rynku (dobre pod Ads), ale 
 - [x] Faza 1 — pomiar i zgody: GA4 + Ads tag (consent-gated), Consent Mode v2, CSP,
       eventy `generate_lead` / `tel_click` / `email_click` / `chat_started`, aktualizacja
       polityki prywatności, poprawa cen (netto → brutto bez VAT).
-- [ ] Faza 2 — miejsce na portfolio przygotowane (sekcja zakomentowana na stronie głównej);
-      czeka na prawdziwe realizacje + case study ŁączyNas.pl (bez opinii — świadoma decyzja).
+- [x] Faza 2 (część) — sekcja `#portfolio` na stronie głównej: Orzechowo.pl (demo sklepu).
+- [ ] Faza 2 (reszta) — kolejne prawdziwe realizacje + case study ŁączyNas.pl (bez opinii —
+      świadoma decyzja).
 - [ ] Faza 3 — landing `/wycena/` + sticky CTA mobilny.
 - [ ] Faza 4 — kampanie Google Search (struktura niżej).
 

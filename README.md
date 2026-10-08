@@ -169,6 +169,6 @@ Binding AI i assets są zadeklarowane w `wrangler.toml`, więc deployują się z
 - [ ] Konto Google Ads + konwersja `generate_lead`, Search Console, wizytówka Google (GBP)
 - [x] E-mail `kontakt@springus.pl` (Cloudflare Email Routing → gmail; adresy na stronie podmienione)
 - [ ] Pełne imię i nazwisko do stopki / polityki prywatności (obecnie „Kacper — Springus”)
-- [ ] Portfolio: miejsce przygotowane na stronie głównej (sekcja `#portfolio` zakomentowana) — czeka na prawdziwe realizacje
+- [x] Portfolio: sekcja `#portfolio` na stronie głównej — Orzechowo.pl (demo sklepu); kolejne realizacje dochodzą jako karty
 - [ ] Case study ŁączyNas.pl (realizacje/opinie dopiero po decyzji)
 - [ ] Landing `/wycena/` pod kampanie + sticky CTA mobilny

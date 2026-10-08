@@ -38,7 +38,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="assets/css/style.css?v=22">
+    <link rel="stylesheet" href="assets/css/style.css?v=23">
 
     <script type="application/ld+json">
       {
@@ -140,6 +140,7 @@
           <button class="btn-new" type="button" data-hero-new hidden>Nowa rozmowa</button>
           <nav class="bar-nav" aria-label="Nawigacja główna">
             <a href="#uslugi">Usługi</a>
+            <a href="#portfolio">Portfolio</a>
             <a href="#cennik">Cennik</a>
             <a href="#faq">FAQ</a>
             <a href="#kontakt">Kontakt</a>
@@ -287,45 +288,37 @@
         </div>
       </section>
 
-      <!--
-        PORTFOLIO — miejsce przygotowane (na razie puste).
-
-        Gdy będziesz mieć prawdziwe realizacje:
-        1. Wrzuć zrzuty do public/assets/img/portfolio/ (np. nazwa.png, ok. 1200x860).
-        2. Odkomentuj sekcję poniżej i uzupełnij karty (src, alt, tytuł, opis).
-        3. Dodaj "Portfolio" do nawigacji (.bar-nav) i stopki oraz przenumeruj sekcje
-           (Portfolio byłoby 02, kolejne +1).
-        4. Nie wstawiaj wymyślonych projektów — tylko własne, prawdziwe realizacje.
-
-        <section class="section section--tint" id="portfolio">
-          <div class="container">
-            <div class="section-head">
-              <p class="eyebrow">02 · Portfolio</p>
-              <h2>Zrobione strony</h2>
-            </div>
-
-            <div class="portfolio-grid">
-              <a class="card portfolio-card" href="#">
-                <img src="/assets/img/portfolio/projekt-1.png" alt="Strona dla [firma] — [branża]" width="1200" height="860" loading="lazy">
-                <div class="portfolio-body">
-                  <h3>[Nazwa firmy] — [branża]</h3>
-                  <p>[Co zawiera i po co — jedno zdanie.]</p>
-                </div>
-              </a>
-            </div>
-
-            <p class="portfolio-more">
-              <a class="btn btn--primary" href="#kontakt">Chcę podobną stronę</a>
-            </p>
+      <!-- Portfolio — kolejne realizacje dodawaj jako karty w .portfolio-grid -->
+      <section class="section section--tint" id="portfolio">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">02 · Portfolio</p>
+            <h2>Zrobione strony</h2>
           </div>
-        </section>
-      -->
+
+          <div class="portfolio-grid">
+            <article class="card portfolio-card">
+              <img
+                src="assets/img/portfolio/orzechowo.webp"
+                alt="Orzechowo.pl — sklep z orzechami i bakaliami (demo)"
+                width="1200"
+                height="860"
+                loading="lazy"
+              >
+              <div class="portfolio-body">
+                <h3>Orzechowo.pl — sklep z bakaliami</h3>
+                <p>Demo sklepu online: katalog z filtrami, koszyk, checkout i blog.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <!-- Proces -->
       <section class="section section--dark" id="proces">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">02 · Jak pracuję</p>
+            <p class="eyebrow">03 · Jak pracuję</p>
             <h2>Od rozmowy do wdrożenia w czterech krokach</h2>
           </div>
 
@@ -358,7 +351,7 @@
       <section class="section" id="cennik">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">03 · Cennik</p>
+            <p class="eyebrow">04 · Cennik</p>
             <h2>Przejrzyste ceny</h2>
             <p class="lead">Ceny brutto — nie doliczam VAT.</p>
           </div>
@@ -426,7 +419,7 @@
       <section class="section" id="o-mnie">
         <div class="container about">
           <div class="about-copy">
-            <p class="eyebrow">04 · O mnie</p>
+            <p class="eyebrow">05 · O mnie</p>
             <h2>Kacper — Springus</h2>
             <p>
               Dopiero zaczynam jako freelancer — mówię to wprost. Każdy projekt traktuję
@@ -452,7 +445,7 @@
       <section class="section section--tint" id="faq">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">05 · FAQ</p>
+            <p class="eyebrow">06 · FAQ</p>
             <h2>Najczęstsze pytania</h2>
           </div>
 
@@ -484,7 +477,7 @@
       <section class="section" id="kontakt">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">06 · Kontakt</p>
+            <p class="eyebrow">07 · Kontakt</p>
             <h2>Bezpłatna wycena w 24 h</h2>
             <p class="lead">Napisz krótko, czego potrzebujesz — odpowiem w 24 h.</p>
           </div>
@@ -609,6 +602,7 @@
           <h3>Strona</h3>
           <ul>
             <li><a href="#uslugi">Usługi</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#cennik">Cennik</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
