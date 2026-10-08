@@ -972,6 +972,120 @@ body.chatting .chat-log {
   height: 24px;
 }
 
+/* Realizacje ------------------------------------------------------------------ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.project-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+.project-body {
+  padding: 16px 22px 20px;
+}
+
+.project-body h3 {
+  margin: 0 0 4px;
+  font-size: 1.02rem;
+}
+
+.project-body p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.projects-more {
+  margin: 30px 0 0;
+  text-align: center;
+}
+
+.note-demo {
+  max-width: 720px;
+  margin: 0 0 clamp(32px, 5vw, 48px);
+  padding: 16px 20px;
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 249, 0.7);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.note-demo strong {
+  color: var(--ink);
+}
+
+/* Realizacje — układ case study (/realizacje/) */
+
+.project-list {
+  display: grid;
+  gap: clamp(44px, 7vw, 84px);
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(24px, 5vw, 52px);
+  align-items: center;
+}
+
+.project--flip .project-media {
+  order: 2;
+}
+
+.project-media {
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.project-info .eyebrow {
+  margin-bottom: 10px;
+}
+
+.project-info h3 {
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+}
+
+.project-info p {
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+}
+
+.project-info .check-list {
+  margin-top: 16px;
+}
+
 /* Proces --------------------------------------------------------------------- */
 
 .steps {
@@ -1664,6 +1778,11 @@ body.chatting .chat-log {
   overflow: hidden;
 }
 
+.hero--short {
+  min-height: 0;
+  padding: clamp(40px, 6vw, 72px) 0 clamp(8px, 2vw, 16px);
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -1781,8 +1900,13 @@ body.chatting .chat-log {
 
   .pricing-grid,
   .contact-grid,
-  .about {
+  .about,
+  .project {
     grid-template-columns: 1fr;
+  }
+
+  .project--flip .project-media {
+    order: 0;
   }
 
   .price-card--featured {
@@ -1808,7 +1932,8 @@ body.chatting .chat-log {
   }
 
   .services-grid,
-  .steps {
+  .steps,
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 
