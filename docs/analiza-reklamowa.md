@@ -8,7 +8,7 @@ Data: 2026-10-07 · Cel: przygotować stronę do skutecznej reklamy w Google Sea
 | --- | --- |
 | Kanał startowy | Google Search lokalny (Przeworsk, Jarosław, Łańcut, Rzeszów + zdalnie Polska) |
 | Forma działalności | Działalność nierejestrowana (bez NIP, bez VAT) |
-| Portfolio | Do zdobycia — start: ŁączyNas.pl + własne realizacje (szablony usunięte 2026-10-07) |
+| Portfolio | Do zdobycia — start: ŁączyNas.pl |
 | Model oferty | Bez miesięcznych opłat za utrzymanie strony (hosting Cloudflare w cenie) |
 | Cennik | Landing od 500 zł, wizytówka od 800 zł, firmowa od 1200 zł (od 2026-10-07) |
 | Reklamy | Sprzedajemy konfigurację i prowadzenie kampanii Google/Meta: od 800 zł + 400 zł/mies. (budżet klienta opłacany w Google/Meta) |
@@ -49,9 +49,8 @@ Wnioski: cena 500–1200 zł jest wyraźnie poniżej rynku (dobre pod Ads), ale 
 - [x] Faza 1 — pomiar i zgody: GA4 + Ads tag (consent-gated), Consent Mode v2, CSP,
       eventy `generate_lead` / `tel_click` / `email_click` / `chat_started`, aktualizacja
       polityki prywatności, poprawa cen (netto → brutto bez VAT).
-- [x] Faza 2 (część) — `/realizacje/` z 4 przykładowymi konceptami (projekty pokazowe).
-- [ ] Faza 2 (reszta) — case study ŁączyNas.pl; oferta startowa dla pierwszych klientów
-      w zamian za zgodę na pokazanie realizacji (bez opinii — świadoma decyzja).
+- [ ] Faza 2 — miejsce na portfolio przygotowane (sekcja zakomentowana na stronie głównej);
+      czeka na prawdziwe realizacje + case study ŁączyNas.pl (bez opinii — świadoma decyzja).
 - [ ] Faza 3 — landing `/wycena/` + sticky CTA mobilny.
 - [ ] Faza 4 — kampanie Google Search (struktura niżej).
 

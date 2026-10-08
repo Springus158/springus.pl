@@ -45,7 +45,7 @@ const errors = [];
 const pages = ROOTS.flatMap((dir) => walkHtml(dir));
 
 for (const page of pages) {
-  const html = readFileSync(page, "utf8");
+  const html = readFileSync(page, "utf8").replace(/<!--[\s\S]*?-->/g, "");
   const refs = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map((match) => match[1]);
 
   for (const ref of refs) {
