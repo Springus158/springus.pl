@@ -1995,3 +1995,15 @@ body.chatting .chat-log {
     flex: 1;
   }
 }
+
+.portfolio-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--accent);
+}
+
+.portfolio-card:hover .portfolio-link {
+  color: var(--accent-strong);
+}
