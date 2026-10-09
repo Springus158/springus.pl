@@ -8,7 +8,7 @@
 
   /* Animacje przy przewijaniu ------------------------------------ */
   var revealTargets = document.querySelectorAll(
-    ".section-head, .services-grid, .templates-grid, .steps, .pricing-grid, .pricing-extras, .about, .faq, .contact-grid, .map-wrap"
+    ".section-head, .services-grid, .steps, .pricing-grid, .pricing-extras, .faq, .contact-grid"
   );
 
   if (revealTargets.length > 0 && "IntersectionObserver" in window) {
@@ -28,6 +28,38 @@
       el.setAttribute("data-reveal", "");
       revealObserver.observe(el);
     });
+  }
+
+  /* Karta portfolio na wysokość czatu ---------------------------- */
+  var chatCard = document.querySelector(".stage-chat");
+  var pfCard = document.querySelector(".stage-portfolio .portfolio-card");
+
+  if (chatCard && pfCard) {
+    var syncCards = function () {
+      if (window.matchMedia("(min-width: 901px)").matches) {
+        pfCard.style.height = chatCard.offsetHeight + "px";
+        pfCard.style.setProperty("--pf-shift", "0px");
+        var chatRect = chatCard.getBoundingClientRect();
+        var cardRect = pfCard.getBoundingClientRect();
+        var delta = Math.round(chatRect.bottom - cardRect.bottom);
+        pfCard.style.setProperty("--pf-shift", delta + "px");
+      } else {
+        pfCard.style.height = "";
+        pfCard.style.removeProperty("--pf-shift");
+      }
+    };
+
+    syncCards();
+
+    if (typeof ResizeObserver === "function") {
+      new ResizeObserver(syncCards).observe(chatCard);
+    } else {
+      window.addEventListener("resize", syncCards);
+    }
+    window.addEventListener("load", syncCards);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(syncCards);
+    }
   }
 
   /* Źródło zapytania (UTM / referrer) ---------------------------- */

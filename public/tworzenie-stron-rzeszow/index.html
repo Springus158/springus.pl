@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
     <title>Tworzenie stron internetowych Rzeszów — Springus</title>
     <meta
       name="description"
@@ -25,7 +26,8 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="/assets/css/style.css?v=24">
+    <script src="/assets/js/theme.js?v=1"></script>
+    <link rel="stylesheet" href="/assets/css/style.css?v=25">
 
     <script type="application/ld+json">
       {
@@ -73,7 +75,28 @@
     <header class="site-header">
       <div class="container">
         <a class="logo" href="/">Springus<span>.</span></a>
-        <a class="btn btn--primary" href="/#kontakt">Bezpłatna wycena</a>
+        <div class="header-actions">
+          <a class="btn btn--primary" href="/#kontakt">Bezpłatna wycena</a>
+          <button
+            class="lamp"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Włącz tryb nocny"
+          >
+            <svg viewBox="0 0 120 264" aria-hidden="true" focusable="false">
+              <line class="lamp__cable" x1="60" y1="-260" x2="60" y2="96"></line>
+              <g class="lamp__body">
+                <rect class="lamp__mount" x="52" y="80" width="16" height="20" rx="8"></rect>
+                <path class="lamp__shade" d="M52 96 C32 98 18 114 14 140 C44 148 78 146 106 138 C102 116 84 98 64 96 C60 100 56 100 52 96 Z"></path>
+                <ellipse class="lamp__rim" cx="60" cy="141" rx="46" ry="12"></ellipse>
+                <line class="lamp__string" data-lamp-string x1="84" y1="136" x2="84" y2="182"></line>
+                <circle class="lamp__knob" data-lamp-knob cx="84" cy="190" r="7"></circle>
+                <circle class="lamp__bulb" cx="62" cy="143" r="11"></circle>
+              </g>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -191,6 +214,6 @@
     </footer>
 
     <script src="/assets/js/analytics.js?v=1" defer></script>
-    <script src="/assets/js/main.js?v=18" defer></script>
+    <script src="/assets/js/main.js?v=21" defer></script>
   </body>
 </html>

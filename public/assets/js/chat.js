@@ -102,11 +102,48 @@
     return html;
   }
 
+  var PORTFOLIO = {
+    orzechowo: {
+      img: "assets/img/portfolio/orzechowo.webp",
+      title: "Orzechowo.pl — sklep z bakaliami",
+      desc: "Demo sklepu online: katalog z filtrami, koszyk, checkout i blog.",
+      href: "https://orzechowo-demo.kacpermroszczyk10.workers.dev/",
+    },
+  };
+
+  function portfolioCard(slug) {
+    var item = PORTFOLIO[slug];
+    if (!item) {
+      return "";
+    }
+    return (
+      '<figure class="chat-card">' +
+      '<a href="' + item.href + '" target="_blank" rel="noopener">' +
+      '<img src="' + item.img + '" alt="' + item.title + '" width="1200" height="860" loading="lazy">' +
+      "</a>" +
+      '<figcaption class="chat-card__body">' +
+      '<a class="chat-card__title" href="' + item.href + '" target="_blank" rel="noopener">' + item.title + "</a>" +
+      '<p class="chat-card__desc">' + item.desc + "</p>" +
+      '<a class="chat-card__link" href="' + item.href + '" target="_blank" rel="noopener">Zobacz demo ↗</a>' +
+      "</figcaption></figure>"
+    );
+  }
+
+  function withPortfolioCards(html) {
+    return html
+      .replace(/<p>\[\[portfolio:([a-z-]+)\]\]<\/p>/g, function (match, slug) {
+        return portfolioCard(slug);
+      })
+      .replace(/\[\[portfolio:([a-z-]+)\]\]/g, function (match, slug) {
+        return portfolioCard(slug);
+      });
+  }
+
   function addBubble(role, text) {
     var bubble = document.createElement("div");
     bubble.className = "bubble bubble--" + role;
     if (role === "bot") {
-      bubble.innerHTML = formatBotText(text);
+      bubble.innerHTML = withPortfolioCards(formatBotText(text));
     } else {
       bubble.textContent = text;
     }
@@ -158,9 +195,40 @@
     syncSendState();
   }
 
+  function localThemeCommand(text) {
+    var value = String(text || "").toLowerCase();
+    if (/(zgaś|zgas|wyłącz|wylacz)\s+(światło|swiatlo)|tryb\s+nocny|ciemny\s+tryb/.test(value)) {
+      return "dark";
+    }
+    if (/(zapal|włącz|wlacz)\s+(światło|swiatlo)|tryb\s+dzienny|jasny\s+tryb/.test(value)) {
+      return "light";
+    }
+    return null;
+  }
+
   function send(text) {
     var content = String(text || "").trim().slice(0, MAX_CHARS);
     if (!content || busy || !logEl) {
+      return;
+    }
+
+    var themeCommand = localThemeCommand(content);
+    if (themeCommand && window.springusTheme) {
+      if (input) {
+        input.value = "";
+      }
+      setConversing(true);
+      addBubble("user", content);
+      history.push({ role: "user", content: content });
+      window.springusTheme.set(themeCommand);
+      var themeReply =
+        themeCommand === "dark"
+          ? "Zgaszone — oczy odpoczną. Wróć do mnie, gdy najdzie Cię ochota."
+          : "Zapalone. Wracamy do światła.";
+      addBubble("bot", themeReply);
+      history.push({ role: "assistant", content: themeReply });
+      saveHistory();
+      syncSendState();
       return;
     }
 

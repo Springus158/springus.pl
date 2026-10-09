@@ -14,6 +14,7 @@ Data: 2026-10-07 · Cel: przygotować stronę do skutecznej reklamy w Google Sea
 | Reklamy | Sprzedajemy konfigurację i prowadzenie kampanii Google/Meta: od 800 zł + 400 zł/mies. (budżet klienta opłacany w Google/Meta) |
 | Obsługa leada | Auto-potwierdzenie do klienta + UTM/referrer w powiadomieniu (od 2026-10-07) |
 | Opinie | Świadomie bez opinii/recenzji na stronie (od 2026-10-07) |
+| Design | Strona główna pod czat + portfolio; sekcje 01–06; motyw ciemny z lampką (od 2026-10-08) |
 
 ## Stan wyjściowy (2026-10-06)
 

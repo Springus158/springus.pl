@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
     <title>Springus — strony internetowe dla firm | Podkarpacie</title>
     <meta
       name="description"
@@ -38,7 +39,8 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="assets/css/style.css?v=24">
+    <script src="assets/js/theme.js?v=1"></script>
+    <link rel="stylesheet" href="assets/css/style.css?v=25">
 
     <script type="application/ld+json">
       {
@@ -153,6 +155,7 @@
       <div class="screen">
       <section class="stage" id="start">
         <div class="container stage-wrap" data-hero-chat>
+          <div class="stage-main">
           <div class="stage-intro">
             <p class="stage-hello">Cześć, jestem Kacper</p>
             <h1>Robię strony, które <em>przyprowadzają klientów</em></h1>
@@ -188,6 +191,9 @@
               <button type="button" class="chip" data-hero-suggestion="Ile kosztuje strona internetowa?">
                 Ile kosztuje strona internetowa?
               </button>
+              <button type="button" class="chip" data-hero-suggestion="Pokaż przykłady stron">
+                Pokaż przykłady stron
+              </button>
               <button type="button" class="chip" data-hero-suggestion="Jak długo trwa realizacja strony?">
                 Jak długo trwa realizacja?
               </button>
@@ -201,6 +207,47 @@
               <a href="mailto:kontakt@springus.pl">kontakt@springus.pl</a>
             </p>
           </div>
+          </div>
+          <aside class="stage-portfolio" id="portfolio" aria-label="Zrobione strony">
+          <button
+            class="lamp"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Włącz tryb nocny"
+          >
+            <svg viewBox="0 0 120 264" aria-hidden="true" focusable="false">
+              <line class="lamp__cable" x1="60" y1="-260" x2="60" y2="96"></line>
+              <g class="lamp__body">
+                <rect class="lamp__mount" x="52" y="80" width="16" height="20" rx="8"></rect>
+                <path class="lamp__shade" d="M52 96 C32 98 18 114 14 140 C44 148 78 146 106 138 C102 116 84 98 64 96 C60 100 56 100 52 96 Z"></path>
+                <ellipse class="lamp__rim" cx="60" cy="141" rx="46" ry="12"></ellipse>
+                <line class="lamp__string" data-lamp-string x1="84" y1="136" x2="84" y2="182"></line>
+                <circle class="lamp__knob" data-lamp-knob cx="84" cy="190" r="7"></circle>
+                <circle class="lamp__bulb" cx="62" cy="143" r="11"></circle>
+              </g>
+            </svg>
+          </button>
+            <a
+                          class="card portfolio-card"
+                          href="https://orzechowo-demo.kacpermroszczyk10.workers.dev/"
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          <img
+                            src="assets/img/portfolio/orzechowo.webp"
+                            alt="Orzechowo.pl — sklep z orzechami i bakaliami (demo)"
+                            width="1200"
+                            height="860"
+                            loading="lazy"
+                          >
+                          <div class="portfolio-body">
+                            <h3>Orzechowo.pl — sklep z bakaliami</h3>
+                            <p>Demo sklepu online: katalog z filtrami, koszyk, checkout i blog.</p>
+                            <span class="portfolio-link">Zobacz demo ↗</span>
+                          </div>
+                        </a>
+          </aside>
         </div>
 
         <div class="container stage-trust">
@@ -244,7 +291,7 @@
             <h2>Co mogę dla Ciebie zrobić</h2>
           </div>
 
-          <div class="services-grid">
+          <div class="services-grid services-grid--strip">
             <article class="card service-card">
               <span class="service-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg>
@@ -288,76 +335,11 @@
         </div>
       </section>
 
-      <!-- Portfolio — kolejne realizacje dodawaj jako karty w .portfolio-grid -->
-      <section class="section section--tint" id="portfolio">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">02 · Portfolio</p>
-            <h2>Zrobione strony</h2>
-          </div>
-
-          <div class="portfolio-grid">
-            <a
-              class="card portfolio-card"
-              href="https://orzechowo-demo.kacpermroszczyk10.workers.dev/"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                src="assets/img/portfolio/orzechowo.webp"
-                alt="Orzechowo.pl — sklep z orzechami i bakaliami (demo)"
-                width="1200"
-                height="860"
-                loading="lazy"
-              >
-              <div class="portfolio-body">
-                <h3>Orzechowo.pl — sklep z bakaliami</h3>
-                <p>Demo sklepu online: katalog z filtrami, koszyk, checkout i blog.</p>
-                <span class="portfolio-link">Zobacz demo ↗</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Proces -->
-      <section class="section section--dark" id="proces">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">03 · Jak pracuję</p>
-            <h2>Od rozmowy do wdrożenia w czterech krokach</h2>
-          </div>
-
-          <ol class="steps">
-            <li class="step">
-              <span class="step-number">1</span>
-              <h3>Rozmowa i wycena</h3>
-            </li>
-            <li class="step">
-              <span class="step-number">2</span>
-              <h3>Oferta i start</h3>
-            </li>
-            <li class="step">
-              <span class="step-number">3</span>
-              <h3>Realizacja</h3>
-            </li>
-            <li class="step">
-              <span class="step-number">4</span>
-              <h3>Wdrożenie</h3>
-            </li>
-          </ol>
-
-          <div class="section-cta">
-            <a class="btn btn--light" href="#kontakt">Porozmawiajmy</a>
-          </div>
-        </div>
-      </section>
-
       <!-- Cennik -->
       <section class="section" id="cennik">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">04 · Cennik</p>
+            <p class="eyebrow">02 · Cennik</p>
             <h2>Przejrzyste ceny</h2>
             <p class="lead">Ceny brutto — nie doliczam VAT.</p>
           </div>
@@ -421,28 +403,35 @@
         </div>
       </section>
 
-      <!-- O mnie -->
-      <section class="section" id="o-mnie">
-        <div class="container about">
-          <div class="about-copy">
-            <p class="eyebrow">05 · O mnie</p>
-            <h2>Kacper — Springus</h2>
-            <p>
-              Dopiero zaczynam jako freelancer — mówię to wprost. Każdy projekt traktuję
-              jak własną wizytówkę.
-            </p>
-            <p>
-              Mieszkam w Świętoniowej pod Przeworskiem. Pracuję lokalnie i zdalnie.
-            </p>
-            <p class="about-sign">Kontaktujesz się bezpośrednio ze mną — jedna osoba od wyceny po wdrożenie.</p>
+      <!-- Proces -->
+      <section class="section section--dark" id="proces">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">03 · Jak pracuję</p>
+            <h2>Od rozmowy do wdrożenia w czterech krokach</h2>
           </div>
-          <div class="card about-facts">
-            <h3>W skrócie</h3>
-            <ul>
-              <li>Strony na Cloudflare — bez miesięcznych opłat</li>
-              <li>Technologie: HTML/CSS/JS, Next.js, Node.js</li>
-              <li>Odpowiadam w ciągu 24 h</li>
-            </ul>
+
+          <ol class="steps">
+            <li class="step">
+              <span class="step-number">1</span>
+              <h3>Rozmowa i wycena</h3>
+            </li>
+            <li class="step">
+              <span class="step-number">2</span>
+              <h3>Oferta i start</h3>
+            </li>
+            <li class="step">
+              <span class="step-number">3</span>
+              <h3>Realizacja</h3>
+            </li>
+            <li class="step">
+              <span class="step-number">4</span>
+              <h3>Wdrożenie</h3>
+            </li>
+          </ol>
+
+          <div class="section-cta">
+            <a class="btn btn--light" href="#kontakt">Porozmawiajmy</a>
           </div>
         </div>
       </section>
@@ -451,7 +440,7 @@
       <section class="section section--tint" id="faq">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">06 · FAQ</p>
+            <p class="eyebrow">04 · FAQ</p>
             <h2>Najczęstsze pytania</h2>
           </div>
 
@@ -483,7 +472,7 @@
       <section class="section" id="kontakt">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">07 · Kontakt</p>
+            <p class="eyebrow">05 · Kontakt</p>
             <h2>Bezpłatna wycena w 24 h</h2>
             <p class="lead">Napisz krótko, czego potrzebujesz — odpowiem w 24 h.</p>
           </div>
@@ -575,16 +564,7 @@
             </form>
           </div>
 
-          <div class="map-wrap">
-            <iframe
-              src="https://www.google.com/maps?q=%C5%9Awi%C4%99toniowa,%20Przeworsk&output=embed"
-              title="Mapa — Świętoniowa, gmina Przeworsk"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-            ></iframe>
           </div>
-        </div>
       </section>
     </main>
 
@@ -648,7 +628,7 @@
     </footer>
 
     <script src="assets/js/analytics.js?v=1" defer></script>
-    <script src="assets/js/main.js?v=18" defer></script>
-    <script src="assets/js/chat.js?v=16" defer></script>
+    <script src="assets/js/main.js?v=21" defer></script>
+    <script src="assets/js/chat.js?v=17" defer></script>
   </body>
 </html>

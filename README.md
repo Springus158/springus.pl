@@ -134,6 +134,15 @@ wymyśla informacji spoza zakresu i kieruje do formularza/e-maila.
 - CSP w `_headers` dopuszcza `googletagmanager.com`, `google-analytics.com`,
   `googleadservices.com` i `doubleclick.net`.
 
+## Motyw jasny/ciemny (lampka ze sznurkiem)
+
+- `public/assets/js/theme.js` — ustawia motyw przed renderem (`localStorage["springus-theme"]`,
+  domyślnie wg systemu), obsługuje przełącznik i okrągłe przejście (View Transitions).
+- W nagłówku każdej strony jest lampka: **pociągnij sznurek** (próg ~16 px) albo kliknij,
+  żeby przełączyć tryb; wybór jest zapamiętywany.
+- Easter egg w czacie: „zgaś światło” / „zapal światło”.
+- Światło lampy: żółte (zapalone) domyślnie; w trybie ciemnym lampa przybiera dawny wygląd (przygaszona żarówka, bez poświaty). Żarówka jest w warstwie pod kloszem.
+
 ## Deploy
 
 Produkcja: **Cloudflare Workers** (projekt `springus-pl`, `main = src/worker.js`,

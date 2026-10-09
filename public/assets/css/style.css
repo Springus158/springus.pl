@@ -445,6 +445,133 @@ p {
   display: none;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Lampka wisząca ze sznurkiem (przełącznik motywu) ---------------------------- */
+
+.lamp {
+  position: fixed;
+  top: 0;
+  right: clamp(10px, 2.5vw, 36px);
+  z-index: 40;
+  width: clamp(96px, 9vw, 150px);
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: grab;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lamp:active {
+  cursor: grabbing;
+}
+
+.lamp:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+.lamp svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  transform-origin: 50% 96px;
+}
+
+.lamp.is-snapping svg {
+  animation: lamp-swing 0.55s ease;
+}
+
+.lamp__cable {
+  stroke: var(--muted);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.stage-portfolio .lamp__cable {
+  stroke-width: 3.4;
+}
+
+.lamp__mount,
+.lamp__shade {
+  fill: var(--accent);
+  transition: fill 0.35s ease;
+}
+
+.lamp__string {
+  stroke: var(--ink-soft);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.lamp__knob {
+  fill: var(--ink-soft);
+  transition: fill 0.2s ease;
+}
+
+.lamp__rim {
+  fill: color-mix(in srgb, var(--accent) 62%, #2a0d05);
+  transition: fill 0.35s ease;
+}
+
+.lamp__bulb {
+  fill: #ffd76b;
+  filter: drop-shadow(0 0 7px rgba(255, 215, 107, 0.9));
+  animation: bulb-pulse 3.2s ease-in-out infinite;
+  transition: fill 0.35s ease, filter 0.35s ease;
+}
+
+.lamp.is-pulling .lamp__knob,
+.lamp.is-snapping .lamp__knob {
+  fill: var(--accent);
+}
+
+@keyframes bulb-pulse {
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 215, 107, 1));
+  }
+}
+
+@keyframes lamp-swing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  30% {
+    transform: rotate(-3.5deg);
+  }
+
+  60% {
+    transform: rotate(2.5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .lamp {
+    width: 78px;
+    right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lamp__bulb,
+  .lamp.is-snapping svg {
+    animation: none;
+  }
+}
+
 /* Scena główna z czatem ------------------------------------------------------ */
 
 .screen {
@@ -490,8 +617,61 @@ p {
 .stage-wrap {
   position: relative;
   z-index: 1;
-  max-width: min(1060px, 100%);
-  text-align: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  max-width: min(1160px, 100%);
+  text-align: left;
+}
+
+.stage-main {
+  min-width: 0;
+}
+
+.stage-portfolio {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  align-self: start;
+}
+
+.stage-portfolio .lamp {
+  position: relative;
+  z-index: 41;
+  width: min(100%, 340px);
+  margin: calc(clamp(28px, 5vw, 56px) * -1 - 110px) auto -185px;
+  pointer-events: none;
+}
+
+.stage-portfolio .lamp__string,
+.stage-portfolio .lamp__knob {
+  pointer-events: auto;
+  cursor: grab;
+}
+
+.stage-portfolio .lamp__string:active,
+.stage-portfolio .lamp__knob:active {
+  cursor: grabbing;
+}
+
+
+
+.stage-portfolio .portfolio-card {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(var(--pf-shift, 0px));
+  box-shadow: var(--shadow-md);
+}
+
+.stage-portfolio .portfolio-card:hover {
+  transform: translateY(calc(var(--pf-shift, 0px) - 4px));
+}
+
+.stage-portfolio .portfolio-card img {
+  flex: 1 1 auto;
+  min-height: 0;
+  object-fit: cover;
 }
 
 .stage-hello {
@@ -512,7 +692,6 @@ p {
   position: relative;
   font-style: normal;
   color: var(--accent);
-  white-space: nowrap;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
@@ -531,7 +710,7 @@ p {
 
 .stage-lead {
   max-width: 54ch;
-  margin: 18px auto 0;
+  margin: 18px 0 0;
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.8vw, 1.13rem);
 }
@@ -791,15 +970,7 @@ p {
   }
 }
 
-/* Tryb rozmowy — nagłówek zostaje bez zmian, zmienia się tylko zawartość czatu */
-
-body.chatting .suggests {
-  display: none;
-}
-
-body.chatting .sticker {
-  display: none;
-}
+/* Tryb rozmowy — wygląd identyczny, pojawia się tylko log rozmowy */
 
 body.chatting .chat-log {
   display: flex;
@@ -973,19 +1144,55 @@ body.chatting .chat-log {
 }
 
 /* Portfolio (miejsce przygotowane — sekcja zakomentowana w index.html) ------- */
+/* Pasek usług (strona główna) -------------------------------------------------- */
 
-.portfolio-grid {
-  display: grid;
+.services-grid--strip {
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  gap: 0 44px;
 }
 
-.portfolio-grid > :only-child {
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: 100%;
-  max-width: 780px;
+.services-grid--strip .service-card {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
+
+.services-grid--strip .service-card::before,
+.services-grid--strip .service-card::after {
+  display: none;
+}
+
+.services-grid--strip .service-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.services-grid--strip .service-icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 12px;
+}
+
+.services-grid--strip .service-card h3 {
+  flex: 0 0 170px;
+  padding-right: 0;
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.services-grid--strip .service-card p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
 
 .portfolio-card {
   display: flex;
@@ -1003,6 +1210,7 @@ body.chatting .chat-log {
   height: auto;
   border-bottom: 1px solid var(--border);
   background: #fff;
+  transition: transform 0.35s ease;
 }
 
 .portfolio-body {
@@ -1026,9 +1234,8 @@ body.chatting .chat-log {
   border-color: var(--border-strong);
 }
 
-.portfolio-more {
-  margin: 30px 0 0;
-  text-align: center;
+.portfolio-card:hover img {
+  transform: scale(1.02);
 }
 
 /* Proces --------------------------------------------------------------------- */
@@ -1265,56 +1472,6 @@ body.chatting .chat-log {
   color: var(--ink-soft);
 }
 
-/* O mnie ---------------------------------------------------------------------- */
-
-.about {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(28px, 5vw, 56px);
-  align-items: start;
-}
-
-.about-sign {
-  margin-top: 22px;
-  font-family: var(--font-hand);
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: var(--accent-strong);
-  transform: rotate(-0.8deg);
-}
-
-.about-facts {
-  background: var(--tint);
-  border-style: dashed;
-}
-
-.about-facts h3 {
-  margin-bottom: 14px;
-}
-
-.about-facts ul {
-  display: grid;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.about-facts li {
-  position: relative;
-  padding-left: 22px;
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-}
-
-.about-facts li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
 /* FAQ ------------------------------------------------------------------------- */
 
 .faq {
@@ -1514,21 +1671,6 @@ body.chatting .chat-log {
 
 .form-status.is-error {
   color: var(--danger);
-}
-
-.map-wrap {
-  margin-top: clamp(36px, 6vw, 56px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-
-.map-wrap iframe {
-  display: block;
-  width: 100%;
-  height: 340px;
-  border: 0;
 }
 
 /* Stopka ------------------------------------------------------------------------ */
@@ -1812,6 +1954,259 @@ body.chatting .chat-log {
   transform: none;
 }
 
+/* Karty portfolio w czacie ------------------------------------------------------ */
+
+.chat-card {
+  max-width: 340px;
+  margin: 10px 0 4px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.chat-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chat-card__body {
+  padding: 10px 14px 12px;
+}
+
+.chat-card__title {
+  display: block;
+  margin-bottom: 2px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.chat-card__desc {
+  margin: 0 0 6px;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.chat-card__link {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+/* Motyw ciemny ------------------------------------------------------------------- */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --cream: #1d1915;
+  --tint: #241e17;
+  --surface: #262019;
+  --ink: #f4eee2;
+  --ink-soft: #d6ccbc;
+  --muted: #a89d8d;
+  --accent: #e4571f;
+  --accent-strong: #f97316;
+  --accent-soft: #3a2416;
+  --border: #3a3229;
+  --border-strong: #4d4236;
+  --dark: #14110d;
+  --dark-soft: #221c16;
+  --success: #4ade80;
+  --danger: #f87171;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.45), 0 18px 40px rgba(0, 0, 0, 0.5);
+  --shadow-pop: 6px 6px 0 rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(1100px 600px at 85% -10%, rgba(228, 87, 31, 0.14), transparent 60%),
+    var(--cream);
+}
+
+[data-theme="dark"] .bar,
+[data-theme="dark"] .site-header {
+  background: rgba(29, 25, 21, 0.88);
+}
+
+[data-theme="dark"] .stage::before,
+[data-theme="dark"] .hero::before {
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.12), transparent 62%);
+}
+
+[data-theme="dark"] .stage-chat {
+  background: rgba(38, 32, 25, 0.78);
+}
+
+[data-theme="dark"] .trust-strip li {
+  background: rgba(38, 32, 25, 0.72);
+}
+
+[data-theme="dark"] .marquee {
+  background: #14110d;
+  color: #f4eee2;
+}
+
+[data-theme="dark"] .chip--primary {
+  background: #f4eee2;
+  border-color: #f4eee2;
+  color: #1d1915;
+}
+
+[data-theme="dark"] .chip--primary:hover {
+  background: #fffaf0;
+  border-color: #fffaf0;
+  color: #1d1915;
+}
+
+[data-theme="dark"] .section--dark {
+  background:
+    radial-gradient(900px 420px at 12% -20%, rgba(228, 87, 31, 0.22), transparent 60%),
+    radial-gradient(rgba(244, 238, 226, 0.05) 1px, transparent 1px),
+    #17130f;
+  background-size: auto, 24px 24px, auto;
+}
+
+[data-theme="dark"] .price-card--featured {
+  background:
+    radial-gradient(420px 240px at 90% -10%, rgba(228, 87, 31, 0.3), transparent 65%),
+    #2b231b;
+  border-color: var(--border-strong);
+}
+
+[data-theme="dark"] .bubble--bot {
+  background: #2b231b;
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .bubble--bot code {
+  background: #1f1a15;
+}
+
+[data-theme="dark"] .form-field input,
+[data-theme="dark"] .form-field select,
+[data-theme="dark"] .form-field textarea {
+  background: #1f1a15;
+}
+
+[data-theme="dark"] .form-field input:focus,
+[data-theme="dark"] .form-field select:focus,
+[data-theme="dark"] .form-field textarea:focus {
+  background: #241e17;
+}
+
+[data-theme="dark"] .consent__inner {
+  background: #262019;
+}
+
+[data-theme="dark"] .skip-link {
+  background: #f4eee2;
+  color: #1d1915;
+}
+
+[data-theme="dark"] .btn--light {
+  background: #f4eee2;
+  color: #1d1915;
+}
+
+[data-theme="dark"] .btn--light:hover {
+  background: #fffaf0;
+}
+
+[data-theme="dark"] .composer__send:disabled {
+  background: #322a22;
+  color: #7d7264;
+}
+
+[data-theme="dark"] .price-tag,
+[data-theme="dark"] .sticker {
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .lamp__cable {
+  stroke: #4d4236;
+}
+
+[data-theme="dark"] .lamp__string {
+  stroke: #6b6154;
+}
+
+[data-theme="dark"] .lamp__knob {
+  fill: #6b6154;
+}
+
+[data-theme="dark"] .lamp__mount,
+[data-theme="dark"] .lamp__shade {
+  fill: #8f2f10;
+}
+
+[data-theme="dark"] .lamp__bulb {
+  fill: #b9ad9a;
+  filter: none;
+  animation: none;
+}
+
+
+/* Efekt LED na czerwonych napisach ---------------------------------------------- */
+
+.stage-intro h1 em,
+.hero h1 em {
+  text-shadow:
+    0 0 6px color-mix(in srgb, var(--accent) 80%, transparent),
+    0 0 20px color-mix(in srgb, var(--accent) 45%, transparent),
+    0 0 44px color-mix(in srgb, var(--accent) 25%, transparent);
+  animation: led-breathe 3.4s ease-in-out infinite;
+}
+
+.eyebrow {
+  text-shadow: 0 0 10px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+@keyframes led-breathe {
+  50% {
+    text-shadow:
+      0 0 8px color-mix(in srgb, var(--accent) 95%, transparent),
+      0 0 26px color-mix(in srgb, var(--accent) 60%, transparent),
+      0 0 56px color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-intro h1 em,
+  .hero h1 em {
+    animation: none;
+  }
+}
+
+/* Przejście motywu (okrągłe zalanie z lampki) ------------------------------------ */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: theme-reveal 0.55s ease-out;
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 40%));
+  }
+
+  to {
+    clip-path: circle(150vmax at var(--vt-x, 50%) var(--vt-y, 40%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
 /* Responsywność ---------------------------------------------------------------------- */
 
 @media (max-width: 1024px) {
@@ -1834,13 +2229,25 @@ body.chatting .chat-log {
     display: none;
   }
 
+  .stage-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-portfolio {
+    margin-top: 8px;
+  }
+
+  .stage-portfolio .lamp {
+    width: min(62%, 240px);
+    margin: 4px auto -70px;
+  }
+
   .nav-toggle {
     display: flex;
   }
 
   .pricing-grid,
-  .contact-grid,
-  .about {
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1862,14 +2269,13 @@ body.chatting .chat-log {
     padding: 56px 0;
   }
 
-  .stage-intro h1 em {
-    white-space: normal;
+  .services-grid,
+  .steps {
+    grid-template-columns: 1fr;
   }
 
-  .services-grid,
-  .steps,
-  .portfolio-grid {
-    grid-template-columns: 1fr;
+  .services-grid--strip .service-card h3 {
+    flex: 1 1 auto;
   }
 
   .step {
