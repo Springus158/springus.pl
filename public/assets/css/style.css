@@ -2148,10 +2148,10 @@ body.chatting .chat-log {
 }
 
 
-/* Efekt LED na czerwonych napisach ---------------------------------------------- */
+/* Efekt LED na czerwonych napisach — tylko po zgaszeniu światła (dark mode) ------ */
 
-.stage-intro h1 em,
-.hero h1 em {
+[data-theme="dark"] .stage-intro h1 em,
+[data-theme="dark"] .hero h1 em {
   text-shadow:
     0 0 6px color-mix(in srgb, var(--accent) 80%, transparent),
     0 0 20px color-mix(in srgb, var(--accent) 45%, transparent),
@@ -2159,7 +2159,7 @@ body.chatting .chat-log {
   animation: led-breathe 3.4s ease-in-out infinite;
 }
 
-.eyebrow {
+[data-theme="dark"] .eyebrow {
   text-shadow: 0 0 10px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
@@ -2173,8 +2173,8 @@ body.chatting .chat-log {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stage-intro h1 em,
-  .hero h1 em {
+  [data-theme="dark"] .stage-intro h1 em,
+  [data-theme="dark"] .hero h1 em {
     animation: none;
   }
 }
@@ -2238,8 +2238,14 @@ body.chatting .chat-log {
   }
 
   .stage-portfolio .lamp {
-    width: min(62%, 240px);
-    margin: 4px auto -70px;
+    position: fixed;
+    top: var(--bar-h);
+    right: 10px;
+    width: 68px;
+    margin: 0;
+    z-index: 40;
+    pointer-events: auto;
+    cursor: pointer;
   }
 
   .nav-toggle {
