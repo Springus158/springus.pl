@@ -2243,7 +2243,7 @@ body.chatting .chat-log {
     right: 10px;
     width: 68px;
     margin: 0;
-    z-index: 40;
+    z-index: 49;
     pointer-events: auto;
     cursor: pointer;
   }
