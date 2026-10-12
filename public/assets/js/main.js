@@ -30,9 +30,15 @@
     });
   }
 
-  /* Karta portfolio na wysokość czatu ---------------------------- */
+  /* Karta portfolio na wysokość czatu (tylko przy jednej karcie) */
   var chatCard = document.querySelector(".stage-chat");
-  var pfCard = document.querySelector(".stage-portfolio .portfolio-card");
+  var pfCardsAll = document.querySelectorAll(".stage-portfolio .portfolio-card");
+  var pfCard = pfCardsAll.length === 1 ? pfCardsAll[0] : null;
+  var stageWrap = document.querySelector(".stage-wrap");
+
+  if (stageWrap && pfCardsAll.length > 1) {
+    stageWrap.classList.add("stage-wrap--tall");
+  }
 
   if (chatCard && pfCard) {
     var syncCards = function () {

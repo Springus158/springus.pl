@@ -109,6 +109,12 @@
       desc: "Demo sklepu online: katalog z filtrami, koszyk, checkout i blog.",
       href: "https://orzechowo-demo.kacpermroszczyk10.workers.dev/",
     },
+    volt: {
+      img: "assets/img/portfolio/volt.webp",
+      title: "Volt — elektryk z Warszawy",
+      desc: "Landing page firmy elektrycznej: usługi, cennik, formularz wyceny i FAQ.",
+      href: "https://volt-demo.kacpermroszczyk10.workers.dev/",
+    },
   };
 
   function portfolioCard(slug) {

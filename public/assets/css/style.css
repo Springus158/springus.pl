@@ -625,6 +625,11 @@ p {
   text-align: left;
 }
 
+/* Kilka kart portfolio: kolumny wyrównane do góry, karty naturalnej wysokości */
+.stage-wrap--tall {
+  align-items: start;
+}
+
 .stage-main {
   min-width: 0;
 }
