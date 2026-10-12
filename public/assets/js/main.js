@@ -30,28 +30,36 @@
     });
   }
 
-  /* Karta portfolio na wysokość czatu (tylko przy jednej karcie) */
+  /* Karty portfolio na wysokość czatu + wyrównanie slidera */
   var chatCard = document.querySelector(".stage-chat");
   var pfCardsAll = document.querySelectorAll(".stage-portfolio .portfolio-card");
-  var pfCard = pfCardsAll.length === 1 ? pfCardsAll[0] : null;
+  var pfSlider = document.querySelector(".stage-portfolio .pf-slider");
   var stageWrap = document.querySelector(".stage-wrap");
 
   if (stageWrap && pfCardsAll.length > 1) {
     stageWrap.classList.add("stage-wrap--tall");
   }
 
-  if (chatCard && pfCard) {
+  if (chatCard && pfCardsAll.length > 0) {
     var syncCards = function () {
       if (window.matchMedia("(min-width: 901px)").matches) {
-        pfCard.style.height = chatCard.offsetHeight + "px";
-        pfCard.style.setProperty("--pf-shift", "0px");
-        var chatRect = chatCard.getBoundingClientRect();
-        var cardRect = pfCard.getBoundingClientRect();
-        var delta = Math.round(chatRect.bottom - cardRect.bottom);
-        pfCard.style.setProperty("--pf-shift", delta + "px");
+        pfCardsAll.forEach(function (card) {
+          card.style.height = chatCard.offsetHeight + "px";
+        });
+        if (pfSlider) {
+          pfSlider.style.setProperty("--pf-shift", "0px");
+          var chatRect = chatCard.getBoundingClientRect();
+          var sliderRect = pfSlider.getBoundingClientRect();
+          var delta = Math.round(chatRect.bottom - sliderRect.bottom);
+          pfSlider.style.setProperty("--pf-shift", delta + "px");
+        }
       } else {
-        pfCard.style.height = "";
-        pfCard.style.removeProperty("--pf-shift");
+        pfCardsAll.forEach(function (card) {
+          card.style.height = "";
+        });
+        if (pfSlider) {
+          pfSlider.style.removeProperty("--pf-shift");
+        }
       }
     };
 
@@ -66,6 +74,42 @@
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(syncCards);
     }
+  }
+
+  /* Strzałki portfolio ------------------------------------------- */
+  var pfTrack = document.querySelector("[data-pf-track]");
+  var pfPrev = document.querySelector("[data-pf-prev]");
+  var pfNext = document.querySelector("[data-pf-next]");
+
+  if (pfTrack && pfPrev && pfNext) {
+    var updateArrows = function () {
+      var max = pfTrack.scrollWidth - pfTrack.clientWidth;
+      var single = max < 10;
+      pfPrev.hidden = single;
+      pfNext.hidden = single;
+      if (!single) {
+        pfPrev.disabled = pfTrack.scrollLeft <= 2;
+        pfNext.disabled = pfTrack.scrollLeft >= max - 2;
+      }
+    };
+
+    var slide = function (dir) {
+      pfTrack.scrollBy({ left: dir * pfTrack.clientWidth, behavior: "smooth" });
+    };
+
+    pfPrev.addEventListener("click", function () {
+      slide(-1);
+    });
+    pfNext.addEventListener("click", function () {
+      slide(1);
+    });
+    pfTrack.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    if (typeof ResizeObserver === "function") {
+      new ResizeObserver(updateArrows).observe(pfTrack);
+    }
+
+    updateArrows();
   }
 
   /* Źródło zapytania (UTM / referrer) ---------------------------- */

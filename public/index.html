@@ -40,7 +40,7 @@
       rel="stylesheet"
     >
     <script src="assets/js/theme.js?v=1"></script>
-    <link rel="stylesheet" href="assets/css/style.css?v=25">
+    <link rel="stylesheet" href="assets/css/style.css?v=26">
 
     <script type="application/ld+json">
       {
@@ -208,7 +208,7 @@
             </p>
           </div>
           </div>
-          <aside class="stage-portfolio" id="portfolio" aria-label="Zrobione strony">
+          <aside class="stage-portfolio" id="portfolio" aria-label="Portfolio">
           <button
             class="lamp"
             type="button"
@@ -228,6 +228,11 @@
               </g>
             </svg>
           </button>
+            <div class="pf-slider">
+              <button class="pf-arrow pf-arrow--prev" type="button" data-pf-prev aria-label="Poprzednia realizacja" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+              </button>
+              <div class="pf-track" data-pf-track>
             <a
                           class="card portfolio-card"
                           href="https://orzechowo-demo.kacpermroszczyk10.workers.dev/"
@@ -266,6 +271,11 @@
                             <span class="portfolio-link">Zobacz demo ↗</span>
                           </div>
                         </a>
+              </div>
+              <button class="pf-arrow pf-arrow--next" type="button" data-pf-next aria-label="Następna realizacja" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
           </aside>
         </div>
 
@@ -647,7 +657,7 @@
     </footer>
 
     <script src="assets/js/analytics.js?v=1" defer></script>
-    <script src="assets/js/main.js?v=21" defer></script>
+    <script src="assets/js/main.js?v=22" defer></script>
     <script src="assets/js/chat.js?v=17" defer></script>
   </body>
 </html>

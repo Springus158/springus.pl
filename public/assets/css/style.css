@@ -665,12 +665,83 @@ p {
 .stage-portfolio .portfolio-card {
   display: flex;
   flex-direction: column;
-  transform: translateY(var(--pf-shift, 0px));
   box-shadow: var(--shadow-md);
 }
 
-.stage-portfolio .portfolio-card:hover {
-  transform: translateY(calc(var(--pf-shift, 0px) - 4px));
+.pf-slider {
+  position: relative;
+  transform: translateY(var(--pf-shift, 0px));
+}
+
+.pf-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 6px 0 10px;
+  margin: -6px 0 -10px;
+}
+
+.pf-track::-webkit-scrollbar {
+  display: none;
+}
+
+.pf-track > * {
+  scroll-snap-align: start;
+}
+
+.pf-track .portfolio-card:hover {
+  transform: none;
+}
+
+.pf-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.pf-arrow:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.pf-arrow[hidden] {
+  display: none;
+}
+
+.pf-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.pf-arrow--prev {
+  left: -14px;
+}
+
+.pf-arrow--next {
+  right: -14px;
+}
+
+.pf-arrow svg {
+  width: 18px;
+  height: 18px;
 }
 
 .stage-portfolio .portfolio-card img {
@@ -2240,6 +2311,14 @@ body.chatting .chat-log {
 
   .stage-portfolio {
     margin-top: 8px;
+  }
+
+  .pf-arrow--prev {
+    left: 6px;
+  }
+
+  .pf-arrow--next {
+    right: 6px;
   }
 
   .stage-portfolio .lamp {
