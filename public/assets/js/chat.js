@@ -115,6 +115,12 @@
       desc: "Landing page firmy elektrycznej: usługi, cennik, formularz wyceny i FAQ.",
       href: "https://volt-demo.kacpermroszczyk10.workers.dev/",
     },
+    formacraft: {
+      img: "assets/img/portfolio/formacraft.webp",
+      title: "FormaCraft — meble na wymiar",
+      desc: "Strona wizytówka pracowni mebli: usługi, realizacje, proces, FAQ i formularz.",
+      href: "https://formacraft-demo.kacpermroszczyk10.workers.dev/",
+    },
   };
 
   function portfolioCard(slug) {
